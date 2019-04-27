@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Personal Computer PC-AT Bus Description and ISA Pinout</title>
+<meta charset="UTF-8">
+<meta name="author" content="Larry Davis" />
+<meta http-equiv="language" content="eng" />
+<meta http-equiv="dialect" content="us" />
+<meta name="copyright" content="2015, Larry Davis" />
+<meta name="description" content="PCAT, Personal Computer PC/PC-AT [ISA] Bus Design Information, and Pin-out" />
+<link rel="stylesheet" href="Webstyle.css" type="text/css" />
+</head>
+<body>
+<a name="top" id="top"></a>
+<center>
+<h2><font size="5"><b>ISA Bus / AT Bus</b></font></h2>
+</center>
+<p style="text-align:center">
+<b>Industry Standard Architecture Bus</b></p><br/>
+<br/>
+<p style="text-align:center">
+[<a href="#a"><b>PC Bus Description(s)</b></a>]<br/>
+[<a href="#b"><b>ISA Card Form Factors</b></a>] [<a href="#c"><b>PC
+ Interface ICs</b></a>]<br/>
+[<a href="#e"><b>PC Connectors</b></a>] [<a href=
+"http://www.interfacebus.com/Design_PCAT_Card.html" title=
+"PC Bus Pin Out"><b>PC-XT / PC-AT Pinout</b></a>] [<a href=
+"http://www.interfacebus.com/COTS_Board_Manufacturers.html" title=
+"PC Board Manufacturers Listing"><b>PCAT Cards</b></a>] [<a href=
+"http://www.interfacebus.com/Equipment_PC_Case_Manufacturers.html" title=
+"PC Case Manufacturers List"><b>PC Chassis</b></a>]<br/>
+[<a href="http://www.interfacebus.com/" title="Engineering Index"><b>Home</b></a>]</p>
+
+<center><form action="http://www.google.com" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-4308118663291870:9482193981" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="45" />
+    <input type="submit" name="sa" value="Search" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+</center>
+
+<h3><a name="a" id="a"><font size="5"><b>PC/PC-AT Description and Pin
+      Outs</b></font></a></h3>
+<p><b>ISA (AT)bus:</b> The ISA bus operates at 8MHz with an 8 and 16 bits
+      data bus, a 24 bit address bus, using +/- 12 volts, +/- 5 volts, and 15
+      Interrupt lines. The standard drive level is 24mA for all non
+      Open-Collector signals on the bus. The AT card used the standard (edge)
+      connector provided by the XT bus and added an additional (edge) connector
+      behind that with the same pin-spacing @ 0.1 inch center-to-center. The
+      additional connector has only 38 (19 per side) fingers, while the XT
+      connector had 62 (32 per side) fingers. The <a href=
+      "http://www.interfacebus.com/Mother_Board_Manufacturers.html" title=
+      "Mother Board Manufacturers">Motherboard</a> could then accept either an
+      8 or 16 bit card in an 8 bit slot (XT), or (if the connector was
+      provided) a 16 bit card in an AT slot. A maximum number of 8 Expansion
+      slots were provided on IBM compatible Motherboards. The additional
+      connector provided 4 additional address lines , and 8 additional data
+      lines. Some Interrupt lines are reserved and the AT spec allowed
+      interrupt sharing. A number of different oscillators may be used to
+      control timers, bus transfers, etc. Refer to this page for a comparison
+      of <a href="http://www.interfacebus.com/Video_Bus_Through-put_comparison.html" title=
+      "PC Video Bus Expansion Slot Comparison">Video bus through-put</a> for
+      different expansion buses. This page provides the <a href=
+      "http://www.interfacebus.com/Design_PCAT_Card.html" title=
+      "PC Bus Descriptions pinout and signal names"><b>PC-XT / PC-AT
+      pinout</b></a>.<br/>
+      <br/>
+By 2001, many computers started shipping with <b><a href=
+      "http://www.interfacebus.com/Design_Connector_PCI.html" title=
+      "Peripheral Component Interface Bus Description, and Pinout, and pinout information">
+      PCI</a></b> only slots. But a combination of ISA AT expansion slots, and
+      PCI slots was still common. The PC ISA bus is Obsolete and should not be
+      used for new designs. In fact, all of the buses listed here are obsolete,
+      and were all replaced by the PCI bus. But, because so many ISA cards and
+      <a href="http://www.interfacebus.com/Mother_Board_Manufacturers.html"
+      title="MotherBoard Manufacturers Listing">Mother boards</a> were produced
+      many companies still support these form factors. By the middle of 2004
+      many companies were shipping Mother Boards with PCI expansion slots
+      [which replaced the ISA slots] and <a href=
+      "http://www.interfacebus.com/PCI-Express-Bus-PCIe-Description.html" title=
+      "PCIe Bus, Signal names and Pinout"><b>PCI-Express</b></a> slots, in a
+      combination of 1x PCIe slots and 16x PCIe slots, which replaced the
+      <a href="http://www.interfacebus.com/Design_Connector_AGP.html" title=
+      "AGP Bus description, pinout"><b>AGP</b></a> expansion slots. As of 2005
+      PCI-express slots reside on a majority of motherboards, but AGP expansion
+      slots are still common [especially on AMD based boards]. PCI slots still
+      exist on all motherboards, and the ISA expansion slots are all but gone.
+      Only industrial PC motherboards still offer ISA based motherboards. In
+      addition; the Embedded Industrial <b><a href=
+      "http://www.interfacebus.com/Design_Connector_PC104.html" title=
+      "PC104 Bus description">PC/104</a></b> specification (IEEE P966) still
+      requires the ISA bus, in a different form factor.</p>
+<br/><br/>
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4308118663291870";
+/* 728x90 */
+google_ad_slot = "8490830536";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<br/><br/>
+<p><b>Additional Personal Computer [PC] Bus Information:</b><br/>
+      <b>ISA (XT)bus:</b> Obsolete; 4.77MHz @ 8 bits, +/- 12 volts, +/- 5
+      volts. The XT bus used a 62 pin (.1" center) edge connector; 31 pins per
+      card side. Used a single oscillator of 14.31818MHz which was divided by
+      3. 8 Data lines, 0 to 7 (LSB=0). 20 Address lines, 0 to 19 (LSB=0). 1
+      Clock line (4.77MHz). 1 Reset line, 8 Interrupt lines. Some 8 bit cards
+      have skirts which extend the board below the depth of the top of the
+      connector to allow additional circuitry. These cards, with skirts, are
+      not compatible with the 16 bit AT bus. The XT bus uses connector J1
+      (A/B), AT uses J1 (A/B), J2 (C/D). A maximum number of 8 Expansion slots
+      were provided on IBM compatible Motherboards.<br/>
+      <br/>
+<b>MCA (Micro Channel Architecture) bus:</b> Obsolete; 10MHz @ 16 or 32
+      bits, uP independent, asynchronous, IBM proprietary on PS2 computers.
+      With bus enhancements the speed reaches 80MBps, using clock doubling. The
+      MCI bus only appeared on IBM PS2 series of computers which have been off
+      the market for many years now. MCA description and pinout information is
+      listed on the <a href="http://www.interfacebus.com/IBM_MCA_PinOut.html"
+      title="MCA Pin Out and Signal names">MCA</a> page.<br/>
+      <br/>
+<b>EISA (Extended Industry Standard Architecture) or (Enhanced ISA)
+      bus:</b> 8MHz @ 8/16/32 bits data bus, 32 bit address bus; PC Expansion
+      Bus, compatible with ISA. An ISA card will work in a EISA slot, but an
+      EISA card will not work in an AT slot. All of the PC-XT and PC-AT fingers
+      reside on an EISA board/connector. The actual EISA fingers (pin) reside
+      below the XT and AT fingers on an EISA board. The EISA bus (in one mode)
+      used both edges of the clock, with the rising edge used to output
+      address, and the falling edge to place the data on the bus. Three other
+      transfer modes were available. The EISA bus does not allow the board
+      skirts common with the older XT cards. The EISA cards are the same size
+      as the AT cards. The new address lines are termed "LA#", all address
+      lines are latched. Refer to the <a href=
+      "http://www.interfacebus.com/Design_PC_EISA_Card.html" title=
+      "EISA Pin Out and Signal names">EISA Pinout</a> table for signal names
+      and pin out information.<br/>
+      <br/>
+<b><a href="http://www.interfacebus.com/Design_Connector_PCI.html" title=
+      "PCI Bus">PCI</a></b> (Peripheral Component Interconnect) bus: The
+      Peripheral Component Interface 'PCI' [Parallel] Bus was originally
+      developed as a local bus expansion for the PC. The first version of the
+      PCI bus ran at 33MHz with a 32 bit bus (133MBps), the current version
+      runs at 66MHz with a 64 bit bus. The PCI bus operates either
+      synchronously or asynchronously with the "mother Board bus rate: The PCI
+      bus is microprocessor independent. The page contains the PCI connector
+      Pin-Outs. The PCI bus replaced the PCAT bus on most Mother Boards.<br/>
+      <br/>
+      <b><a href="http://www.interfacebus.com/COTS_PISA_Board_Manufacturers.html" title=
+      "PISA Bus Description">PISA</a> (PCI + ISA) bus:</b> ~PC Expansion Bus. A normal ISA card with an
+      additional row of pins above, used for the PCI bus. A passive backplane
+      which moves all active devices off the Mother-Board and onto a single
+      card. The controller card used in the system has fingers [edge
+      connectors] for both PCI and the ISA bus, the Mother Board only
+      connectors. This allows additional cards to be added to the mother board
+      which use either the ISA or PCI buses. Because only connectors reside on
+      the motherboard, repair time is increased, and down time is decreased.
+      The standard is PICMG-xx. The specification is used in embedded or
+      industrial computer systems.<br/>
+      <br/>
+<b>VESA (Video Electronic Standards Association)/Local bus (<a href=
+      "http://www.interfacebus.com/VESA_Local_Bus_Pinout.html" title=
+      "VLB pinout and Description">VLB</a> or VL-Bus):</b> had a bus speed of
+      33MHz using either 16-bit or 32-bit data transfers, 30 address bits were
+      provided. A 64 bit bus was also available by multiplexing the additional
+      upper 32 bits on to address bus. A maximum of three devices may be
+      connected to the bus. Best speed is seen in the Burst mode: Single
+      address followed by 4 data transfers. Supports bus mastering.<br/>
+      The <a href="http://www.interfacebus.com/VESA_Local_Bus_Pinout.html"
+      title="VLB pinout and Description">VLB</a> resides on a standard 16 bit
+      ISA card with the additional pins required by the VLB interface residing
+      after the ISA pins, allowing an ISA card to use the same slot. A VLB card
+      does not need to use the ISA bus and may only require the VLB connector
+      pins. Rev 2 of VLB multiplexed 32 bit of data onto the address bus,
+      producing a 64 bit data bus. The version 2 card is back-ware compatible.
+      The VLB connector is keyed at pins 46 and 47. The pinout and a short
+      description is provided on the <a href=
+      "http://www.interfacebus.com/VESA_Local_Bus_Pinout.html" title=
+      "VLB pinout and Description">VESA Local Bus</a> page.<br/>
+      Because this bus used the same bus structure as the 486, it could only be
+      used with the 486 class of processors, with the advent of the Pentium
+      <a href="http://www.interfacebus.com/Controllers.html" title=
+      "List of Processor Manufacturers">processor</a> and the PCI bus - this
+      bus is now obsolete. This bus was replaced with a deviant of the PCI bus
+      called the <a href="http://www.interfacebus.com/Design_Connector_AGP.html" title=
+      "Accelerated Graphics Port Bus Description"><b>AGP</b></a> bus.</p>
+<p><a href="http://www.interfacebus.com/Design_Connector_Apple.html" title=
+"PinOuts for the Apple Computer"><b>Apple Computer Buses</b></a>
+      {Pin-Outs only}</p>
+<p><a href="http://www.interfacebus.com/Interface_PC_Buses.html" title=
+"Main PC Interface Bus Listing"><b>All other Computer Interface
+      Buses</b></a></p>
+<p style="text-align:center">
+<a href="#top" title="top of PC-AT Page"><b>{PCAT/ISA Bus Index}</b></a></p>
+<hr width="85%" />
+<h3><a name="b" id="b"><font size="5"><b>Card [Dimensions] Form Factors</b></font></a></h3>
+<p><a href="http://www.interfacebus.com/Design_PCAT_Card.html" title=
+"PC Bus Board Sizes, and Pinout">PC AT and combined AT/PCI Bus</a> Board
+      Dimensions Full Size Detailed (with Pin-Outs)</p>
+<p><a href="http://www.interfacebus.com/Design_PCI_Card_Size.html" title=
+"PCI Bus Board Sizes">PC PCI Board Dimensions</a> Half Size Board with
+      Detailed Dimensions</p>
+<center>
+<img src="ISA-PCAT-Physical-Card-Size-vs-PC104.png"
+ alt="PC-AT Board Size Drawing" title="Personal Computer PCAT Physical Card Size" />
+</center>
+<br/><br/>
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4308118663291870";
+/* 728x90 */
+google_ad_slot = "8490830536";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+
+<br/><br/>
+<p>The PC-104 card is an industrial embedded card that uses the PCAT bus.<br/>
+The PC-104 card also uses a different board format, or form factor as shown in the graphic.</p>
+<p style="text-align:center"><a href="#top" title="top of PC-AT Page"><b>{PCAT Bus
+ Index}</b></a></p>
+<hr width="85%" />
+<h3><a name="c" id="c"><font size="5"><b>PC Bus Interface IC Vendors</b></font></a></h3>
+<p><b>ISA</b> bus use standard <a href=
+"http://www.interfacebus.com/voltage_threshold.html" title=
+"Graph of TTL Switching Levels">TTL logic levels</a> for the AT and XT PC
+      bus interfaces. An input Low is 0 to 0.4v, High is 2.4v to Vcc. An output
+      Low is 0 to 0.8v, High is 2.0v to Vcc. <br/>The bus drive was reduced from
+      24mA used on the ISA bus to 4mA for the embedded <a href=
+"http://www.interfacebus.com/Design_Connector_PC104.html" title=
+"PC104 Bus description">PC/104</a> bus.</p>
+<p><a href="http://www.interfacebus.com/Specialized_chipsets.html" title=
+"PC Chip Set Manufacturers List">PC Chip Set Manufacturers</a><br/>
+<a href="http://www.interfacebus.com/memory.html" title=
+"Memory Chip Manufacturers Listing">Memory Chip Manufacturers</a><br/>
+<a href="http://www.interfacebus.com/memory_modules.html" title=
+"Memory Module Manufacturers">Memory Module Manufacturers</a><br/>
+<a href="http://www.interfacebus.com/Controllers.html" title=
+"IC Processor and Controller Manufacturers">Computer Processor Manufacturers</a><br/>
+<a href="http://www.interfacebus.com/Standard_Logic.html" title=
+"IC Glue Logic Manufacturers">TTL Glue Logic Manufacturers</a></p>
+<p style="text-align:center">
+<a href="#top" title="top of PC-AT Page"><b>{PC-AT Bus Index}</b></a></p>
+<hr width="85%" />
+<h3><a name="e" id="e"><font size="5"><b>PC Bus Connector
+      Manufacturers</b></font></a></h3>
+<p><b>PCAT Connector:</b> Card Edge type, 100 pins, dual row (50 pins per side)
+      on 0.1" centers.<br/>
+	  The connector is keyed. For a comparison between the IBM
+      XT slot vs. the AT slot, refer to the connector below.<br/>
+	  The IBM XT slot used the left portion of the connector (J1). The IBM AT slot added the
+      right most portion of the connector (J2). <br/>
+	  The AT slot used the entire connector, J1 and J2. The connector has a card slot barrier which divides
+      the 98 Pin Connector into Groups of 62 and 36 Contacts.</p>
+<br/>
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4308118663291870";
+/* 728x90 */
+google_ad_slot = "8490830536";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<br/><br/>
+<center>
+<img src="pc-isa-bus-mother-board-expansion-connector-dimensions.png" alt=
+"PC Edge Connector Size" title="ISA PC-AT Physical Edge Connector Dimensions" /><br/>
+<b>ISA Physical Connector</b>
+</center>
+<p style="text-align:center">
+<a href="http://www.edac.net/">EDAC Inc.</a><br/>
+{PC/AT-EISA-MCA}</p>
+<p style="text-align:center">
+<a href="http://www.fciconnect.com/">FCI</a><br/>
+{Card Edge Connectors, 120, 184, 180 pins}</p>
+<p><b>Card Edge connector manufacturers</b> are listed on the <a href=
+"http://www.interfacebus.com/connectors.html">connector</a> page.<br/>
+Note that other than the pitch or pin to pin spacing, the PC-AT connector is not much different than other PC expansion connectors.</p>
+<br/>
+
+<p>Topic Navigation: <a href="http://www.interfacebus.com/">Engineering Home</a> > <a href="http://www.interfacebus.com/Interface_Bus_Types.html">Interface Buses</a> > <a href="http://www.interfacebus.com/Interface_PC_Buses.html">Personal Computer Buses</a> > PC-AT Expansion Slot.</p>
+
+<p style="text-align:center"><a href="#top" title="top of PC-AT Page"><b>{ISA Bus Index}</b></a></p>
+
+<hr width="85%" />
+<center><table width="85%" summary="Site Navigation for Engineering Tools and Manufacturing Links on interfacebus.com">
+<tr><td colspan="8" align="center">
+<a href="http://www.interfacebus.com/" title="Engineering Portal"><img src="Web-PC-Motherboard.jpg" alt="PC motherboard" title="Electrical Engineering Web Portal Home" /></a></td></tr>
+<tr><td colspan="8" align="center"><a href="http://www.interfacebus.com/" title="Engineering Home Page"><b>Home</b></a>
+</td></tr>
+<tr><td colspan="8" align="center"><br/></td></tr><tr><td align="center"><a href="http://www.interfacebus.com/Parts_Distributors.html"><img src="Web-Component-Distributors.jpg" alt="Distributor rolodex" title="Electronic Part Distributors" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Components.html"><img src="Web-Component-Manufacturers.jpg" alt="Electronic Components" title="Electronic Component Manufacturers" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/OEM_Equipment.html"><img src="Web-OEM-Equipment-Manufacturers.jpg" alt="Electronic Equipment" title="Electronic Equipment Manufacturers" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Software.html"><img src="Web-Software-Vendors.gif" alt="EDA CDROM Software" title="EDA Software Vendors. CAD/CAE Software Companies" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Standards_and_Publications.html"><img src="Web-Electronic-Standards.jpg" alt="Engineering Standards, BOB card" title="Engineering Specifications and Electronic Standards" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Interface_Bus_Types.html"><img src="Web-Electronic-Buses.jpg" alt="Cabled Computer Bus" title="Embedded Computer Interface Specifications" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Logic_Design_Descriptions.html"><img src="Web-Logic-Design.jpg" alt="Electronic Engineering Design Table" title="Electronic Design How-To, and data" /></a></td>
+<td align="center"><a href="http://www.interfacebus.com/Reference_and_Information.html"><img src="Web-Reference.jpg" alt="Conversion DB9-to-DB25." title="Engineering Reference Information" /></a></td></tr>
+<tr><td align="center"><a href="http://www.interfacebus.com/Parts_Distributors.html" title="Electronic Component / Electronic Equipment Distributors. Catalog Sites. Obsolete Part Distributors">Distributors</a></td><td align="center"><a href="http://www.interfacebus.com/Components.html" title="Electronic Component Manufacturers. Semiconductor, Passive, Mechanical Components">Components</a></td>
+<td align="center"><a href="http://www.interfacebus.com/OEM_Equipment.html" title="Electronic Equipment Manufacturers. Test Equipment, Power Supplies, COTS Card, Chassis, Cases, Racks">Equipment</a></td>
+<td align="center"><a href="http://www.interfacebus.com/Software.html" title="EDA Software Vendors. CAD/CAE Software Companies, Simulation, PC/Embedded Operating Systems">Software</a></td>
+<td align="center"><a href="http://www.interfacebus.com/Standards_and_Publications.html" title="Engineering Specifications, Electronic Standards, Technical Books, Professional Publications">Standards</a></td>
+<td align="center"><a href="http://www.interfacebus.com/Interface_Bus_Types.html" title="Embedded Computer Bus Specifications. PC, Cable, Backplane, Mezzanine, IC Bus, SoC Bus, Card Buses">Buses</a></td>
+<td align="center"><a href="http://www.interfacebus.com/Logic_Design_Descriptions.html" title="Electronic Design How-To, Logic Design Recommendations, Design Pitfalls, Passive Component Data">Design</a></td>
+<td align="center"><a href="http://www.interfacebus.com/Reference_and_Information.html" title="AWG Sizes, Conversion Tables, VHDL, Abbreviations, Dictionaries, PWB data.">Reference</a></td></tr></table></center>
+<br/>
+
+<center>Modified 6/13/15<br/>&copy; 1998 - 2016 All rights reserved Larry Davis</center>
+
+</body>
+</html>

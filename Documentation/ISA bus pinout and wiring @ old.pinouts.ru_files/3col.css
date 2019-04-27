@@ -1,0 +1,155 @@
+body {
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+}
+
+/* Header styles */
+#header {
+	clear:both;
+	width:100%;
+}
+#header h1 {text-align:center;}
+#header h2 {min-width: 190px; text-align:right;font-size: 0.6em;padding:1px;} /*small keywords in left up */
+
+/* column container */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
+	position:relative;
+}
+.col1,
+.col2,
+.col3 {
+	float:left;
+	position:relative;
+	padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
+	overflow:hidden;
+}
+/* 3 Column settings */
+.threecol {
+	background:#eee;		/* right column background colour */
+}
+.threecol .colmid {
+	right:25%;			/* width of the right column */
+	background:#eee;		/* center column background colour */
+}
+.threecol .colleft {
+	right:50%;			/* width of the middle column */
+	background:#eee;	/* left column background colour */
+}
+.threecol .col1 {
+	width:46%;			/* width of center column content (column width minus padding on either side) */
+	left:102%;			/* 100% plus left padding of center column */
+}
+
+.col2 .ad {
+margin-left:auto;
+margin-top:15px;
+float:right;
+#padding: 5px 5px;
+clear:both;
+width:100%;
+}
+
+.col2 .ad .narrow_ad{
+width:100%;
+}
+.col2 div{
+	margin-left:auto;
+	margin-right:auto;
+	#max-width:180px;
+	text-align:center;
+	word-wrap: break-word;
+}
+.col2 img{
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+/*
+.col2 img:hover{
+-webkit-transform:scale(1.6); /*Webkit: Scale up image to 1.2x original size*/
+-moz-transform:scale(1.6); /*Mozilla scale version*/
+-o-transform:scale(1.6); /*Opera scale version*/
+box-shadow:0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+-webkit-box-shadow:0px 0px 30px gray; /*Safari shadow version*/
+-moz-box-shadow:0px 0px 30px gray; /*Mozilla shadow version*/
+transform-origin:0 0;
+z-index:1000;
+}
+*/
+
+.col2,.col3 {
+overflow:visible;
+text-align: center;
+
+}
+
+
+.threecol .col2 {
+	width:24%;			/* Width of left column content (column width minus padding on either side) */
+	left:31%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+
+.col3 #comments{
+	text-align: left !important;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	clear: both;
+	display:block;
+}
+
+.col3 #comments ul li{
+	text-align: left;
+	margin:5px;
+	border-bottom: 1px gray dotted;
+}
+.col3 div{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	word-wrap: break-word;
+}
+.col3 img{
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.threecol .col3 {
+	width:21%;			/* Width of right column content (column width minus padding on either side) */
+	left:81%;			/* Please make note of the brackets here:
+					(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+	text-align: center;
+}
+/* Footer styles */
+#footer {
+	clear:both;
+}
+#footer p {
+	padding:10px;
+	margin:0;
+}
+
+.col3 .ad{
+margin-top:15px;
+}

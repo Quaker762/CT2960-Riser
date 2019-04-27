@@ -1,0 +1,1612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+<title>ISA bus pinout and wiring @ old.pinouts.ru </title>
+<meta name="Description" content="Pinout of ISA bus and layout of 98 pin (62+36)ISA EDGE male connector and 98 pin (62+36)ISA EDGE female connectorISA=Industry Standard Architecture">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<LINK REL=STYLESHEET HREF="/3col.css" TYPE="text/css">
+<LINK REL=STYLESHEET HREF="/styles.css" TYPE="text/css">
+
+<script type="text/javascript">
+function toggle(id) {
+ var e = document.getElementById(id);
+    if (e.style.display == '')
+    e.style.display = 'none';
+      else
+    e.style.display = '';
+     }
+</script>
+
+<link rel="alternate" hreflang="ru" href="http://old.pinouts.ru/Slots/ISA.shtml"><script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6653670-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-6653670-1');
+</script>
+
+</head>
+<body>
+
+<div id="header">
+<div style="float:right;">
+<div id="langswitch"><a href="/">Pinouts</a>&nbsp/&nbsp;<a href="/dev/">Devices</a>&nbsp;/&nbsp;<a href="/conn/">Connectors</a></div>
+<h2>computer bus specification</h2>
+</div>
+<a href="http://old.pinouts.ru/"><IMG SRC="/pictures/title.gif" ALT="Obsolete hardware connectors pinouts" BORDER="0"></a>
+<h1 itemprop="name">ISA bus pinout</h1>
+</div>
+<div id="page_path"><a href="http://pinouts.ru/Slots/">Computer buses and slots connectors</a> 
+</div>
+
+<div class="colmask threecol">
+	<div class="colmid">
+		<div class="colleft" itemscope itemtype="http://schema.org/Article">
+			<div class="col1">
+				<!-- Column 1 start -->
+				<div id="bookmark"><ul>
+	<li><a href="javascript:window.open('/soc_bookmark.php?url=http://old.pinouts.ru/Slots/ISA_pinout.shtml','Bookmark this page','location=no,toolbar=no,menubar=no,directories=no,status=no,resizable=no,height=128,width=500', false); void 0;">Bookmark</a></li>
+<li><A HREF="http://pinouts.ru/forum/index.php?board=1.0" TARGET="_top">Ask a question</A></li>
+<li><a href="http://old.pinouts.ru/edit_page.php?file=ISA&lang=eng">Edit</a></li>
+<li><A HREF="http://old.pinouts.ru/add.php?lang=eng">Submit New</A></li>
+</ul>
+<div id="googleplus"><g:plusone size="standard (bubble)"></g:plusone></div>
+
+</div>
+<div style="width:100%;text-align:center; margin:10px;"><div "style=inline-block;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Links responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3397735932831539"
+     data-ad-slot="1095026009"
+     data-ad-format="link"></ins>
+     <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+</div></div>
+<div id="content_header" itemprop="headline">ISA=Industry Standard Architecture</div>
+
+<div itemprop="articleBody" id="content">
+<!--Apage_content-->
+<table border="1" cellpadding="2" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<th>Pin</th>
+			<th>Name</th>
+			<th>Dir</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>A1</td>
+			<td>/I/O CH CK</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>I/O channel check; active low=parity error</td>
+		</tr>
+		<tr>
+			<td>A2</td>
+			<td>D7</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 7</td>
+		</tr>
+		<tr>
+			<td>A3</td>
+			<td>D6</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 6</td>
+		</tr>
+		<tr>
+			<td>A4</td>
+			<td>D5</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 5</td>
+		</tr>
+		<tr>
+			<td>A5</td>
+			<td>D4</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 4</td>
+		</tr>
+		<tr>
+			<td>A6</td>
+			<td>D3</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 3</td>
+		</tr>
+		<tr>
+			<td>A7</td>
+			<td>D2</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 2</td>
+		</tr>
+		<tr>
+			<td>A8</td>
+			<td>D1</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 1</td>
+		</tr>
+		<tr>
+			<td>A9</td>
+			<td>D0</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 0</td>
+		</tr>
+		<tr>
+			<td>A10</td>
+			<td>I/O CH RDY</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>I/O Channel ready, pulled low to lengthen memory cycles</td>
+		</tr>
+		<tr>
+			<td>A11</td>
+			<td>AEN</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address enable; active high when DMA controls bus</td>
+		</tr>
+		<tr>
+			<td>A12</td>
+			<td>A19</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 19</td>
+		</tr>
+		<tr>
+			<td>A13</td>
+			<td>A18</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 18</td>
+		</tr>
+		<tr>
+			<td>A14</td>
+			<td>A17</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 17</td>
+		</tr>
+		<tr>
+			<td>A15</td>
+			<td>A16</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 16</td>
+		</tr>
+		<tr>
+			<td>A16</td>
+			<td>A15</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 15</td>
+		</tr>
+		<tr>
+			<td>A17</td>
+			<td>A14</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 14</td>
+		</tr>
+		<tr>
+			<td>A18</td>
+			<td>A13</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 13</td>
+		</tr>
+		<tr>
+			<td>A19</td>
+			<td>A12</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 12</td>
+		</tr>
+		<tr>
+			<td>A20</td>
+			<td>A11</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 11</td>
+		</tr>
+		<tr>
+			<td>A21</td>
+			<td>A10</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 10</td>
+		</tr>
+		<tr>
+			<td>A22</td>
+			<td>A9</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 9</td>
+		</tr>
+		<tr>
+			<td>A23</td>
+			<td>A8</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 8</td>
+		</tr>
+		<tr>
+			<td>A24</td>
+			<td>A7</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 7</td>
+		</tr>
+		<tr>
+			<td>A25</td>
+			<td>A6</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 6</td>
+		</tr>
+		<tr>
+			<td>A26</td>
+			<td>A5</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 5</td>
+		</tr>
+		<tr>
+			<td>A27</td>
+			<td>A4</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 4</td>
+		</tr>
+		<tr>
+			<td>A28</td>
+			<td>A3</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 3</td>
+		</tr>
+		<tr>
+			<td>A29</td>
+			<td>A2</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 2</td>
+		</tr>
+		<tr>
+			<td>A30</td>
+			<td>A1</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 1</td>
+		</tr>
+		<tr>
+			<td>A31</td>
+			<td>A0</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 0</td>
+		</tr>
+		<tr>
+			<td>B1</td>
+			<td>GND</td>
+			<td>&nbsp;</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>B2</td>
+			<td>RESET</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Active high to reset or initialize system logic</td>
+		</tr>
+		<tr>
+			<td>B3</td>
+			<td>+5V</td>
+			<td>&nbsp;</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>B4</td>
+			<td>IRQ2</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 2</td>
+		</tr>
+		<tr>
+			<td>B5</td>
+			<td>-5VDC</td>
+			<td>&nbsp;</td>
+			<td>-5 VDC</td>
+		</tr>
+		<tr>
+			<td>B6</td>
+			<td>DRQ2</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 2</td>
+		</tr>
+		<tr>
+			<td>B7</td>
+			<td>-12VDC</td>
+			<td>&nbsp;</td>
+			<td>-12 VDC</td>
+		</tr>
+		<tr>
+			<td>B8</td>
+			<td>/NOWS</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>No WaitState</td>
+		</tr>
+		<tr>
+			<td>B9</td>
+			<td>+12VDC</td>
+			<td>&nbsp;</td>
+			<td>+12 VDC</td>
+		</tr>
+		<tr>
+			<td>B10</td>
+			<td>GND</td>
+			<td>&nbsp;</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>B11</td>
+			<td>/SMEMW</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>System Memory Write</td>
+		</tr>
+		<tr>
+			<td>B12</td>
+			<td>/SMEMR</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>System Memory Read</td>
+		</tr>
+		<tr>
+			<td>B13</td>
+			<td>/IOW</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>I/O Write</td>
+		</tr>
+		<tr>
+			<td>B14</td>
+			<td>/IOR</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>I/O Read</td>
+		</tr>
+		<tr>
+			<td>B15</td>
+			<td>/DACK3</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 3</td>
+		</tr>
+		<tr>
+			<td>B16</td>
+			<td>DRQ3</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 3</td>
+		</tr>
+		<tr>
+			<td>B17</td>
+			<td>/DACK1</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 1</td>
+		</tr>
+		<tr>
+			<td>B18</td>
+			<td>DRQ1</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 1</td>
+		</tr>
+		<tr>
+			<td>B19</td>
+			<td>/REFRESH</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Refresh</td>
+		</tr>
+		<tr>
+			<td>B20</td>
+			<td>CLOCK</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>System Clock (67 ns, 8-8.33 MHz, 50% duty cycle)</td>
+		</tr>
+		<tr>
+			<td>B21</td>
+			<td>IRQ7</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 7</td>
+		</tr>
+		<tr>
+			<td>B22</td>
+			<td>IRQ6</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 6</td>
+		</tr>
+		<tr>
+			<td>B23</td>
+			<td>IRQ5</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 5</td>
+		</tr>
+		<tr>
+			<td>B24</td>
+			<td>IRQ4</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 4</td>
+		</tr>
+		<tr>
+			<td>B25</td>
+			<td>IRQ3</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 3</td>
+		</tr>
+		<tr>
+			<td>B26</td>
+			<td>/DACK2</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 2</td>
+		</tr>
+		<tr>
+			<td>B27</td>
+			<td>T/C</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Terminal count; pulses high when DMA term. count reached</td>
+		</tr>
+		<tr>
+			<td>B28</td>
+			<td>ALE</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>Address Latch Enable</td>
+		</tr>
+		<tr>
+			<td>B29</td>
+			<td>+5V</td>
+			<td>&nbsp;</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>B30</td>
+			<td>OSC</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>High-speed Clock (70 ns, 14.31818 MHz, 50% duty cycle)</td>
+		</tr>
+		<tr>
+			<td>B31</td>
+			<td>GND</td>
+			<td>&nbsp;</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>C1</td>
+			<td>SBHE</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>System bus high enable (data available on SD8-15)</td>
+		</tr>
+		<tr>
+			<td>C2</td>
+			<td>LA23</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 23</td>
+		</tr>
+		<tr>
+			<td>C3</td>
+			<td>LA22</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 22</td>
+		</tr>
+		<tr>
+			<td>C4</td>
+			<td>LA21</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 21</td>
+		</tr>
+		<tr>
+			<td>C5</td>
+			<td>LA20</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 20</td>
+		</tr>
+		<tr>
+			<td>C6</td>
+			<td>LA19</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 19</td>
+		</tr>
+		<tr>
+			<td>C7</td>
+			<td>LA18</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 18</td>
+		</tr>
+		<tr>
+			<td>C8</td>
+			<td>LA17</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Address bit 17</td>
+		</tr>
+		<tr>
+			<td>C9</td>
+			<td>/MEMR</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Memory Read (Active on all memory read cycles)</td>
+		</tr>
+		<tr>
+			<td>C10</td>
+			<td>/MEMW</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Memory Write (Active on all memory write cycles)</td>
+		</tr>
+		<tr>
+			<td>C11</td>
+			<td>SD08</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 8</td>
+		</tr>
+		<tr>
+			<td>C12</td>
+			<td>SD09</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 9</td>
+		</tr>
+		<tr>
+			<td>C13</td>
+			<td>SD10</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 10</td>
+		</tr>
+		<tr>
+			<td>C14</td>
+			<td>SD11</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 11</td>
+		</tr>
+		<tr>
+			<td>C15</td>
+			<td>SD12</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 12</td>
+		</tr>
+		<tr>
+			<td>C16</td>
+			<td>SD13</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 13</td>
+		</tr>
+		<tr>
+			<td>C17</td>
+			<td>SD14</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 14</td>
+		</tr>
+		<tr>
+			<td>C18</td>
+			<td>SD15</td>
+			<td><img alt="&lt;-&gt;" src="/images/arrowlr.gif" style="height:9px; width:32px" /></td>
+			<td>Data bit 15</td>
+		</tr>
+		<tr>
+			<td>D1</td>
+			<td>/MEMCS16</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Memory 16-bit chip select (1 wait, 16-bit memory cycle)</td>
+		</tr>
+		<tr>
+			<td>D2</td>
+			<td>/IOCS16</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>I/O 16-bit chip select (1 wait, 16-bit I/O cycle)</td>
+		</tr>
+		<tr>
+			<td>D3</td>
+			<td>IRQ10</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 10</td>
+		</tr>
+		<tr>
+			<td>D4</td>
+			<td>IRQ11</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 11</td>
+		</tr>
+		<tr>
+			<td>D5</td>
+			<td>IRQ12</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 12</td>
+		</tr>
+		<tr>
+			<td>D6</td>
+			<td>IRQ15</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 15</td>
+		</tr>
+		<tr>
+			<td>D7</td>
+			<td>IRQ14</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Interrupt Request 14</td>
+		</tr>
+		<tr>
+			<td>D8</td>
+			<td>/DACK0</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 0</td>
+		</tr>
+		<tr>
+			<td>D9</td>
+			<td>DRQ0</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 0</td>
+		</tr>
+		<tr>
+			<td>D10</td>
+			<td>/DACK5</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 5</td>
+		</tr>
+		<tr>
+			<td>D11</td>
+			<td>DRQ5</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 5</td>
+		</tr>
+		<tr>
+			<td>D12</td>
+			<td>/DACK6</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 6</td>
+		</tr>
+		<tr>
+			<td>D13</td>
+			<td>DRQ6</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 6</td>
+		</tr>
+		<tr>
+			<td>D14</td>
+			<td>/DACK7</td>
+			<td><img alt="--&gt;" src="/images/arrowr.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Acknowledge 7</td>
+		</tr>
+		<tr>
+			<td>D15</td>
+			<td>DRQ7</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>DMA Request 7</td>
+		</tr>
+		<tr>
+			<td>D16</td>
+			<td>+5 V</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>D17</td>
+			<td>/MASTER</td>
+			<td><img alt="&lt;--" src="/images/arrowl.gif" style="height:9px; width:32px" /></td>
+			<td>Used with DRQ to gain control of system</td>
+		</tr>
+		<tr>
+			<td>D18</td>
+			<td>GND</td>
+			<td>&nbsp;</td>
+			<td>Ground</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The AT version of the bus is upwardly compatible, which means that cards designed to work on an XT bus will work on an AT bus. This bus was produced for many years without any formal standard. In recent years, a more formal standard called the ISA bus (Industry Standard Architecture) has been created, with an extension called the EISA (Extended ISA) bus also now as a standard. The EISA bus extensions will not be detailed here.</p>
+
+<p>This file is not intended to be a thorough coverage of the standard. It is for informational purposes only, and is intended to give designers and hobbyists sufficient information to design their own XT and AT compatible cards.</p>
+
+<h2>Physical Design:</h2>
+
+<p>ISA cards can be either 8-bit or 16-bit. 8-bit cards only uses the first 62 pins and 16-bit cards uses all 98 pins. Some 8-bit cards uses some of the 16-bit extension pins to get more interrupts.</p>
+
+<h3>8-bit card:</h3>
+
+<p><img alt="62 PIN EDGE CONNECTOR MALE" src="/images/busisa8m.gif" style="height:246px; width:250px" /> (At the card)<br />
+<img alt="62 PIN EDGE CONNECTOR FEMALE" src="/images/busisa8f.gif" style="height:65px; width:187px" /> (At the computer)</p>
+
+<h3>16-bit card:</h3>
+
+<p><img alt="62+36 PIN EDGE CONNECTOR MALE" src="/connectors/busisa16m.gif" /> (At the card)<br />
+<img alt="62+36 PIN EDGE CONNECTOR FEMALE" src="/connectors/busisa16f.gif" /> (At the computer)</p>
+
+<h2>Signal Descriptions:</h2>
+
+<h3>+5, -5, +12, -12</h3>
+
+<p>Power supplies. -5 is often not implemented.</p>
+
+<h3>AEN</h3>
+
+<p>Address Enable. This is asserted when a DMAC has control of the bus. This prevents an I/O device from responding to the I/O command lines during a DMA transfer. When AEN is active, the DMA Controller has control of the address bus as the memory and I/O read/write command lines.</p>
+
+<h3>BALE</h3>
+
+<p>Bus Address Latch Enable. The address bus is latched on the rising edge of this signal. The address on the SA bus is valid from the falling edge of BALE to the end of the bus cycle. Memory devices should latch the LA bus on the falling edge of BALE. Some references refer to this signal as Buffered Address Latch Enable, or just Address Latch Enable (ALE). The Buffered-Address Latch Enable is used to latch SA0-19 on the falling edge. This signal is forced high during DMA cycles.</p>
+
+<h3>BCLK</h3>
+
+<p>Bus Clock, 33% Duty Cycle. Frequency Varies. 4.77 to 8 MHz typical. 8.3 MHz is specified as the maximum, but many systems allow this clock to be set to 12 MHz and higher.</p>
+
+<h3>DACKx</h3>
+
+<p>DMA Acknowledge. The active-low DMA Acknowledge 0 to 3 and 5 to 7 are the corresponding acknowledge signals for DRQ 0-3, 5-7.</p>
+
+<h3>DRQx</h3>
+
+<p>DMA Request. These signals are asynchronous channel requests used by I/O channel devices to gain DMA service. DMA request channels 0-3 are for 8-bit data transfer. DAM request channels 5-7 are for 16-bit data transfer. DMA request channel 4 is used internally on the system board. DMA requests should be held high until the corresponding DACK line goes active. DMA requests are serviced in the following priority sequence:<br />
+High: DRQ 0, 1, 2, 3, 5, 6, 7 Lowest</p>
+
+<h3>IOCS16</h3>
+
+<p>I/O size 16. Generated by a 16 bit slave when addressed by a bus master. The active-low I/O Chip Select 16 indicates that the current transfer is a 1 wait state, 16 bit I/O cycle. Open Collector.</p>
+
+<h3>I/O CH CK</h3>
+
+<p>Channel Check. A low signal generates an NMI. The NMI signal can be masked on a PC, externally to the processor (of course). Bit 7 of port 70(hex) (enable NMI interrupts) and bit 3 of port 61 (hex) (recognition of channel check) must both be set to zero for an NMI to reach the cpu. The I/O Channel Check is an active-low signal which indicates that a parity error exists in a device on the I/O channel.</p>
+
+<h3>I/O CH RDY</h3>
+
+<p>Channel Ready. Setting this low prevents the default ready timer from timing out. The slave device may then set it high again when it is ready to end the bus cycle. Holding this line low for too long (15 microseconds, typical) can prevent RAM refresh cycles on some systems. This signal is called IOCHRDY (I/O Channel Ready) by some references. CHRDY and NOWS should not be used simultaneously. This may cause problems with some bus controllers. This signal is pulled low by a memory or I/O device to lengthen memory or I/O read/write cycles. It should only be held low for a minimum of 2.5 microseconds.</p>
+
+<h3>IOR</h3>
+
+<p>The I/O Read is an active-low signal which instructs the I/O device to drive its data onto the data bus, SD0-SD15.</p>
+
+<h3>IOW</h3>
+
+<p>The I/O Write is an active-low signal which instructs the I/O device to read data from the data bus, SD0-SD15.</p>
+
+<h3>IRQx</h3>
+
+<p>Interrupt Request. IRQ2 has the highest priority. IRQ 10-15 are only available on AT machines, and are higher priority than IRQ 3-7. The Interrupt Request signals which indicate I/O service attention. They are prioritized in the following sequence: Highest IRQ 9(2),10,11,12,14,3,4,5,6,7</p>
+
+<h3>LAxx</h3>
+
+<p>Latchable Address lines. Combine with the lower address lines to form a 24 bit address space (16 MB) These unlatched address signals give the system up to 16 MB of address ability. The are valid when BALE is high.</p>
+
+<h3>MASTER</h3>
+
+<p>16 bit bus master. Generated by the ISA bus master when initiating a bus cycle. This active-low signal is used in conjunction with a DRQ line by a processor on the I/O channel to gain control of the system. The I/O processor first issues a DRQ, and upon receiving the corresponding DACK, the I/O processor may assert MASTER, which will allow it to control the system address, data and control lines. This signal should not be asserted for more than 15 microseconds, or system memory may be corrupted du to the lack of memory refresh activity.</p>
+
+<h3>MEMCS16</h3>
+
+<p>The active-low Memory Chip Select 16 indicates that the current data transfer is a 1 wait state, 16 bit data memory cycle.</p>
+
+<h3>MEMR</h3>
+
+<p>The Memory Read is an active-low signal which instructs memory devices to drive data onto the data bus SD0-SD15. This signal is active on all memory read cycles.</p>
+
+<h3>MEMW</h3>
+
+<p>The Memory Write is an active-low signal which instructs memory devices to store data present on the data bus SD0-SD15. This signal is active on all memory write cycles.</p>
+
+<h3>NOWS</h3>
+
+<p>No Wait State. Used to shorten the number of wait states generated by the default ready timer. This causes the bus cycle to end more quickly, since wait states will not be inserted. Most systems will ignore NOWS if CHRDY is active (low). However, this may cause problems with some bus controllers, and both signals should not be active simultaneously.</p>
+
+<h3>OSC</h3>
+
+<p>Oscillator, 14.31818 MHz, 50% Duty Cycle. Frequency varies. This was originally divided by 3 to provide the 4.77 MHz cpu clock of early PCs, and divided by 12 to produce the 1.19 MHz system clock. Some references have placed this signal as low as 1 MHz (possibly referencing the system clock), but most modern systems use 14.318 MHz.<br />
+This frequency (14.318 MHz) is four times the television colorburst frequency. Refresh timing on many PCs is based on OSC/18, or approximately one refresh cycle every 15 microseconds. Many modern motherboards allow this rate to be changed, which frees up some bus cycles for use by software, but also can cause memory errors if the system RAM cannot handle the slower refresh rates.</p>
+
+<h3>REFRESH</h3>
+
+<p>Refresh. Generated when the refresh logic is bus master. This active-low signal is used to indicate a memory refresh cycle is in progress. An ISA device acting as bus master may also use this signal to initiate a refresh cycle.</p>
+
+<h3>RESET</h3>
+
+<p>This signal goes low when the machine is powered up. Driving it low will force a system reset. This signal goes high to reset the system during powerup, low line-voltage or hardware reset. ??????????????</p>
+
+<h3>SA0-SA19</h3>
+
+<p>System Address Lines, tri-state. The System Address lines run from bit 0 to bit 19. They are latched on to the falling edge of BALE.</p>
+
+<h3>SBHE</h3>
+
+<p>System Bus High Enable, tristate. Indicates a 16 bit data transfer. The System Bus High Enable indicates high byte transfer is occurring on the data bus SD8-SD15. This may also indicate an 8 bit transfer using the upper half of the bus data (if an odd address is present).</p>
+
+<h3>SD0-SD16</h3>
+
+<p>System Data lines, or Standard Data Lines. They are bidrectional and tri-state. On most systems, the data lines float high when not driven. These 16 lines provide for data transfer between the processor, memory and I/O devices.</p>
+
+<h3>SMEMR</h3>
+
+<p>System Memory Read Command line. Indicates a memory read in the lower 1 MB area. This System Memory Read is an active-low signal which instructs memory devices to drive data onto the data bus SD0-SD15. This signal is active only when the memory address is within the lowest 1MB of memory address space.</p>
+
+<h3>SMEMW</h3>
+
+<p>System Memory Write Commmand line. Indicates a memory write in the lower 1 MB area. The System Memory Write is an active-low signal which instructs memory devices to store data preset on the data bus SD0-SD15. This signal is active only when the memory address is within the lowest 1MB of memory address space.</p>
+
+<h3>T/C</h3>
+
+<p>Terminal Count. Notifies the cpu that that the last DMA data transfer operation is complete. Terminal Count provides a pulse when the terminal count for any DMA channel is reached.</p>
+
+<h2>8 Bit Memory or I/O Transfer Timing Diagram (4 wait states shown)</h2>
+
+<pre>
+                  __     __     __    __     __     __     __
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |___|  |__
+                               W1    W2     W3     W4
+                      __
+BALE          _______|  |_______________________________________
+
+
+
+AEN           __________________________________________________
+
+                        ______________________________________
+SA0-SA19      ---------&lt;______________________________________&gt;-
+
+
+              _____________                                _____
+Command Line               |______________________________|
+(IORC,IOWC,
+SMRDC, or SMWTC)
+                                                      _____
+SD0-SD7       ---------------------------------------&lt;_____&gt;----
+(READ)
+
+                        ___________________________________
+SD0-SD7       ---------&lt;___________________________________&gt;----
+(WRITE)</pre>
+
+<p>Note: W1 through W4 indicate wait cycles.</p>
+
+<p>BALE is placed high, and the address is latched on the SA bus. The slave device may safely sample the address during the falling edge of BALE, and the address on the SA bus remains valid until the end of the transfer cycle. Note that AEN remains low throughout the entire transfer cycle.</p>
+
+<p>The command line is then pulled low (IORC or IOWC for I/O commands, SMRDSC or SMWTC for memory commands, read and write respectively). For write operations, the data remains on the SD bus for the remainder of the transfer cycle. For read operations, the data must be valid on the falling edge of the last cycle.</p>
+
+<p>NOWS is sampled at the midpoint of each wait cycle. If it is low, the transfer cycle terminates without further wait states. CHRDY is sampled during the first half of the clock cycle. If it is low, further wait cycles will be inserted.</p>
+
+<p>The default for 8 bit transfers is 4 wait states. Some computers allow the number of default wait states to be changed.</p>
+
+<h2>16 Bit Memory or I/O Transfer Timing Diagram (1 wait state shown)</h2>
+
+<pre>
+                  __     __     __    __     __     __
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |_
+
+
+AEN [2]       __________________________________________
+
+                      _____________
+LA17-LA23     -------&lt;_____________&gt;-[1]-----------------
+
+                             __
+BALE          ______________|  |________________________
+
+             ________________                    _______
+SBHE                         |__________________|
+
+                              __________________
+SA0-SA19      ---------------&lt;__________________&gt;-------
+
+             _________________      ____________________
+M16                           |____|
+                               *  * [4]
+
+             _________________               ___________
+IO16 [3]                      |_____________|
+                                        *
+
+              _________________              ___________
+Command Line                   |____________|
+(IORC,IOWC,
+MRDC, or MWTC)
+                                          ____
+SD0-SD7       ---------------------------&lt;____&gt;---------
+(READ)
+
+                                ______________
+SD0-SD7       -----------------&lt;______________&gt;---------
+(WRITE)</pre>
+
+<p>An asterisk (*) denotes the point where the signal is sampled.</p>
+
+<p>[1] The portion of the address on the LA bus for the NEXT cycle may now be placed on the bus. This is used so that cards may begin decoding the address early. Address pipelining must be active.</p>
+
+<p>[2] AEN remains low throughout the entire transfer cycle, indicating that a normal (non-DMA) transfer is occurring.</p>
+
+<p>[3] Some bus controllers sample this signal during the same clock cycle as M16, instead of during the first wait state, as shown above. In this case, IO16 needs to be pulled low as soon as the address is decoded, which is before the I/O command lines are active.</p>
+
+<p>[4] M16 is sampled a second time, in case the adapter card did not active the signal in time for the first sample (usually because the memory device is not monitoring the LA bus for early address information, or is waiting for the falling edge of BALE).</p>
+
+<p>16 bit transfers follow the same basic timing as 8 bit transfers. A valid address may appear on the LA bus prior to the beginning of the transfer cycle. Unlike the SA bus, the LA bus is not latched, and is not valid for the entire transfer cycle (on most computers). The LA bus should be latched on the falling edge of BALE. Note that on some systems, the LA bus signals will follow the same timing as the SA bus. On either type of system, a valid address is present on the falling edge of BALE.</p>
+
+<p>I/O adapter cards do not need to monitor the LA bus or BALE, since I/O addresses are always within the address space of the SA bus.</p>
+
+<p>SBHE will be pulled low by the system board, and the adapter card must respond with IO16 or M16 at the appropriate time, or else the transfer will be split into two separate 8 bit transfers. Many systems expect IO16 or M16 before the command lines are valid. This requires that IO16 or M16 be pulled low as soon as the address is decoded (before it is known whether the cycle is I/O or Memory). If the system is starting a memory cycle, it will ignore IO16 (and vice-versa for I/O cycles and M16).</p>
+
+<p>For read operations, the data is sampled on the rising edge of the last clock cycle. For write operations, valid data appears on the bus before the end of the cycle, as shown in the timing diagram. While the timing diagram indicates that the data needs to be sampled on the rising clock, on most systems it remains valid for the entire clock cycle.</p>
+
+<p>The default for 16 bit transfers is 1 wait state. This may be shortened or lengthened in the same manner as 8 bit transfers, via NOWS and CHRDY. Many systems only allow 16 bit memory devices (and not I/O devices) to transfer using 0 wait states (NOWS has no effect on 16 bit I/O cycles).</p>
+
+<p>SMRDC/SMWTC follow the same timing as MRDC/MWTC respectively when the address is within the lower 1 MB. If the address is not within the lower 1 MB boundary, SMRDC/SMWTC will remain high during the entire cycle.</p>
+
+<p>It is also possible for an 8 bit bus cycle to use the upper portion of the bus. In this case, the timing will be similar to a 16 bit cycle, but an odd address will be present on the bus. This means that the bus is transferring 8 bits using the upper data bits (SD8-SD15).</p>
+
+<h2>Shortening or Lengthening the bus cycle:</h2>
+
+<pre>
+BCLK       W                 W     W                 W
+ _    __    __    __    __    __    __    __    __    __    __    __
+  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__
+
+        |--Transfer 1-----|----Transfer 2---------|----Transfer 3---|
+
+BALE
+         __                __                      __                __
+________|  |______________|  |____________________|  |______________|
+
+
+SBHE
+_________                                       _______________________
+         |__________________|__________________|
+
+
+SA0-SA19
+           _________________  _____________________  _________________
+----------&lt;_________________&gt;&lt;_____________________&gt;&lt;_________________&gt;
+
+
+IO16
+___________               ___               ___________________________
+           |_____________|   |_____________|
+                    *                 *
+
+CHRDY
+________________________________        _______________________________
+                                |______|
+                  *                 *     *  [1]
+
+NOWS
+______________________________________________________            _____
+                                                      |__________|
+                                                        * [2]
+IORC
+______________           _______                 _______           ____
+              |_________|       |_______________|       |_________|
+
+
+SD0-SD15
+                     ____                    ____              ____
+--------------------&lt;____&gt;------------------&lt;____&gt;------------&lt;____&gt;---
+                       *                       *                 *</pre>
+
+<p>An asterisk (*) denotes the point where the signal is sampled.<br />
+W=Wait Cycle</p>
+
+<p>This timing diagram shows three different transfer cycles. The first is a 16 bit standard I/O read. This is followed by an almost identical 16 bit I/O read, with one wait state inserted. The I/O device pulls CHRDY low to indicate that it is not ready to complete the transfer (see [1]). This inserts a wait cycle, and CHRDY is again sampled. At this second sample, the I/O device has completed its operation and released CHRDY, and the bus cycle now terminates. The third cycle is an 8 bit transfer, which is shortened to 1 wait state (the default is 4) by the use of NOWS.</p>
+
+<h2>I/O Port Addresses</h2>
+
+<p>Note: Only the first 10 address lines are decoded for I/O operations. This limits the I/O address space to address 3FF (hex) and lower. Some systems allow for 16 bit I/O address space, but may be limited due to some I/O cards only decoding 10 of these 16 bits.</p>
+
+<table border="1" cellpadding="2" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<th>Port (hex)</th>
+			<th>Port Assignments</th>
+		</tr>
+		<tr>
+			<td>000-00F</td>
+			<td>DMA Controller</td>
+		</tr>
+		<tr>
+			<td>010-01F</td>
+			<td>DMA Controller (PS/2)</td>
+		</tr>
+		<tr>
+			<td>020-02F</td>
+			<td>Master Programmable Interrupt Controller (PIC)</td>
+		</tr>
+		<tr>
+			<td>030-03F</td>
+			<td>Slave PIC</td>
+		</tr>
+		<tr>
+			<td>040-05F</td>
+			<td>Programmable Interval Timer (PIT)</td>
+		</tr>
+		<tr>
+			<td>060-06F</td>
+			<td>Keyboard Controller</td>
+		</tr>
+		<tr>
+			<td>070-071</td>
+			<td>Real Time Clock</td>
+		</tr>
+		<tr>
+			<td>080-083</td>
+			<td>DMA Page Register</td>
+		</tr>
+		<tr>
+			<td>090-097</td>
+			<td>Programmable Option Select (PS/2)</td>
+		</tr>
+		<tr>
+			<td>0A0-0AF</td>
+			<td>PIC #2</td>
+		</tr>
+		<tr>
+			<td>0C0-0CF</td>
+			<td>DMAC #2</td>
+		</tr>
+		<tr>
+			<td>0E0-0EF</td>
+			<td>reserved</td>
+		</tr>
+		<tr>
+			<td>0F0-0FF</td>
+			<td>Math coprocessor, PCJr Disk Controller</td>
+		</tr>
+		<tr>
+			<td>100-10F</td>
+			<td>Programmable Option Select (PS/2)</td>
+		</tr>
+		<tr>
+			<td>110-16F</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>170-17F</td>
+			<td>Hard Drive 1 (AT)</td>
+		</tr>
+		<tr>
+			<td>180-1EF</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>1F0-1FF</td>
+			<td>Hard Drive 0 (AT)</td>
+		</tr>
+		<tr>
+			<td>200-20F</td>
+			<td>Game Adapter</td>
+		</tr>
+		<tr>
+			<td>210-217</td>
+			<td>Expansion Card Ports</td>
+		</tr>
+		<tr>
+			<td>220-26F</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>278-27F</td>
+			<td>Parallel Port 3</td>
+		</tr>
+		<tr>
+			<td>280-2A1</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>2A2-2A3</td>
+			<td>clock</td>
+		</tr>
+		<tr>
+			<td>2B0-2DF</td>
+			<td>EGA/Video</td>
+		</tr>
+		<tr>
+			<td>2E2-2E3</td>
+			<td>Data Acquisition Adapter (AT)</td>
+		</tr>
+		<tr>
+			<td>2E8-2EF</td>
+			<td>Serial Port COM4</td>
+		</tr>
+		<tr>
+			<td>2F0-2F7</td>
+			<td>Reserved</td>
+		</tr>
+		<tr>
+			<td>2F8-2FF</td>
+			<td>Serial Port COM2</td>
+		</tr>
+		<tr>
+			<td>300-31F</td>
+			<td>Prototype Adapter, Periscope Hardware Debugger</td>
+		</tr>
+		<tr>
+			<td>320-32F</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>330-33F</td>
+			<td>Reserved for XT/370</td>
+		</tr>
+		<tr>
+			<td>340-35F</td>
+			<td>AVAILABLE</td>
+		</tr>
+		<tr>
+			<td>360-36F</td>
+			<td>Network</td>
+		</tr>
+		<tr>
+			<td>370-377</td>
+			<td>Floppy Disk Controller</td>
+		</tr>
+		<tr>
+			<td>378-37F</td>
+			<td>Parallel Port 2</td>
+		</tr>
+		<tr>
+			<td>380-38F</td>
+			<td>SDLC Adapter</td>
+		</tr>
+		<tr>
+			<td>390-39F</td>
+			<td>Cluster Adapter</td>
+		</tr>
+		<tr>
+			<td>3A0-3AF</td>
+			<td>reserved</td>
+		</tr>
+		<tr>
+			<td>3B0-3BF</td>
+			<td>Monochrome Adapter</td>
+		</tr>
+		<tr>
+			<td>3BC-3BF</td>
+			<td>Parallel Port 1</td>
+		</tr>
+		<tr>
+			<td>3C0-3CF</td>
+			<td>EGA/VGA</td>
+		</tr>
+		<tr>
+			<td>3D0-3DF</td>
+			<td>Color Graphics Adapter</td>
+		</tr>
+		<tr>
+			<td>3E0-3EF</td>
+			<td>Serial Port COM3</td>
+		</tr>
+		<tr>
+			<td>3F0-3F7</td>
+			<td>Floppy Disk Controller</td>
+		</tr>
+		<tr>
+			<td>3F8-3FF</td>
+			<td>Serial Port COM1</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Soundblaster cards usually use I/O ports 220-22F.<br />
+Data acquisition cards frequently use 300-31F.</p>
+
+<h2>DMA Read and Write</h2>
+
+<p>The ISA bus uses two DMA controllers (DMAC) cascaded together. The slave DMAC connects to the master DMAC via DMA channel 4 (channel 0 on the master DMAC). The slave therefore gains control of the bus through the master DMAC. On the ISA bus, the DMAC is programmed to use fixed priority (channel 0 always has the highest priority), which means that channel 0-4 from the slave have the highest priority (since they connect to the master channel 0), followed by channels 5-7 (which are channel 1-3 on the master).</p>
+
+<p>The DMAC can be programmed for read transfers (data is read from memory and written to the I/O device), write transfers (data is read from the I/O device and written to memory), or verify transfers (neither a read or a write - this was used by DMA CH0 for DRAM refresh on early PCs).</p>
+
+<p>Before a DMA transfer can take place, the DMA Controller (DMAC) must be programmed. This is done by writing the start address and the number of bytes to transfer (called the transfer count) and the direction of the transfer to the DMAC. After the DMAC has been programmed, the device may activate the appropriate DMA request (DRQx) line.</p>
+
+<h2>Slave DMA Controller</h2>
+
+<table border="1" cellpadding="2" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<th>I/O</th>
+			<th>Port</th>
+		</tr>
+		<tr>
+			<td>0000</td>
+			<td>DMA CH0 Memory Address Register<br />
+			Contains the lower 16 bits of the memory address, written as two consecutive bytes.</td>
+		</tr>
+		<tr>
+			<td>0001</td>
+			<td>DMA CH0 Transfer Count<br />
+			Contains the lower 16 bits of the transfer count, written as two consecutive bytes.</td>
+		</tr>
+		<tr>
+			<td>0002</td>
+			<td>DMA CH1 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>0003</td>
+			<td>DMA CH1 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>0004</td>
+			<td>DMA CH2 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>0005</td>
+			<td>DMA CH2 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>0006</td>
+			<td>DMA CH3 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>0007</td>
+			<td>DMA CH3 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>0008</td>
+			<td>DMAC Status/Control Register<br />
+			Status (I/O read) bits 0-3: Terminal Count, CH 0-3<br />
+			- bits 4-7: Request CH0-3<br />
+			Control (write)<br />
+			- bit 0: Mem to mem enable (1 = enabled)<br />
+			- bit 1: ch0 address hold enable (1 = enabled)<br />
+			- bit 2: controller disable (1 = disabled)<br />
+			- bit 3: timing (0 = normal, 1 = compressed)<br />
+			- bit 4: priority (0 = fixed, 1 = rotating)<br />
+			- bit 5: write selection (0 = late, 1 = extended)<br />
+			- bit 6: DRQx sense asserted (0 = high, 1 = low)<br />
+			- bit 7: DAKn sense asserted (0 = low, 1 = high)</td>
+		</tr>
+		<tr>
+			<td>0009</td>
+			<td>Software DRQn Request<br />
+			- bits 0-1: channel select (CH0-3)<br />
+			- bit 2: request bit (0 = reset, 1 = set)</td>
+		</tr>
+		<tr>
+			<td>000A</td>
+			<td>DMA mask register<br />
+			- bits 0-1: channel select (CH0-3)<br />
+			- bit 2: mask bit (0 = reset, 1 = set)</td>
+		</tr>
+		<tr>
+			<td>000B</td>
+			<td>DMA Mode Register<br />
+			- bits 0-1: channel select (CH0-3)<br />
+			- bits 2-3: 00 = verify transfer, 01 = write transfer, 10 = read transfer, 11 = reserved<br />
+			- bit 4: Auto init (0 = disabled, 1 = enabled)<br />
+			- bit 5: Address (0 = increment, 1 = decrement)<br />
+			- bits 6-7: 00 = demand transfer mode, 01 = single transfer mode, 10 = block transfer mode, 11 = cascade mode</td>
+		</tr>
+		<tr>
+			<td>000C</td>
+			<td>DMA Clear Byte Pointer<br />
+			Writing to this causes the DMAC to clear the pointer used to keep track of 16 bit data transfers into and out of the DMAC for hi/low byte sequencing.</td>
+		</tr>
+		<tr>
+			<td>000D</td>
+			<td>DMA Master Clear (Hardware Reset)</td>
+		</tr>
+		<tr>
+			<td>000E</td>
+			<td>DMA Reset Mask Register - clears the mask register</td>
+		</tr>
+		<tr>
+			<td>000F</td>
+			<td>DMA Mask Register<br />
+			- bits 0-3: mask bits for CH0-3 (0 = not masked, 1 = masked)</td>
+		</tr>
+		<tr>
+			<td>0081</td>
+			<td>DMA CH2 Page Register (address bits A16-A23)</td>
+		</tr>
+		<tr>
+			<td>0082</td>
+			<td>DMA CH3 Page Register</td>
+		</tr>
+		<tr>
+			<td>0083</td>
+			<td>DMA CH1 Page Register</td>
+		</tr>
+		<tr>
+			<td>0087</td>
+			<td>DMA CH0 Page Register</td>
+		</tr>
+		<tr>
+			<td>0089</td>
+			<td>DMA CH6 Page Register</td>
+		</tr>
+		<tr>
+			<td>008A</td>
+			<td>DMA CH7 Page Register</td>
+		</tr>
+		<tr>
+			<td>008B</td>
+			<td>DMA CH5 Page Register</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Master DMA Controller</h2>
+
+<table border="1" cellpadding="2" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<th>I/O</th>
+			<th>Port</th>
+		</tr>
+		<tr>
+			<td>00C0</td>
+			<td>DMA CH4 Memory Address Register<br />
+			Contains the lower 16 bits of the memory address, written as two consecutive bytes.</td>
+		</tr>
+		<tr>
+			<td>00C2</td>
+			<td>DMA CH4 Transfer Count<br />
+			Contains the lower 16 bits of the transfer count, written as two consecutive bytes.</td>
+		</tr>
+		<tr>
+			<td>00C4</td>
+			<td>DMA CH5 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>00C6</td>
+			<td>DMA CH5 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>00C8</td>
+			<td>DMA CH6 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>00CA</td>
+			<td>DMA CH6 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>00CC</td>
+			<td>DMA CH7 Memory Address Register</td>
+		</tr>
+		<tr>
+			<td>00CE</td>
+			<td>DMA CH7 Transfer Count</td>
+		</tr>
+		<tr>
+			<td>00D0</td>
+			<td>DMAC Status/Control Register<br />
+			Status (I/O read) bits 0-3: Terminal Count, CH 4-7<br />
+			- bits 4-7: Request CH4-7<br />
+			Control (write)- bit 0: Mem to mem enable (1 = enabled)<br />
+			- bit 1: ch0 address hold enable (1 = enabled)<br />
+			- bit 2: controller disable (1 = disabled)<br />
+			- bit 3: timing (0 = normal, 1 = compressed)<br />
+			- bit 4: priority (0 = fixed, 1 = rotating)<br />
+			- bit 5: write selection (0 = late, 1 = extended)<br />
+			- bit 6: DRQx sense asserted (0 = high, 1 = low)<br />
+			- bit 7: DAKn sense asserted (0 = low, 1 = high)</td>
+		</tr>
+		<tr>
+			<td>00D2</td>
+			<td>Software DRQn Request<br />
+			- bits 0-1: channel select (CH4-7)<br />
+			- bit 2: request bit (0 = reset, 1 = set)</td>
+		</tr>
+		<tr>
+			<td>00D4</td>
+			<td>DMA mask register<br />
+			- bits 0-1: channel select (CH4-7)<br />
+			- bit 2: mask bit (0 = reset, 1 = set)</td>
+		</tr>
+		<tr>
+			<td>00D6</td>
+			<td>DMA Mode Register<br />
+			- bits 0-1: channel select (CH4-7)<br />
+			- bits 2-3: 00 = verify transfer, 01 = write transfer, 10 = read transfer, 11 = reserved<br />
+			- bit 4: Auto init (0 = disabled, 1 = enabled)<br />
+			- bit 5: Address (0 = increment, 1 = decrement)<br />
+			- bits 6-7: 00 = demand transfer mode, 01 = single transfer mode, 10 = block transfer mode, 11 = cascade mode</td>
+		</tr>
+		<tr>
+			<td>00D8</td>
+			<td>DMA Clear Byte Pointer<br />
+			Writing to this causes the DMAC to clear the pointer used to keep track of 16 bit data transfers into and out of the DMAC for hi/low byte sequencing.</td>
+		</tr>
+		<tr>
+			<td>00DA</td>
+			<td>DMA Master Clear (Hardware Reset)</td>
+		</tr>
+		<tr>
+			<td>00DC</td>
+			<td>DMA Reset Mask Register - clears the mask register</td>
+		</tr>
+		<tr>
+			<td>00DE</td>
+			<td>DMA Mask Register<br />
+			- bits 0-3: mask bits for CH4-7 (0 = not masked, 1 = masked)</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Single Transfer Mode</h2>
+
+<p>The DMAC is programmed for transfer. The DMA device requests a transfer by driving the appropriate DRQ line high. The DMAC responds by asserting AEN and acknowledges the DMA request through the appropriate DAK line. The I/O and memory command lines are also asserted. When the DMA device sees the DAK signal, it drops the DRQ line.</p>
+
+<p>The DMAC places the memory address on the SA bus (at the same time as the command lines are asserted), and the device either reads from or writes to memory, depending on the type of transfer. The transfer count is incremented, and the address incremented/decremented. DAK is de-asserted. The cpu now once again has control of the bus, and continues execution until the I/O device is once again ready for transfer. The DMA device repeats the procedure, driving DRQ high and waiting for DAK, then transferring data. This continues for a number of cycles equal to the transfer count. When this has been completed, the DMAC signals the cpu that the DMA transfer is complete via the TC (terminal count) signal.</p>
+
+<pre>
+                  __     __     __    __     __     __
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |___
+
+               _______
+DRQx         _|       |___________________________________
+
+                   ______________________________
+AEN           ____|                              |________
+
+              _______                             ________
+DAKx                 |___________________________|
+
+                      ____________________________
+SA0-SA15      -------&lt;____________________________&gt;-------
+
+
+              ___________                     ____________
+Command Line             |___________________|
+(IORC, MRDC)
+                                     _____________
+SD0-SD7       ----------------------&lt;_____________&gt;-------
+(READ)
+
+                      ____________________________
+SD0-SD7       -------&lt;____________________________&gt;-------
+(WRITE)</pre>
+
+<h2>Block Transfer Mode</h2>
+
+<p>The DMAC is programmed for transfer. The device attempting DMA transfer drives the appropriate DRQ line high. The motherboard responds by driving AEN high and DAK low. This indicates that the DMA device is now the bus master. In response to the DAK signal, the DMA device drops DRQ. The DMAC places the address for DMA transfer on the address bus. Both the memory and I/O command lines are asserted (since DMA involves both an I/O and a memory device). AEN prevents I/O devices from responding to the I/O command lines, which would not result in proper operation since the I/O lines are active, but a memory address is on the address bus. The data transfer is now done (memory read or write), and the DMAC increments/decrements the address and begins another cycle. This continues for a number of cycles equal to the DMAC transfer count. When this has been completed, the terminal count signal (TC) is generated by the DMAC to inform the cpu that the DMA transfer has been completed.</p>
+
+<p>Note: Block transfer must be used carefully. The bus cannot be used for other things (like RAM refresh) while block mode transfers are being done.</p>
+
+<h2>Demand Transfer Mode</h2>
+
+<p>The DMAC is programmed for transfer. The device attempting DMA transfer drives the appropriate DRQ line high. The motherboard responds by driving AEN high and DAK low. This indicates that the DMA device is now the bus master. Unlike single transfer and block transfer, the DMA device does not drop DRQ in response to DAK. The DMA device transfers data in the same manner as for block transfers. The DMAC will continue to generate DMA cycles as long as the I/O device asserts DRQ. When the I/O device is unable to continue the transfer (if it no longer had data ready to transfer, for example), it drops DRQ and the cpu once again has control of the bus. Control is returned to the DMAC by once again asserting DRQ. This continues until the terminal count has been reached, and the TC signal informs the cpu that the transfer has been completed.</p>
+
+<h2>Interrupts on the ISA bus</h2>
+
+<table border="1" cellpadding="2" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Interrupt</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>NMI</td>
+			<td>2</td>
+			<td>Parity Error, Mem Refresh</td>
+		</tr>
+		<tr>
+			<td>IRQ0</td>
+			<td>8</td>
+			<td>8253 Channel 0 (System Timer)</td>
+		</tr>
+		<tr>
+			<td>IRQ1</td>
+			<td>9</td>
+			<td>Keyboard</td>
+		</tr>
+		<tr>
+			<td>IRQ2</td>
+			<td>A</td>
+			<td>Cascade from slave PIC</td>
+		</tr>
+		<tr>
+			<td>IRQ3</td>
+			<td>B</td>
+			<td>COM2</td>
+		</tr>
+		<tr>
+			<td>IRQ4</td>
+			<td>C</td>
+			<td>COM1</td>
+		</tr>
+		<tr>
+			<td>IRQ5</td>
+			<td>D</td>
+			<td>LPT2</td>
+		</tr>
+		<tr>
+			<td>IRQ6</td>
+			<td>E</td>
+			<td>Floppy Drive Controller</td>
+		</tr>
+		<tr>
+			<td>IRQ7</td>
+			<td>F</td>
+			<td>LPT1</td>
+		</tr>
+		<tr>
+			<td>IRQ8</td>
+			<td>F</td>
+			<td>Real Time Clock</td>
+		</tr>
+		<tr>
+			<td>IRQ9</td>
+			<td>F</td>
+			<td>Redirection to IRQ2</td>
+		</tr>
+		<tr>
+			<td>IRQ10</td>
+			<td>F</td>
+			<td>Reserved</td>
+		</tr>
+		<tr>
+			<td>IRQ11</td>
+			<td>F</td>
+			<td>Reserved</td>
+		</tr>
+		<tr>
+			<td>IRQ12</td>
+			<td>F</td>
+			<td>Mouse Interface</td>
+		</tr>
+		<tr>
+			<td>IRQ13</td>
+			<td>F</td>
+			<td>Coprocessor</td>
+		</tr>
+		<tr>
+			<td>IRQ14</td>
+			<td>F</td>
+			<td>Hard Drive Controller</td>
+		</tr>
+		<tr>
+			<td>IRQ15</td>
+			<td>F</td>
+			<td>Reserved</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>IRQ0,1,2,8, and 13 are not available on the ISA bus.</p>
+
+<p>The IBM PC and XT had only a single 8259 interrupt controller. The AT and later machines have a second interrupt controller, and the two are used in a master/slave combination. IRQ2 and IRQ9 are the same pin on most ISA systems. Interrupts on most systems may be either edge triggered or level triggered. The default is usually edge triggered, and active high (low to high transition). The interrupt level must be held high until the first interrupt acknowledge cycle (two interrupt acknowledge bus cycles are generated in response to an interrupt request).</p>
+
+<p>The software aspects of interrupts and interrupt handlers is intentionally omitted from this document, due to the numerous syntactical differences in software tools and the fact that adequate documentation of this topic is usually provided with developement software.</p>
+
+<h2>Bus Mastering:</h2>
+
+<p>An ISA device may take control of the bus, but this must be done with caution. There are no safety mechanisms involved, and so it is easily possible to crash the entire system by incorrectly taking control of the bus. For example, most systems require bus cycles for DRAM refresh. If the ISA bus master does not relinquish control of the bus or generate its own DRAM refresh cycles every 15 microseconds, the system RAM can become corrupted. The ISA adapter card can generate refresh cycles without relinquishing control of the bus by asserting REFRESH. MRDC can be then monitored to determine when the refresh cycle ends.</p>
+
+<p>To take control of the bus, the device first asserts its DRQ line. The DMAC sends a hold request to the cpu, and when the DMAC receives a hold acknowledge, it asserts the appropriate DAK line corresponding to the DRQ line asserted. The device is now the bus master. AEN is asserted, so if the device wishes to access I/O devices, it must assert MASTER16 to release AEN. Control of the bus is returned to the system board by releasing DRQ.</p>
+
+<p>Sources: Mark Sokos ISA page<br />
+Sources: ISA System Architecture, 3rd Edition by Tom Shanley and Don Anderson ISBN 0-201-40996-8<br />
+Sources: Eisa System Architecture, 2nd Edition by Tom Shanley and Don Anderson ISBN 0-201-40995-X<br />
+Sources: Microcomputer Busses by R.M. Cram ISBN 0-12-196155-9<br />
+Sources: HelpPC v2.10 Quick Reference Utility, by David Jurgens<br />
+Sources: ZIDA 80486 Mother Board Users Manual, OPTi 486, 82C495sx</p>
+
+<p>Note: Direction is Motherboard relative ISA-Cards.<br />
+Note: B8 was /CARD SLCDTD on the XT. Card selected, activated by cards in XT&acute;s slot J8</p>
+ 	
+</div>
+<!--Apage_bottom-->
+
+
+								<!-- Column 1 end -->
+			</div>
+			<div class="col2">
+				<!-- Column 2 start -->
+
+				<a href="http://connector.pinouts.ru/98_pin_6236ISA_EDGE_male/" class="imglink">
+<img src="http://connector.pinouts.ru/diagram/busisa16m.gif" alt="98 pin (62+36)ISA EDGE male connector layout" border=0 itemprop="image"><br>98 pin (62+36)ISA EDGE male&nbsp;connector<br> at the computer<div class="clearer"></div><img src="/photos/thumb_busisa16m.jpg" border=0 class="connphoto"><div class="clearer"></div></a>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 300x250_gray -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px;float:right;margin:7px;"
+          data-ad-client="ca-pub-3397735932831539"
+               data-ad-slot="3601593201"></ins>
+               <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+               </script>
+
+				<!-- Column 2 end -->
+			</div>
+			<div class="col3">
+				<!-- Column 3 start -->
+				<a href="http://connector.pinouts.ru/98_pin_6236ISA_EDGE_female/" class="imglink">
+	<img src="http://connector.pinouts.ru/diagram/busisa16f.gif" alt="98 pin (62+36)ISA EDGE female connector layout" border=0 itemprop="image"><br>98 pin (62+36)ISA EDGE female&nbsp;connector<div class="clearer"></div><img src="/photos/thumb_busisa16f.jpg" border=0 class="connphoto"><div class="clearer"></div></a>
+
+		<div class="togglebox good"><a href="/reports/ISA.shtml">Pinout status: <span style="color:green;font-weight:bold;"> +4</span>&nbsp;<span  style="color:red;font-weight:bold;">-2</span></a></div>
+		<div id=status itemprop="aggregateRating"  itemscope itemtype="http://schema.org/AggregateRating">According to <a href="/reports/ISA.shtml"><span itemprop=ratingCount>6</span> reports</a> in our database (<span itemprop=ratingValue>4</span> positive and <span>2</span> negative) this pinout should be correct.<br><br>Is this pinout<div id=rate> <div id=rate_good><a href="javascript:void();" onClick="window.open('http://pinouts.ru/report.php?data_file=ISA&lang=eng&mark=1' ,'report','menubar=no,toolbar=no,height=400,width=800');"><img src="/pictures/thumb_up.gif">correct</a> </div><div id=rate_bad><a href="javascript:void();" onClick="window.open('http://pinouts.ru/report.php?data_file=ISA&lang=eng&mark=0' ,'report','menubar=no,toolbar=no,height=400,width=800');"
+><img src="/pictures/thumb_down.gif">incorrect</a></div></div> <meta itemprop="bestRating" content="6 ">
+<meta itemprop="worstRating" content="0"></div><div class="togglebox"><a href="#" onclick="toggle('ilinks')"><strong>NO</strong> DIY devices</a></div><div id=ilinks style="display:none"><div id="report_box">If you know how to make Do-It-Yourself device using with this pinout, <a href="javascript:void();" onClick="window.open('http://pinouts.ru/newlink.php?data_file=ISA&lang=eng' ,'report','menubar=no,toolbar=no,height=400,width=800');"> share the link </a> with us.</div></div><!--Apage_right-->
+				<!-- Column 3 end -->
+			</div>
+		</div>
+	</div>
+</div>
+<div>Source(s) of this and additional information: IBM PC/AT Technical Reference,  comp.sys.ibm.pc.hardware.* FAQ Part 4, from <a href="http://hardwarebook.net/">Hardware Book</a></div><div id="footer">
+<div>Contributor(s): , Anton</div>	
+<div>Last updated <span itemprop="datePublished" content="2018-08-19 19:13:42">2018-08-19 19:13:42</span>. </span></div>
+<meta itemprop="articleSection" content="pinout">
+
+</div>
+<div id="footnotes">
+This page contain parts under Copyright &copy; 2000-2018 by pinouts.ru team.<br>No portion of this webpage may be reproduced in any form without providing visible HTML link to Old.Pinouts.ru . Webmaster permission required in any other cases.<br>Efforts have been made to ensure this page is correct, but it is the responsibility of the user to verify the data is correct for their application.
+</div>
+<!--bottom-->
+</body></html>

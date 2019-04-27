@@ -1,0 +1,951 @@
+                          THE ISA AND PC/104 BUS
+
+
+
+IBM, IBM/XT, IBM PC, and IBM PC AT are registered trademarks of 
+International Business Machines Corporation.
+
+This file is designed to give a basic overview of the bus found in
+most IBM clone computers, often referred to as the XT or AT bus. The 
+AT version of the bus is upwardly compatible, which means that cards
+designed to work on an XT bus will work on an AT bus. This bus was
+produced for many years without any formal standard. In recent years,
+a more formal standard called the ISA bus (Industry Standard Architecture)
+has been created, with an extension called the EISA (Extended ISA) bus
+also now as a standard. The EISA bus extensions will not be detailed here.
+
+The PC/104 bus is an adaptation of the ISA bus for embedded computing
+use. It uses the same signals as ISA, but uses a smaller connector and
+cards that are stackable, which eliminates the need for a backplane. The
+name PC/104 comes from the fact that the bus was invented for the PC, 
+and has 104 pins.
+
+This file is not intended to be a thorough coverage of the standard. It
+is for informational purposes only, and is intended to give designers
+and hobbyists sufficient information to design their own XT and AT 
+compatible cards.
+
+The IEEE P996 standard may be obtained from:
+     IEEE Standards Office
+     445 Hoes Lane
+     Piscataway, NJ 08854
+
+The PC/104 standard may be obtained from:
+     The PC/104 Consortium
+     PO Box 4303
+     Mountain View, CA 94040
+
+
+
+
+Connector Pinouts
+
+
+ISA Connector
+
+Component Side                  
+
+A1:  *CHKCHK                    B1:  GND
+A2:  SD7                        B2:  RESDRV
+A3:  SD6                        B3:  +5 
+A4:  SD5                        B4:  IRQ2
+A5:  SD4                        B5:  -5 
+A6:  SD3                        B6:  DRQ2
+A7:  SD2                        B7:  -12 
+A8:  SD1                        B8:  *NOWS  [A]
+A9:  SD0                        B9:  +12
+A10: CHRDY                      B10: GND
+A11: AEN                        B11: *SMWTC
+A12: SA19                       B12: *SMRDC
+A13: SA18                       B13: *IOWC
+A14: SA17                       B14: *IORC
+A15: SA16                       B15: *DAK3
+A16: SA15                       B16: DRQ3
+A17: SA14                       B17: *DAK1
+A18: SA13                       B18: DRQ1
+A19: SA12                       B19: *REFRESH
+A20: SA11                       B20: BCLK
+A21: SA10                       B21: IRQ7
+A22: SA9                        B22: IRQ6
+A23: SA8                        B23: IRQ5
+A24: SA7                        B24: IRQ4
+A25: SA6                        B25: IRQ3
+A26: SA5                        B26: *DAK2
+A27: SA4                        B27: TC
+A28: SA3                        B28: BALE
+A29: SA2                        B29: +5 
+A30: SA1                        B30: OSC
+A31: SA0                        B31: GND
+
+
+AT Bus only:
+
+Component Side
+
+C1:  *SBHE                      D1:  *M16
+C2:  LA23                       D2:  *IO16
+C3:  LA22                       D3:  IRQ10
+C4:  LA21                       D4:  IRQ11
+C5:  LA20                       D5:  IRQ12
+C6:  LA19                       D6:  IRQ15 [B]
+C7:  LA18                       D7:  IRQ14
+C8:  LA17                       D8:  *DAK0
+C9:  *MRDC                      D9:  DRQ0
+C10: *MWTC                      D10: *DAK5
+C11: SD8                        D11: DRQ5
+C12: SD9                        D12: *DAK6
+C13: SD10                       D13: DRQ65
+C14: SD11                       D14: *DAK7
+C15: SD12                       D15: DRQ7
+C16: SD13                       D16: +5 
+C17: SD14                       D17: *MASTER16
+C18: SD15                       D18: GND
+
+* Active Low
+
+[A] A signal called J8, or Card_Select was used on this pin on the IBM
+XT. This signal was only active on the J8 slot on the motherboard (the
+slot closest to the keyboard connector).
+
+[B] Many texts (including earlier versions of mine) accidentally place
+IRQ13 on this pin. I'm not sure how IRQ15 managed to end up on the pin
+where IRQ13 fits in the sequence (IRQ10-14), but it is easy to see how
+this causes numerous typographic errors.
+Note that IRQ13 (coprocessor) is not present on the ISA bus connector.
+
+
+ISA physical dimensions:
+
+
+    +---- mounting bracket this end
+    |
+    |
+    +------------------------------------------------------------------+ <--+
+    |                                                                  |    |
+    |                                                                  |    |
+    |                                                                  |    |
+    |                                                                  |   4.8
+    |                                                                  |    |
+    +------+                           +------+           +------------+    |
+           | | | | | | | | | | | | | | |      | | | | | | |                 |
+           +---------------------------+      +-----------+              <--+
+
+    |-.705-|--------3.10+-.005---------|-.220-|----1.87---|
+
+Notes: 
+   All demensions in inches
+   All demensions are +-.010 except as noted
+   Total length can not exceed 13.10+-.020
+   Longer connector has 31 gold tabs on each side 0.100+-.005 
+          center to center 0.06+-.005 width
+   Shorter connector has 18 gold tabs on each side 0.100+-.005 
+          center to center 0.06+-.005 width
+
+
+
+
+PC/104 Connector:
+
+PIN     ROW A (J1)     ROW B(J1)      ROW C (J2)     ROW D (J2)
+----------------------------------------------------------------
+ 0                                    GND            GND
+ 1      *CHCHK         GND            *SBHE          *M16
+ 2      SD7            RESDRV         LA23           *IO16
+ 3      SD6            +5V            LA22           IRQ10
+ 4      SD5            IRQ9           LA21           IRQ11
+ 5      SD4            -5V            LA20           IRQ12
+ 6      SD3            DRQ2           LA19           IRQ15
+ 7      SD2            -12V           LA18           IRQ14
+ 8      SD1            *ENDXFR        LA17           *DACK0
+ 9      SD0            +12V           *MRDC          DRQ0
+ 10     CHRDY          KEY            *MWTC          *DACK5
+ 11     AEN            *SMWTC         SD8            DRQ5
+ 12     SA19           *SMRDC         SD9            *DACK6
+ 13     SA18           *IOWC          SD10           DRQ6
+ 14     SA17           *IORC          SD11           *DACK7
+ 15     SA16           *DACK3         SD12           DRQ7
+ 16     SA15           DRQ3           SD13           +5V
+ 17     SA14           *DACK1         SD14           *MASTER16
+ 18     SA13           DRQ1           SD15           GND
+ 19     SA12           *REFRESH       KEY            GND
+ 20     SA11           CLK
+ 21     SA10           IRQ7
+ 22     SA9            IRQ6
+ 23     SA8            IRQ5
+ 24     SA7            IRQ4
+ 25     SA6            IRQ3
+ 26     SA5            *DACK2
+ 27     SA4            TC
+ 28     SA3            BALE
+ 29     SA2            +5V
+ 30     SA1            OSC
+ 31     SA0            GND
+ 32     GND            GND
+
+ 
+Rows C and D are used for 16 bit (AT) operation.
+Keys are missing pins and holes are filled.
+
+
+Electrical Characteristics:
+
+The actual drive capabilities of ISA motherboards can vary greatly.
+The IEEE P996 specs 1.0 offers these guidelines:
+   +12V at 1.5A
+   -12V at 0.3A
+    +5V at 4.5A
+    -5V at 0.2A
+
+PC/104 specifies the following:
+     +12V at 1.0A
+     +5V at  2.0A
+     -5V at 0.2A 
+     -12V at 0.3A
+     M16, IO16, MASTER16, and ENDXFR are 20 mA max. All other signals
+     are 4 mA max.
+
+
+
+Signal Descriptions:
+
++5, -5, +12, -12: Power supplies. -5 is often not implimented.
+        The PC/104 spec does not require unused voltages to be present
+        on the bus.
+
+AEN: Address Enable. This is asserted when a DMAC has control of the
+        bus. This prevents an I/O device from responding to the I/O
+        command lines during a DMA transfer.
+
+BALE: Bus Address Latch Enable. The address bus is latched on the rising
+        edge of this signal. The address on the SA bus is valid from the
+        falling edge of BALE to the end of the bus cycle. Memory devices
+        should latch the LA bus on the falling edge of BALE. Some references
+        refer to this signal as Buffered Address Latch Enable, or just
+        Address Latch Enable (ALE).
+
+BCLK: Bus Clock, 33% Duty Cycle. Frequency Varies. 4.77 to 8 MHz typical.
+        8.3 MHz is specified as the maximum, but many systems allow this
+        clock to be set to 12 MHz and higher.
+
+CHCHK: Channel Check. A low signal generates an NMI. The NMI signal
+        can be masked on a PC, externally to the processor (of course).
+        Bit 7 of port 70(hex) (enable NMI interrupts) and bit 3 of
+        port 61 (hex) (recognition of channel check) must both be set
+        to zero for an NMI to reach the cpu.
+
+CHRDY: Channel Ready. Setting this low prevents the default ready timer
+        from timing out. The slave device may then set it high again
+        when it is ready to end the bus cycle. Holding this line low
+        for too long (15 microseconds, typically) can prevent RAM refresh
+        cycles on some systems.
+        This signal is called IOCHRDY (I/O Channel Ready) by some references.
+        CHRDY and NOWS should not be used simultaneously. This may cause
+        problems with some bus controllers.
+
+DAKx: DMA Acknowledge. 
+
+DRQx: DMA Request.
+
+ENDXFR (PC/104 only): End Transfer.
+
+GND: Ground (0 volts).
+
+IO16: I/O size 16. Generated by a 16 bit slave when addressed by a 
+        bus master.
+
+IORC: I/O Read Command line. 
+
+IOWC: I/O Write Command line. 
+
+IRQx: Interrupt Request. IRQ2 has the highest priority. IRQ 10-15 are
+        only available on AT machines, and are higher priority than
+        IRQ 3-7.
+
+LAxx: Latchable Address lines. Combine with the lower address lines to 
+        form a 24 bit address space (16 MB)
+
+MASTER16: 16 bit bus master. Generated by the ISA bus master when 
+        initiating a bus cycle.
+
+M16: Memory Access, 16 bit
+
+MRDC: Memory Read Command line.
+
+MWTC: Memory Write Command line.
+
+NOWS: No Wait State. Used to shorten the number of wait states generated 
+        by the default ready timer. This causes the bus cycle to end
+        more quickly, since wait states will not be inserted. Most 
+        systems will ignore NOWS if CHRDY is active (low). However,
+        this may cause problems with some bus controllers, and both
+        signals should not be active simultaneously.
+
+OSC: Oscillator, 14.318 MHz, 50% Duty Cycle. Frequency varies.
+        This was originally divided by 3 to provide the 4.77 MHz cpu
+        clock of early PCs, and divided by 12 to produce the 1.19 MHz
+        system clock. Some references have placed this signal as low
+        as 1 MHz (possibly referencing the system clock), but most modern
+        systems use 14.318 MHz.
+        This frequency (14.318 MHz) is four times the television colorburst
+        frequency.
+        Refresh timing on many PC's is based on OSC/18, or approximately
+        one refresh cycle every 15 microseconds. Many modern motherboards
+        allow this rate to be changed, which frees up some bus cycles for
+        use by software, but also can cause memory errors if the system
+        RAM cannot handle the slower refresh rates.
+
+REFRESH: Refresh. Generated when the refresh logic is bus master.
+        An ISA device acting as bus master may also use this signal to
+        initiate a refresh cycle.
+
+RESDRV: This signal goes momentarily high when the machine is powered up.
+        Driving it high will force a system reset.
+
+SA0-SA19: System Address Lines, tri-state. 
+
+SBHE: System Bus High Enable, tristate. Indicates a 16 bit data transfer.
+        This may also indicate an 8 bit transfer using the upper half
+        of the data bus (if an odd address is present).
+
+SD0-SD15: System Data lines, or Standard Data Lines. They are bidrectional 
+        and tri-state. On most systems, the data lines float high when not
+        driven.
+
+SMRDC: Standard Memory Read Command line. Indicates a memory read in the
+        lower 1 MB area.
+
+SMWTC: Standard Memory Write Commmand line. Indicates a memory write in
+        the lower 1 MB area.
+
+TC: Terminal Count. Notifies the cpu that that the last DMA data transfer 
+        operation is complete.
+
+
+
+
+
+8 Bit Memory or I/O Transfer Timing Diagram  (4 wait states shown)
+
+                  __     __     __    __     __     __     __
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |___|  |__
+                               W1    W2     W3     W4
+                      __                                            
+BALE          _______|  |_______________________________________
+
+
+AEN           __________________________________________________ 
+
+                        ______________________________________ 
+SA0-SA19      ---------<______________________________________>-
+                                                               
+                     
+              _____________                                _____
+Command Line               |______________________________|
+(IORC,IOWC,                                   
+SMRDC, or SMWTC)     
+                                                      _____ 
+SD0-SD7       ---------------------------------------<_____>----
+(READ)                                          
+                     
+                        ___________________________________ 
+SD0-SD7       ---------<___________________________________>----
+(WRITE)                                          
+
+
+Note: W1 through W4 indicate wait cycles.
+
+
+BALE is placed high, and the address is latched on the SA bus. The
+slave device may safely sample the address during the falling edge
+of BALE, and the address on the SA bus remains valid until the end 
+of the transfer cycle. Note that AEN remains low throughout the entire
+transfer cycle.
+
+The command line is then pulled low (IORC or IOWC for I/O commands,
+SMRDSC or SMWTC for memory commands, read and write respectively).
+For write operations, the data remaines on the SD bus for the remainder
+of the transfer cycle. For read operations, the data must be valid
+on the falling edge of the last cycle.
+
+NOWS is sampled at the midpoint of each wait cycle. If it is low, the
+transfer cycle terminates without further wait states.
+CHRDY is sampled during the first half of the clock cycle. If it is
+low, further wait cycles will be inserted.
+
+The default for 8 bit transfers is 4 wait states. Some computers allow
+the number of default wait states to be changed.
+
+
+
+16 Bit Memory or I/O Transfer Timing Diagram  (1 wait state shown)
+
+                  __     __     __    __     __     __   
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |_  
+
+
+AEN [2]       __________________________________________ 
+
+                      _____________
+LA17-LA23     -------<_____________>-[1]-----------------               
+
+                             __                                            
+BALE          ______________|  |________________________
+                     
+             ________________                    _______
+SBHE                         |__________________|            
+
+                              __________________ 
+SA0-SA19      ---------------<__________________>-------
+                                                               
+             _________________      ____________________
+M16                           |____|
+                               *  * [4]
+
+             _________________               ___________
+IO16  [3]                     |_____________|
+                                        *
+
+              _________________              ___________                  
+Command Line                   |____________|                 
+(IORC,IOWC,                                   
+MRDC, or MWTC)     
+                                          ____ 
+SD0-SD15      ---------------------------<____>---------
+(READ)                                      *
+                     
+                                ______________ 
+SD0-SD15      -----------------<______________>---------
+(WRITE)                                          
+
+
+An asterisk (*) denotes the point where the signal is sampled.
+
+[1] The portion of the address on the LA bus for the NEXT cycle
+may now be placed on the bus. This is used so that cards may begin
+decoding the address early. Address pipelining must be active.
+
+[2] AEN remains low throughout the entire transfer cycle, indicating
+that a normal (non-DMA) transfer is occuring.
+
+[3] Some bus controllers sample this signal during the same clock cycle
+as M16, instead of during the first wait state, as shown above.
+In this case, IO16 needs to be pulled low as soon as the address is
+decoded, which is before the I/O command lines are active.
+
+[4] M16 is sampled a second time, in case the adapter card did not
+activate the signal in time for the first sample (usually because the
+memory device is not monitoring the LA bus for early address
+information, or is waiting for the falling edge of BALE).
+
+
+16 bit transfers follow the same basic timing as 8 bit transfers.
+A valid address may appear on the LA bus prior to the beginning of the
+transfer cycle. Unlike the SA bus, the LA bus is not latched, and is
+not valid for the entire transfer cycle (on most computers). The LA bus
+should be latched on the falling edge of BALE. Note that on some systems,
+the LA bus signals will follow the same timing as the SA bus. On
+either type of system, a valid address is present on the falling edge
+of BALE.
+
+I/O adapter cards do not need to monitor the LA bus or BALE, since I/O
+addresses are always within the address space of the SA bus.
+
+SBHE will be pulled low by the system board, and the adapter card must
+respond with IO16 or M16 at the appropriate time, or else the transfer
+will be split into two seperate 8 bit transfers. Many systems expect
+IO16 or M16 before the command lines are valid. This requires that
+IO16 or M16 be pulled low as soon as the address is decoded (before it
+is known whether the cycle is I/O or Memory). If the system is starting
+a memory cycle, it will ignore IO16 (and vice-versa for I/O cycles
+and M16).
+
+For read operations, the data is sampled on the rising edge of the
+last clock cycle. For write operations, valid data appears on the bus
+before the end of the cycle, as shown in the timing diagram. While
+the timing diagram indicates that the data needs to be sampled on the
+rising clock, on most systems it remains valid for the entire clock
+cycle.
+
+The default for 16 bit transfers is 1 wait state. This may be shortened
+or lengthened in the same manner as 8 bit transfers, via NOWS and CHRDY.
+Many systems only allow 16 bit memory devices (and not I/O devices) to
+transfer using 0 wait states (NOWS has no effect on 16 bit I/O cycles).
+
+SMRDC/SMWTC follow the same timing as MRDC/MWTC respectively when
+the address is within the lower 1 MB. If the address is not within the
+lower 1 MB boundary, SMRDC/SMWTC will remain high during the entire
+cycle.
+
+It is also possible for an 8 bit bus cycle to use the upper portion
+of the bus. In this case, the timing will be similar to a 16 bit
+cycle, but an odd address will be present on the bus. This means that
+the bus is transferring 8 bits using the upper data bits (SD8-SD15).
+
+
+Shortening or Lengthening the bus cycle:
+
+
+BCLK       W                 W     W                 W
+ _    __    __    __    __    __    __    __    __    __    __    __   
+  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__
+
+        |--Transfer 1-----|----Transfer 2---------|----Transfer 3---|                 
+
+BALE
+         __                __                      __                __
+________|  |______________|  |____________________|  |______________|  
+                     
+                   
+SBHE
+_________                                       _______________________
+         |__________________|__________________|
+
+                              
+SA0-SA19
+           _________________  _____________________  _________________
+----------<_________________><_____________________><_________________>
+                                                    
+                   
+IO16
+___________               ___               ___________________________
+           |_____________|   |_____________|
+                    *                 *
+
+CHRDY
+________________________________        _______________________________
+                                |______|
+                  *                 *     *  [1]
+
+NOWS
+______________________________________________________            _____
+                                                      |__________|
+                                                        * [2]
+IORC
+______________           _______                 _______           ____
+              |_________|       |_______________|       |_________|
+
+
+SD0-SD15           
+                     ____                    ____              ____
+--------------------<____>------------------<____>------------<____>---
+                       *                       *                 *
+
+An asterisk (*) denotes the point where the signal is sampled.
+W=Wait Cycle
+
+This timing diagram shows three different transfer cycles. The first
+is a 16 bit standard I/O read. This is followed by an almost identical
+16 bit I/O read, with one wait state inserted. The I/O device pulls
+CHRDY low to indicate that it is not ready to complete the transfer
+(see [1]). This inserts a wait cycle, and CHRDY is again sampled. At this
+second sample, the I/O device has completed its operation and released
+CHRDY, and the bus cycle now terminates.
+The third cycle is an 8 bit transfer, which is shortened to 1 wait state
+(the default is 4) by the use of NOWS.
+
+
+I/O Port Addresses
+
+Note: Only the first 10 address lines are decoded for I/O operations.
+This limits the I/O address space to address 3FF (hex) and lower.
+Some systems allow for 16 bit I/O address space, but may be limited due
+to some I/O cards only decoding 10 of these 16 bits.
+
+Port Address Assignments:
+Port (hex)
+000-00F   DMA Controller 
+010-01F   DMA Controller (PS/2)
+020-02F   Master Programmable Interrupt Controller (PIC) 
+030-03F   Slave PIC
+040-05F   Programmable Interval Timer (PIT)
+060-06F   Keyboard Controller 
+070-071   Real Time Clock
+080-083   DMA Page Registers
+090-097   Programmable Option Select (PS/2)
+0A0-0AF   PIC #2
+0C0-0CF   DMAC #2
+0E0-0EF   reserved
+0F0-0FF   Math coprocessor, PCJr Disk Controller
+100-10F   Programmable Option Select (PS/2)
+110-16F   AVAILABLE
+170-17F   Hard Drive 1 (AT)
+180-1EF   AVAILABLE
+1F0-1FF   Hard Drive 0 (AT)
+200-20F   Game Adapter
+210-217   Expansion Card Ports
+220-26F   AVAILABLE
+270-27F   Parallel Port 3
+280-2A1   AVAILABLE
+2A2-2A3   clock
+2B0-2DF   EGA/Video
+2E2-2E3   Data Acquisition Adapter (AT)
+2E8-2EF   Serial Port COM4
+2F0-2F7   Reserved
+2F8-2FF   Serial Port COM2
+300-31F   Prototype Adapter, Periscope Hardware Debugger
+320-32F   AVAILABLE
+330-33F   Reserved for XT/370
+340-35F   AVAILABLE
+360-36F   Network
+370-377   Floppy Disk Controller
+378-37F   Parallel Port 2
+380-38F   SDLC Adapter
+390-39F   Cluster Adapter
+3A0-3AF   reserved
+3B0-3BB   Monochome Adapter
+3BC-3BF   Parallel Port 1
+3C0-3CF   EGA/VGA
+3D0-3DF   Color Graphics Adapter (CGA)
+3E0-3EF   Serial Port COM3
+3F0-3F7   Floppy Disk Controller
+3F8-3FF   Serial Port COM1
+
+Soundblaster cards usually use I/O ports 220-22F.
+Data acquisition cards frequently use 300-320.
+
+
+Memory Addresses
+
+00000-9FFFF System RAM (640k)
+A0000-AFFFF EGA/VGA Video RAM
+B0000-BFFFF Hercules/Mono/CGA Video RAM
+C0000-C7FFF Video ROM
+C8000-CFFFF Hard drive adapter BIOS ROM
+D0000-D7FFF I/O Expansion ROM (unused on most systems)
+D8000-DFFFF PC JR Cartridge (unused on most systems)
+E0000-EFFFF Expansion ROM (unused on some systems)
+F0000-FFFFF System ROM
+100000+     System RAM (extended memory)
+
+There is very little memory space available for ISA cards to use. Generally,
+most computers will let you have the D segment (or at least the lower half
+of the D segment), and maybe the E segment, but nothing else. On newer
+systems, the D and E segment will usually contain RAM that must be disabled
+in the BIOS setup before these memory areas may be used.
+It should be obvious from the above memory map that, unlike I/O addresses,
+all memory address lines must be decoded to prevent bus collisions with
+other memory mapped devices.
+
+To create a rom that is recognized by the BIOS, the first two bytes must
+be 55 AA. The third byte must be the number of 512 byte blocks of address
+space used by the ROM. The eight bit checksum for the ROM must also be zero.
+If all of these conditions are met, then your ROM will be executed when
+the system starts, beginning execution at the byte immediately following
+the 512 byte block count.
+
+
+
+DMA Read and Write
+
+The ISA bus uses two DMA controllers (DMAC) cascaded together.
+The slave DMAC connects to the master DMAC via DMA channel 4 (channel
+0 on the master DMAC). The slave therefore gains control of the
+bus through the master DMAC. On the ISA bus, the DMAC is programmed 
+to use fixed priority (channel 0 always has the highest priority), 
+which means that channel 0-4 from the slave have the highest priority
+(since they connect to the master channel 0), followed by channels
+5-7 (which are channel 1-3 on the master). 
+
+The DMAC can be programmed for read transfers (data is read from memory
+and written to the I/O device), write transfers (data is read from the
+I/O device and written to memory), or verify transfers (neither a 
+read or a write - this was used by DMA CH0 for DRAM refresh on early
+PCs).
+
+Before a DMA transfer can take place, the DMA Controller (DMAC) must
+be programmed. This is done by writing the start address and the number 
+of bytes to transfer (called the transfer count) and the direction of 
+the transfer to the DMAC. 
+After the DMAC has been programmed, the device may activate the 
+appropriate DMA request (DRQx) line. 
+
+
+Slave DMA Controller:
+I/O Port
+0000    DMA CH0 Memory Address Register
+        Contains the lower 16 bits of the memory address, written as
+        two consecutive bytes.
+0001    DMA CH0 Transfer Count
+        Contains the lower 16 bits of the transfer count, written as
+        two consecutive bytes.
+0002    DMA CH1 Memory Address Register
+0003    DMA CH1 Transfer Count
+0004    DMA CH2 Memory Address Register
+0005    DMA CH2 Transfer Count
+0006    DMA CH3 Memory Address Register
+0007    DMA CH3 Transfer Count
+0008    DMAC Status/Control Register
+        Status (I/O read) bits 0-3: Terminal Count, CH 0-3
+                bits 4-7: Request CH0-3
+        Control (write)
+                bit 0: Mem to mem enable (1 = enabled)
+                bit 1: ch0 address hold enable (1 = enabled)
+                bit 2: controller disable (1 = disabled)
+                bit 3: timing (0 = normal, 1 = compressed)
+                bit 4: priority (0 = fixed, 1 = rotating)
+                bit 5: write selection (0 = late, 1 = extended)
+                bit 6: DRQx sense asserted (0 = high, 1 = low)
+                bit 7: DAKn sense asserted (0 = low, 1 = high)
+0009    Software DRQn Request
+        bits 0-1: channel select (CH0-3)
+        bit 2: request bit (0 = reset, 1 = set)
+000A    DMA mask register
+        bits 0-1: channel select (CH0-3)
+        bit 2: mask bit (0 = reset, 1 = set)
+000B    DMA Mode Register
+        bits 0-1: channel select (CH0-3)
+        bits 2-3: 00 = verify transfer, 01 = write transfer, 10 = read
+                transfer, 11 = reserved
+        bit 4: Auto init (0 = disabled, 1 = enabled)
+        bit 5: Address (0 = increment, 1 = decrement)
+        bits 6-7: 00 = demand transfer mode, 01 = single transfer mode
+                10 = block transfer mode, 11 = cascade mode
+000C    DMA Clear Byte Pointer - writing to this causes the DMAC to clear
+        the pointer used to keep track of 16 bit data transfers into
+        and out of the DMAC for hi/low byte sequencing.
+000D    DMA Master Clear (Hardware Reset)
+000E    DMA Reset Mask Register - clears the mask register
+000F    DMA Mask Register
+        bits 0-3: mask bits for CH0-3 (0 = not masked, 1 = masked)
+
+0081    DMA CH2 Page Register (address bits A16-A23)    
+0082    DMA CH3 Page Register
+0083    DMA CH1 Page Register
+0087    DMA CH0 Page Register
+0089    DMA CH6 Page Register
+008A    DMA CH7 Page Register
+008B    DMA CH5 Page Register
+
+
+Master DMA Controller:
+
+I/O Port
+00C0    DMA CH4 Memory Address Register
+        Contains the lower 16 bits of the memory address, written as
+        two consecutive bytes.
+00C2    DMA CH4 Transfer Count
+        Contains the lower 16 bits of the transfer count, written as
+        two consecutive bytes.
+00C4    DMA CH5 Memory Address Register
+00C6    DMA CH5 Transfer Count
+00C8    DMA CH6 Memory Address Register
+00CA    DMA CH6 Transfer Count
+00CC    DMA CH7 Memory Address Register
+00CE    DMA CH7 Transfer Count
+00D0    DMAC Status/Control Register
+        Status (I/O read) bits 0-3: Terminal Count, CH 4-7
+                bits 4-7: Request CH4-7
+        Control (write)
+                bit 0: Mem to mem enable (1 = enabled)
+                bit 1: ch0 address hold enable (1 = enabled)
+                bit 2: controller disable (1 = disabled)
+                bit 3: timing (0 = normal, 1 = compressed)
+                bit 4: priority (0 = fixed, 1 = rotating)
+                bit 5: write selection (0 = late, 1 = extended)
+                bit 6: DRQx sense asserted (0 = high, 1 = low)
+                bit 7: DAKn sense asserted (0 = low, 1 = high)
+00D2    Software DRQn Request
+        bits 0-1: channel select (CH4-7)
+        bit 2: request bit (0 = reset, 1 = set)
+00D4    DMA mask register
+        bits 0-1: channel select (CH4-7)
+        bit 2: mask bit (0 = reset, 1 = set)
+00D6    DMA Mode Register
+        bits 0-1: channel select (CH4-7)
+        bits 2-3: 00 = verify transfer, 01 = write transfer, 10 = read
+                transfer, 11 = reserved
+        bit 4: Auto init (0 = disabled, 1 = enabled)
+        bit 5: Address (0 = increment, 1 = decrement)
+        bits 6-7: 00 = demand transfer mode, 01 = single transfer mode
+                10 = block transfer mode, 11 = cascade mode
+00D8    DMA Clear Byte Pointer - writing to this causes the DMAC to clear
+        the pointer used to keep track of 16 bit data transfers into
+        and out of the DMAC for hi/low byte sequencing.
+00DA    DMA Master Clear (Hardware Reset)
+00DC    DMA Reset Mask Register - clears the mask register
+00DE    DMA Mask Register
+        bits 0-3: mask bits for CH4-7 (0 = not masked, 1 = masked)
+
+
+Single Transfer Mode:
+
+The DMAC is programmed for transfer.
+The DMA device requests a transfer by driving the appropriate
+DRQ line high. The DMAC responds by asserting AEN and acknowledges
+the DMA request through the appropriate DAK line. The I/O and
+memory command lines are also asserted. When the DMA device sees
+the DAK signal, it drops the DRQ line.
+The DMAC places the memory address on the SA bus (at the same time
+as the command lines are asserted), and the device either reads from
+or writes to memory, depending on the type of transfer. The transfer
+count is incrimented, and the address incrimented/decrimented. DAK
+is de-asserted. The cpu now once again has control of the bus, and
+continues execution until the I/O device is once again ready for
+transfer. The DMA device repeats the procedure, driving DRQ high and
+waiting for DAK, then transferring data. This continues for a number
+of cycles equal to the transfer count. When this has been completed,
+the DMAC signals the cpu that the DMA transfer is complete via the TC
+(terminal count) signal.
+
+
+                  __     __     __    __     __     __    
+BCLK          ___|  |___|  |___|  |__|  |___|  |___|  |___ 
+                     
+               _______
+DRQx         _|       |___________________________________
+
+                   ______________________________                   
+AEN           ____|                              |________   
+                     
+              _______                             ________   
+DAKx                 |___________________________|
+
+                      ____________________________ 
+SA0-SA15      -------<____________________________>-------
+                                                               
+                     
+              ___________                     ____________                  
+Command Line             |___________________|
+(IORC, MRDC)     
+                                     _____________ 
+SD0-SD7       ----------------------<_____________>-------
+(READ)                                          
+                     
+                      ____________________________ 
+SD0-SD7       -------<____________________________>-------
+(WRITE)                                                        
+
+
+Block Transfer Mode:
+
+The DMAC is programmed for transfer. 
+The device attempting DMA transfer drives the appropriate DRQ line
+high. The motherboard responds by driving AEN high and DAK low.
+This indicates that the DMA device is now the bus master.
+In response to the DAK signal, the DMA device drops DRQ. The DMAC 
+places the address for DMA transfer on the address bus. Both the
+memory and I/O command lines are asserted (since DMA involves both an 
+I/O and a memory device). AEN prevents I/O devices from responding to 
+the I/O command lines, which would not result in proper operation since 
+the I/O lines are active, but a memory address is on the address bus. 
+The data transfer is now done (memory read or write), and the DMAC
+incriments/decriments the address and begins another cycle.
+This continues for a number of cycles equal to the DMAC transfer count.
+When this has been completed, the terminal count signal (TC) is generated
+by the DMAC to inform the cpu that the DMA transfer has been completed.
+
+Note: Block transfer must be used carefully. The bus cannot be used
+for other things (like RAM refresh) while block mode transfers are
+being done.
+
+
+Demand Transfer Mode:
+
+The DMAC is programmed for transfer. 
+The device attempting DMA transfer drives the appropriate DRQ line
+high. The motherboard responds by driving AEN high and DAK low.
+This indicates that the DMA device is now the bus master.
+Unlike single transfer and block transfer, the DMA device does not
+drop DRQ in response to DAK. The DMA device transfers data in the
+same manner as for block transfers. The DMAC will continue to generate
+DMA cycles as long as the I/O device asserts DRQ. When the I/O device
+is unable to continue the transfer (if it no longer had data ready to
+transfer, for example), it drops DRQ and the cpu once again has control
+of the bus. Control is returned to the DMAC by once again asserting DRQ.
+This continues until the terminal count has been reached, and the TC
+signal informs the cpu that the transfer has been completed.
+
+
+Interrupts on the ISA bus:
+
+              Interrupt
+               (Hex)
+NMI             2       Parity Error, Mem Refresh
+IRQ0            8       8253 Channel 0 (System Timer)
+IRQ1            9       Keyboard
+IRQ2            A       Cascade from slave PIC
+IRQ3            B       COM2
+IRQ4            C       COM1
+IRQ5            D       LPT2
+IRQ6            E       Floppy Drive Controller
+IRQ7            F       LPT1
+IRQ8            F       Real Time Clock
+IRQ9            F       Redirection to IRQ2
+IRQ10           F       Reserved 
+IRQ11           F       Reserved
+IRQ12           F       Mouse Interface
+IRQ13           F       Coprocessor
+IRQ14           F       Hard Drive Controller
+IRQ15           F       Reserved
+
+IRQ0,1,2,8, and 13 are not available on the ISA bus.
+
+The IBM PC and XT had only a single 8259 interrupt controller. The
+AT and later machines have a second interrupt controller, and the
+two are used in a master/slave combination. IRQ2 and IRQ9 are the
+same pin on most ISA systems.
+Interrupts on most systems may be either edge triggered or level
+triggered. The default is usually edge triggered, and active high
+(low to high transition).
+The interrupt level must be held high until the first interrupt
+acknowledge cycle (two interrupt acknowledge bus cycles are generated
+in response to an interrupt request).
+
+The software aspects of interrupts and interrupt handlers is intentionally
+omitted from this document, due to the numerous syntactical differences
+in software tools and the fact that adequate documentation of this topic
+is usually provided with developement software.
+
+
+Bus Mastering:
+
+An ISA device may take control of the bus, but this must be done with
+caution. There are no safety mechanisms involved, and so it is easily
+possible to crash the entire system by incorrectly taking control of
+the bus. For example, most systems require bus cycles for DRAM refresh.
+If the ISA bus master does not relinquish control of the bus or generate
+its own DRAM refresh cycles every 15 microseconds, the system RAM can
+become corrupted. The ISA adapter card can generate refresh cycles without
+relinquishing control of the bus by asserting REFRESH. MRDC can be then
+monitored to determine when the refresh cycle ends.
+
+To take control of the bus, the device first asserts its DRQ line.
+The DMAC sends a hold request to the cpu, and when the DMAC receives
+a hold acknowledge, it asserts the appropriate DAK line corresponding
+to the DRQ line asserted. The device is now the bus master.
+AEN is asserted, so if the device wishes to access I/O devices, it
+must assert MASTER16 to release AEN. Control of the bus is returned to
+the system board by releasing DRQ.
+
+
+This file is (C) Copyright 1996-2000 by Mark Sokos. It may be freely
+copied and distributed, provided that no fee is charged.
+
+All of the information in this file is provided "as-is".
+I have attempted to provide as accurate information as is possible, 
+however, it should be noted that some references offer conflicting
+or incomplete information. Please let me know if any mistakes are
+found. Some slight differences may be attributed to the lack of a
+formal standard while many pieces of equipment were manufactured.
+
+Send questions or comments to Mark Sokos (sokos@desupernet.net).
+The latest version of this file may be found at: 
+http://users.desupernet.net/sokos/
+
+
+References:
+
+"ISA System Architecture, 3rd Edition" by Tom Shanley and Don Anderson
+ISBN 0-201-40996-8
+
+"Eisa System Architecture, 2nd Edition" by Tom Shanley and Don Anderson
+ISBN 0-201-40995-X
+
+"Microcomputer Busses" by R.M. Cram  ISBN 0-12-196155-9
+
+HelpPC 2.10 Quick Reference Utility, by David Jurgens
+
+"PC/104 Specification Version 2.3" by the PC/104 Consortium
+
+
+

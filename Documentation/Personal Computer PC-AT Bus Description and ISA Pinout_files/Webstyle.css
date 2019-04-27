@@ -1,0 +1,27 @@
+A:link {COLOR:#0066ff}
+A:visited {COLOR:#6633cc}
+A:hover {COLOR:#c00000}
+A:active {COLOR:#208040}
+A IMG {BORDER-RIGHT: medium none;BORDER-TOP: medium none;BORDER-LEFT:medium none;BORDER-BOTTOM:medium none}
+BODY {font-family:"New Century Schoolbook",serif; /* font-size: 24pt; */ color:black;background:white;background-attachment:fixed}	
+TABLE.Norm {background-color:#ddffff; border-color:#FF0000; border-style: 'solid'; border-width:'2'; }
+Font.red {color:red; font-family:arial;font-size:9pt;}	
+P {FONT-SIZE: 11pt; COLOR: #000000; FONT-FAMILY: Times New Roman;}
+P.top {FONT-SIZE: 15pt; COLOR: #000000; FONT-FAMILY: Times New Roman; color: black; background:white;}
+#ad {margin-right: auto; margin-left: auto;}
+.cnt {text-align: center;}
+.rgt {text-align: right;}
+.jst {text-align: justify;}
+.bld {font-weight: bold;}
+.itl {font-style:italic;}
+.cb {text-align: center;font-weight: bold;}
+.c1 {font-size: 80%; font-weight: bold; text-align: center}
+.c2 {font-size: 120%; font-weight: bold}
+.c3 {font-size: 150%; font-weight: bold}
+.c4 {text-align: right;font-style:italic;}
+
+
+
+ 
+ 
+ 
