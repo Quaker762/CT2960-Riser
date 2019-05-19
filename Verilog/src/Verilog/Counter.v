@@ -43,6 +43,6 @@ begin
 end
 
 assign Q = counterValue;
-assign carry_n = &counterValue;
+assign carry_n = ~(&counterValue);
 
 endmodule

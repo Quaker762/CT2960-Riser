@@ -14,6 +14,8 @@ module CT2960_Riser
     input           DRQ5,
     input           DRQ7,
     
+    input           SW0,
+    
     output          RESET,
     output          IOW,
     output          IOR,
@@ -24,7 +26,6 @@ module CT2960_Riser
     output          AEN
     
 );
-wire        clk_5MHz;
 
 wire [15:0] data_out;    
 wire [15:0] data_in;
@@ -32,39 +33,12 @@ wire [15:0] address;
 
 wire [3:0]  irq;
 wire [3:0]  drq;
-
 wire        reset;
 wire        data_dir;        // direction of data bus
 wire [3:0]  dack;
 wire        aen;
 
-wire pll_reset = 1'b0;
-wire count_3u_finish;  
-wire count_3u_start;  
-wire count_3u_reset; 
-wire set_safe; 
-
 /*
-PLL5MHz sys_clock
-(
-    .refclk     (clk_50MHz),
-    .rst        (pll_reset),
-    .outclk_0   (clk_5MHz)
-);
-*/
-
-Counter #(4) count_3u
-(
-    .reset_n    (!count_3u_reset),
-    .count      (count_3u_start),
-    .load_n     (1'b1),
-    .D          (),
-    .clk        (clk_5MHz),
-    
-    .Q          (),
-    .carry_n    (count_3u_finish)
-);
-
 State_Machine state_machine
 (
     .sys_clock          (clk_5MHz),
@@ -77,6 +51,42 @@ State_Machine state_machine
     .data_out           (data_out),
     .address            (address),
     .data_dir           (data_dir)
+);
+*/
+
+reg        bus_clock;
+wire [3:0] bus_clock_out;  
+
+Counter #(4) bus_clock_counter
+(
+    .reset_n    (SW0 || !bus_clock),
+    .count      (1'b1),
+    .load_n     (1'b1),
+    .D          (),
+    .clk        (clk_50MHz),
+    
+    .Q          (bus_clock_out),
+    .carry_n    ()
+);
+
+always @(bus_clock_out)
+begin
+    if(bus_clock_out == 4'hC) //4MHz
+        bus_clock = 1'b1;
+    else
+        bus_clock = 1'b0;
+end
+
+Port_Scan port_scan
+(
+    .sys_clock(clk_50MHz),
+    .bus_clock(bus_clock),
+    .data_in(data_in),
+    .reset(!SW0),
+
+    .data_out(data_out),
+    .address(address),
+    .data_dir(data_dir)
 );
 
 /* Control the bi-directional data pins */
@@ -98,8 +108,8 @@ assign drq[3]   = DRQ7;
 assign RESET    = reset;
 
 /* Make sure we only ever read OR write */
-assign IOW      = data_dir;
-assign IOR      = ~data_dir;
+assign IOW      = ~data_dir;
+assign IOR      = data_dir;
 
 assign DACK1    = dack[0];
 assign DACK3    = dack[1];
