@@ -77,7 +77,7 @@ end
 */
 
 wire bus_clock;
-
+/*
 Bus_Clock bus_clock_pll
 (
 	.refclk(clk_50MHz),
@@ -85,7 +85,7 @@ Bus_Clock bus_clock_pll
 	.outclk_0(bus_clock), 	//8MHz
 	.outclk_1()				//6MHz
 );
-
+*/
 Port_Scan port_scan
 (
     .sys_clock(clk_50MHz),

@@ -6,6 +6,7 @@ proc runSim {} {
     property wave -radix hex *
     
     force -deposit clk_50MHz 1 0, 0 {20ns} -repeat 40000
+    force -deposit bus_clock 1 0, 0 {125ns} -repeat 250000
     
     force -freeze SW0 0
     run 60ns

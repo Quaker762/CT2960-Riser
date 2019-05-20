@@ -38,8 +38,8 @@ endgenerate
 
 wire carry_n;
 
-Counter #(26) count_1s
-//Counter #(8) count_1s
+//Counter #(26) count_1s
+Counter #(8) count_1s
 (
     .reset_n    (!reset),
     .count      (1'b1),
