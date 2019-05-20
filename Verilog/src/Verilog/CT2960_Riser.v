@@ -15,6 +15,7 @@ module CT2960_Riser
     input           DRQ7,
     
     input           SW0,
+    output          LED0,
     
     output          RESET,
     output          IOW,
@@ -37,22 +38,6 @@ wire        reset;
 wire        data_dir;        // direction of data bus
 wire [3:0]  dack;
 wire        aen;
-
-/*
-State_Machine state_machine
-(
-    .sys_clock          (clk_5MHz),
-    .data_in            (data_in),
-    .count_3u_finish    (count_3u_finish),
-    .set_safe           (set_safe),
-    
-    .count_3u_reset     (count_3u_reset),
-    .count_3u_start     (count_3u_start),
-    .data_out           (data_out),
-    .address            (address),
-    .data_dir           (data_dir)
-);
-*/
  
 /*
 Counter #(4) bus_clock_counter
@@ -86,16 +71,17 @@ Bus_Clock bus_clock_pll
 	.outclk_1()				//6MHz
 );
 */
-Port_Scan port_scan
+Reset_Sequence #(16'h0220) reset_sequence
 (
-    .sys_clock(clk_50MHz),
     .bus_clock(bus_clock),
     .data_in(data_in),
+    .enable(1'b1),
     .reset(!SW0),
-
+    
     .data_out(data_out),
     .address(address),
-    .data_dir(data_dir)
+    .data_dir(data_dir),
+    .accepted(LED0)
 );
 
 /* Control the bi-directional data pins */
