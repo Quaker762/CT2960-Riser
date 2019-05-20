@@ -17,7 +17,7 @@ localparam reset_write_1     = 4'b0000;
 localparam reset_wait        = 4'b0001;
 localparam reset_write_0     = 4'b0010;
 localparam reset_read_xxxE   = 4'b0011;
-localparam reset_read_xxxA   = 4'b0100;   
+localparam reset_read_xxxA   = 4'b0100; 
 localparam halt              = 4'b0101;
 
 localparam reset_port                = BASE_ADDRESS + 16'h0006;
@@ -128,8 +128,9 @@ begin
     case(current_state)
         halt:
         begin
-            address_r         <= reset_port;
+            address_r         <= read_buffer_status_port;
             accepted_r        <= 1'b1;
+				data_dir_r        <= 1'b0; 
         end
         
         reset_write_1:
@@ -143,9 +144,8 @@ begin
         begin
             count_3u_reset_n  <= 1'b1;
             count_3u_start    <= 1'b1;
-            data_out_r        <= 16'h0001;
-            address_r         <= reset_port;  
-            data_dir_r        <= 1'b1;               
+            address_r         <= reset_port; 
+            data_dir_r        <= 1'b0;               
         end
         
         reset_write_0:
