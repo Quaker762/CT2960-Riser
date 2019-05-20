@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="Bus_Clock_sim/Bus_Clock.vo" type="VERILOG" />
+ <topLevel name="Bus_Clock" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

@@ -23,7 +23,6 @@ generate
         localparam [15:0] j = 16'h0200 + (i << 4);
         Reset_Sequence #(j) reset
         (
-            .sys_clock(sys_clock),
             .bus_clock(bus_clock),
             .data_in(data_in),
             .enable(enable[i]),

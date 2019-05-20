@@ -53,10 +53,8 @@ State_Machine state_machine
     .data_dir           (data_dir)
 );
 */
-
-reg        bus_clock;
-wire [3:0] bus_clock_out;  
-
+ 
+/*
 Counter #(4) bus_clock_counter
 (
     .reset_n    (SW0 || !bus_clock),
@@ -76,6 +74,17 @@ begin
     else
         bus_clock = 1'b0;
 end
+*/
+
+wire bus_clock;
+
+Bus_Clock bus_clock_pll
+(
+	.refclk(clk_50MHz),
+	.rst(!SW0),
+	.outclk_0(bus_clock), 	//8MHz
+	.outclk_1()				//6MHz
+);
 
 Port_Scan port_scan
 (
