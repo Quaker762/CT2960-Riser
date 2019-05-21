@@ -127,7 +127,7 @@ begin
         begin
             address_r         <= read_buffer_status_port;
             accepted_r        <= 1'b1;
-				data_dir_r        <= 1'b0; 
+	    data_dir_r        <= 1'b0; 
         end
         
         reset_write_1:
@@ -142,7 +142,7 @@ begin
             count_3u_reset_n  <= 1'b1;
             count_3u_start    <= 1'b1;
             address_r         <= reset_port; 
-            data_dir_r        <= 1'b0;               
+            data_dir_r        <= 1'b1;               
         end
         
         reset_write_0:
