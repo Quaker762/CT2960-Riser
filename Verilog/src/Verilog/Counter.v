@@ -29,13 +29,13 @@ begin
         counterValue = D;
     end else if(count == 1'b1) 
     begin
-		if(counterValue == MAX)
-		begin
-			counterValue = 0;
-		end else 
-		begin
-			counterValue = counterValue + 1'b1;
-		end	
+        if(counterValue == MAX)
+        begin
+            counterValue = 0;
+        end else 
+        begin
+            counterValue = counterValue + 1'b1;
+        end    
     end else 
     begin
         counterValue = counterValue;
