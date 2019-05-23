@@ -6,6 +6,8 @@ module Register_File
     input   [31:0]  readdata,
     input   [2:0]   address,
     
+    input           control_reset,
+    
     output  [15:0]  data_out,
     output  [15:0]  address_out,
     output  [7:0]   control_out

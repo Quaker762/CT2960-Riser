@@ -1,7 +1,7 @@
 module State_Machine
 (
     input       [7:0] control_in,
-    input             clock_8MHz,
+    input             clk,
     input             reset,
     
     output reg        data_load,
@@ -12,7 +12,6 @@ module State_Machine
 );
 localparam BUS_IDLE         = 4'b0000;
 localparam BUS_ADDRESS_LOAD = 4'b0001;
-localparam BUS_DATA_LOAD    = 4'b0010;
 localparam BUS_WRITE1       = 4'b0011;
 localparam BUS_WRITE2       = 4'b0100;
 localparam BUS_WRITE3       = 4'b0101;
@@ -28,7 +27,7 @@ localparam CONTROL_RESET    = 4'b1101;
 reg [3:0] current_state;
 reg [3:0] next_state;
 
-always @(posedge(clock_8MHz), negedge(reset))
+always @(posedge(clk), negedge(reset))
 begin    
     if(reset == 1'b0)
     begin
@@ -40,7 +39,7 @@ begin
     end
 end
 
-always @(current_state)
+always @(current_state, control_in)
 begin
     case(current_state)
         BUS_IDLE:
@@ -63,17 +62,12 @@ begin
             end
             else if(control_in[1] == 1'b1)
             begin
-                next_state <= BUS_DATA_LOAD;
+                next_state <= BUS_WRITE1;
             end
             else
             begin
                 next_state <= current_state;
             end
-        end
-        
-        BUS_DATA_LOAD:
-        begin
-            next_state <= BUS_WRITE1;
         end
         
         BUS_WRITE1:
@@ -155,20 +149,11 @@ begin
             control_reset   <= 1'b1;        
         end
         
-        BUS_DATA_LOAD:
+        BUS_WRITE1:
         begin
             data_load       <= 1'b0;
             address_load    <= 1'b1;
             IOW             <= 1'b1;
-            IOR             <= 1'b1;
-            control_reset   <= 1'b1;    
-        end
-        
-        BUS_WRITE1:
-        begin
-            data_load       <= 1'b1;
-            address_load    <= 1'b1;
-            IOW             <= 1'b0;
             IOR             <= 1'b1;
             control_reset   <= 1'b1;    
         end

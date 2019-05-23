@@ -28,8 +28,8 @@ module SuperIO
     
 );
 
-wire [15:0] data_out;    
-wire [15:0] data_in;
+wire [15:0] data_bus_out;    
+wire [15:0] data_bus_in;
 wire [15:0] address;
 
 wire [3:0]  irq;
@@ -37,34 +37,77 @@ wire [3:0]  drq;
 wire        reset;
 wire [3:0]  dack;
 wire        aen = 1'b0;
+
+wire        clk_bus;
+
+wire data_load;
+wire address_load;
+wire control_reset;
+
+wire [15:0] data_HPS_in;
+wire [15:0] data_HPS_out;
+wire [15:0] address_HPS_in;
  
+Bus_Clock_8MHz bus_clock_pll
+(
+    .refclk(clk_50MHz),
+    .rst(!SW0),
+    .outclk_0(clk_bus)
+);
 
-/* Control the bi-directional data pins */
-assign data_in  = D;
+State_Machine state_machine
+(
+    .control_in(),
+    .clk(clk_bus),
+    .reset(SW0),
+    
+    .data_load(data_load),
+    .address_load(address_load),
+    .IOW(IOW),
+    .IOR(IOR),
+    .control_reset(control_reset)
+);
 
-assign A        = address;
+Bus_Interface bus_interface
+(
+    .data_HPS_in(data_HPS_in),
+    .data_bus_in(data_bus_in),
+    .address_HPS_in(address_HPS_in),
+    .data_load(data_load),
+    .address_load(address_load),
+    .IOW(IOW),
+    .IOR(IOR),
+    .reset(SW0),
+    .clk(clk_bus),
 
-assign irq[0]   = IRQ2;
-assign irq[1]   = IRQ5;
-assign irq[2]   = IRQ7;
-assign irq[3]   = IRQ10;
+    .data_bus_out(data_bus_out),
+    .data_HPS_out(data_HPS_out),
+    .address_bus(address)
+);
 
-assign drq[0]   = DRQ1;
-assign drq[1]   = DRQ3;
-assign drq[2]   = DRQ5;
-assign drq[3]   = DRQ7;
+assign D            = data_bus_out;
 
-assign RESET    = reset;
+assign data_bus_in  = D;
 
-/* Make sure we only ever read OR write */
-//assign IOW      
-//assign IOR      
+assign A            = address;
 
-assign DACK1    = dack[0];
-assign DACK3    = dack[1];
-assign DACK5    = dack[2];
-assign DACK7    = dack[3];
+assign irq[0]       = IRQ2;
+assign irq[1]       = IRQ5;
+assign irq[2]       = IRQ7;
+assign irq[3]       = IRQ10;
 
-assign AEN      = aen;
+assign drq[0]       = DRQ1;
+assign drq[1]       = DRQ3;
+assign drq[2]       = DRQ5;
+assign drq[3]       = DRQ7;
+
+assign RESET        = reset;   
+
+assign DACK1        = dack[0];
+assign DACK3        = dack[1];
+assign DACK5        = dack[2];
+assign DACK7        = dack[3];
+
+assign AEN          = aen;
 
 endmodule
