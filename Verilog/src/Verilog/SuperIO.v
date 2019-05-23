@@ -47,6 +47,9 @@ wire control_reset;
 wire [15:0] data_HPS_in;
 wire [15:0] data_HPS_out;
 wire [15:0] address_HPS_in;
+
+wire ior;
+wire iow;
  
 Bus_Clock_8MHz bus_clock_pll
 (
@@ -63,8 +66,8 @@ State_Machine state_machine
     
     .data_load(data_load),
     .address_load(address_load),
-    .IOW(IOW),
-    .IOR(IOR),
+    .iow(iow),
+    .ior(ior),
     .control_reset(control_reset)
 );
 
@@ -75,11 +78,13 @@ Bus_Interface bus_interface
     .address_HPS_in(address_HPS_in),
     .data_load(data_load),
     .address_load(address_load),
-    .IOW(IOW),
-    .IOR(IOR),
+    .iow(iow),
+    .ior(ior),
     .reset(SW0),
     .clk(clk_bus),
 
+    .IOW(IOW),
+    .IOR(IOR),
     .data_bus_out(data_bus_out),
     .data_HPS_out(data_HPS_out),
     .address_bus(address)

@@ -6,8 +6,8 @@ module State_Machine
     
     output reg        data_load,
     output reg        address_load,
-    output reg        IOW,
-    output reg        IOR,
+    output reg        iow,
+    output reg        ior,
     output reg        control_reset
 );
 localparam BUS_IDLE         = 4'b0000;
@@ -135,8 +135,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b1;
+            iow             <= 1'b1;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;
         end
         
@@ -144,8 +144,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b0;
-            IOW             <= 1'b1;
-            IOR             <= 1'b1;
+            iow             <= 1'b1;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;        
         end
         
@@ -153,8 +153,8 @@ begin
         begin
             data_load       <= 1'b0;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b1;
+            iow             <= 1'b1;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;    
         end
         
@@ -162,8 +162,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b0;
-            IOR             <= 1'b1;
+            iow             <= 1'b0;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;    
         end
         
@@ -171,8 +171,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b0;
-            IOR             <= 1'b1;
+            iow             <= 1'b0;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;    
         end
         
@@ -180,8 +180,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b0;
-            IOR             <= 1'b1;
+            iow             <= 1'b0;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;    
         end
         
@@ -189,8 +189,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b0;
-            IOR             <= 1'b1;
+            iow             <= 1'b0;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;    
         end
         
@@ -198,16 +198,16 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b0;
+            iow             <= 1'b1;
+            ior             <= 1'b0;
             control_reset   <= 1'b1;        
         end
         BUS_READ2:
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b0;
+            iow             <= 1'b1;
+            ior             <= 1'b0;
             control_reset   <= 1'b1;
         end
         
@@ -215,8 +215,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b0;
+            iow             <= 1'b1;
+            ior             <= 1'b0;
             control_reset   <= 1'b1;
         end
         
@@ -224,8 +224,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b0;
+            iow             <= 1'b1;
+            ior             <= 1'b0;
             control_reset   <= 1'b1;        
         end
         
@@ -233,8 +233,8 @@ begin
         begin
             data_load       <= 1'b0;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b0;
+            iow             <= 1'b1;
+            ior             <= 1'b0;
             control_reset   <= 1'b1;
         end
         
@@ -242,8 +242,8 @@ begin
         begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
-            IOW             <= 1'b1;
-            IOR             <= 1'b1;
+            iow             <= 1'b1;
+            ior             <= 1'b1;
             control_reset   <= 1'b0;
         end
     endcase
