@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7DK
-set_global_assignment -name TOP_LEVEL_ENTITY CT2960_Riser
+set_global_assignment -name TOP_LEVEL_ENTITY SuperIO
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:53:00  MAY 14, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -46,57 +46,7 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_V12 -to A[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK3
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK7
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ1
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ3
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ7
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IOR
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IOW
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ2
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ5
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ7
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ10
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RESET
 set_location_assignment PIN_W12 -to A[14]
 set_location_assignment PIN_D8 -to A[13]
 set_location_assignment PIN_AF7 -to A[12]
@@ -147,17 +97,65 @@ set_location_assignment PIN_AG28 -to AEN
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_V11 -to clk_50MHz
-set_global_assignment -name VERILOG_FILE src/Verilog/State_Machine.v
-set_global_assignment -name VERILOG_FILE src/Verilog/Reset_Sequence.v
-set_global_assignment -name VERILOG_FILE src/Verilog/Port_Scan.v
-set_global_assignment -name VERILOG_FILE src/Verilog/CT2960_Riser.v
-set_global_assignment -name VERILOG_FILE src/Verilog/Counter.v
+set_location_assignment PIN_AH17 -to SW0
+set_location_assignment PIN_W15 -to LED0
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to A[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DACK7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRQ7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IOR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IOW
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RESET
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AEN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk_50MHz
-set_location_assignment PIN_AH17 -to SW0
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW0
-set_global_assignment -name QIP_FILE src/Verilog/ip/Bus_Clock.qip
-set_global_assignment -name SIP_FILE src/Verilog/ip/Bus_Clock.sip
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED0
-set_location_assignment PIN_W15 -to LED0
+set_global_assignment -name VERILOG_FILE src/Verilog/Bus_Interface.v
+set_global_assignment -name VERILOG_FILE src/Verilog/State_Machine.v
+set_global_assignment -name VERILOG_FILE src/Verilog/Register.v
+set_global_assignment -name VERILOG_FILE src/Verilog/Register_File.v
+set_global_assignment -name VERILOG_FILE src/Verilog/SuperIO.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

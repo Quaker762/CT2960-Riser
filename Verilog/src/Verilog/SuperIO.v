@@ -1,4 +1,4 @@
-module CT2960_Riser
+module SuperIO
 (
     input           clk_50MHz,
     
@@ -35,57 +35,11 @@ wire [15:0] address;
 wire [3:0]  irq;
 wire [3:0]  drq;
 wire        reset;
-wire        data_dir;        // direction of data bus
 wire [3:0]  dack;
-wire        aen;
+wire        aen = 1'b0;
  
-/*
-Counter #(4) bus_clock_counter
-(
-    .reset_n    (SW0 || !bus_clock),
-    .count      (1'b1),
-    .load_n     (1'b1),
-    .D          (),
-    .clk        (clk_50MHz),
-    
-    .Q          (bus_clock_out),
-    .carry_n    ()
-);
-
-always @(bus_clock_out)
-begin
-    if(bus_clock_out == 4'hC) //4MHz
-        bus_clock = 1'b1;
-    else
-        bus_clock = 1'b0;
-end
-*/
-
-wire bus_clock;
-/*
-Bus_Clock bus_clock_pll
-(
-	.refclk(clk_50MHz),
-	.rst(!SW0),
-	.outclk_0(bus_clock), 	//8MHz
-	.outclk_1()				//6MHz
-);
-*/
-Reset_Sequence #(16'h0220) reset_sequence
-(
-    .bus_clock(bus_clock),
-    .data_in(data_in),
-    .enable(1'b1),
-    .reset(!SW0),
-    
-    .data_out(data_out),
-    .address(address),
-    .data_dir(data_dir),
-    .accepted(LED0)
-);
 
 /* Control the bi-directional data pins */
-assign D        = data_dir ? data_out : 16'bzzzzzzzzzzzzzzzz;
 assign data_in  = D;
 
 assign A        = address;
@@ -103,8 +57,8 @@ assign drq[3]   = DRQ7;
 assign RESET    = reset;
 
 /* Make sure we only ever read OR write */
-assign IOW      = ~data_dir;
-assign IOR      = data_dir;
+//assign IOW      
+//assign IOR      
 
 assign DACK1    = dack[0];
 assign DACK3    = dack[1];
