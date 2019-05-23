@@ -1,0 +1,18 @@
+Register set for emulated SuperIO Chip
+
+-Each register is 32-bits wide
+
+Base Address: 0xc0000000
+
+Register 0, I/O Control Register (IOCTRL): Address = 0xc0000000
+-Bit0
+	Direction Flag. 0 = Read from Card (IOR = low), 1 = Write to Card (IOW = high)
+-Bit1:
+	
+
+
+Register 1, Data Output Port (DOUT): Address = 0xc0000004
+Note: High word (buts 16-31) are unused and are masked off internally
+
+Register 1, Data InputPort (DOUT): Address = 0xc0000008
+Note: High word (buts 16-31) are unused and are masked off internally

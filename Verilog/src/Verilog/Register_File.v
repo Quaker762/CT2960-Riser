@@ -13,32 +13,49 @@ module Register_File
     output  [7:0]   control_out
 );
 
-Regiset #(32) address_reg
+wire [3:0] decodedAddr;
+
+wire control_reg_load	= decodedAddr[0];
+wire addr_reg_load 		= decodedAddr[1];
+wire data_reg_load_w		= decodedAddr[2];
+wire data_reg_load_r		= decodedAddr[3];
+
+Address_Decoder decoder
 (
-    .D(),
+	.ce(write),
+	.address(address),
+	.out(decodedAddr)
+);
+
+Register #(32) address_reg
+(
+    .D(writeData),
     .clk(),
-    .reset(),
-    .load(),
+    .reset(control_reset),
+    .load(addr_reg_load),
     
     .Q(address_out)
 );
 
-Register #(32) data_reg
+// This needs to be a 2 input Flip flop!
+RegisterRW #(32) data_reg
 (
-    .D(),
+    .D(writeData),
+	 .D2(readData),
     .clk(),
-    .reset(),
-    .load(),
+    .reset(control_reset),
+    .load(data_reg_load_w),
+	 .load2(data_reg_load_r),
     
     .Q(data_out)
 );
 
 Register #(32) control_reg
 (
-    .D(),
+    .D(writeData),
     .clk(),
-    .reset(),
-    .load(),
+    .reset(control_reset),
+    .load(control_reg_load),
     
     .Q(control_out)
 );

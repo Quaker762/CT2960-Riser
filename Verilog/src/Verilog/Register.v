@@ -15,7 +15,7 @@ begin
     begin
         Q <= 0;
     end
-    else if(load == 1'b0)
+    else if(load == 1'b1)
     begin
         Q <= D;
     end

@@ -50,6 +50,9 @@ wire [15:0] address_HPS_in;
 
 wire ior;
 wire iow;
+
+wire hps_write;
+wire hps_read;
  
 Bus_Clock_8MHz bus_clock_pll
 (
@@ -88,6 +91,20 @@ Bus_Interface bus_interface
     .data_bus_out(data_bus_out),
     .data_HPS_out(data_HPS_out),
     .address_bus(address)
+);
+
+Register_File register_file
+(
+    .write(),
+    .read(),
+    .writedata(),
+    .readdata(),
+    .address(),
+    .control_reset(),
+    .data_out(),
+    .address_out(),
+    .control_out()
+    
 );
 
 assign D            = data_bus_out;
