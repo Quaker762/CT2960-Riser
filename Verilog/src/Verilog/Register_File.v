@@ -3,8 +3,9 @@ module Register_File
     input           write,
     input           read,
     input   [31:0]  writedata,
-    input   [31:0]  readdata,
+    output  [31:0]  readdata,
     input   [2:0]   address,
+    input           clk,
     
     input           control_reset,
     
@@ -17,8 +18,8 @@ wire [3:0] decodedAddr;
 
 wire control_reg_load	= decodedAddr[0];
 wire addr_reg_load 		= decodedAddr[1];
-wire data_reg_load_w		= decodedAddr[2];
-wire data_reg_load_r		= decodedAddr[3];
+wire data_reg_load_w	= decodedAddr[2];
+wire data_reg_load_r    = decodedAddr[3];
 
 Address_Decoder decoder
 (
@@ -30,7 +31,7 @@ Address_Decoder decoder
 Register #(32) address_reg
 (
     .D(writeData),
-    .clk(),
+    .clk(clk),
     .reset(control_reset),
     .load(addr_reg_load),
     
@@ -41,11 +42,11 @@ Register #(32) address_reg
 RegisterRW #(32) data_reg
 (
     .D(writeData),
-	 .D2(readData),
-    .clk(),
+	.D2(readData),
+    .clk(clk),
     .reset(control_reset),
     .load(data_reg_load_w),
-	 .load2(data_reg_load_r),
+	.load2(data_reg_load_r),
     
     .Q(data_out)
 );
@@ -53,7 +54,7 @@ RegisterRW #(32) data_reg
 Register #(32) control_reg
 (
     .D(writeData),
-    .clk(),
+    .clk(clk),
     .reset(control_reset),
     .load(control_reg_load),
     

@@ -24,13 +24,19 @@ module SuperIO
     output          DACK3,
     output          DACK5,
     output          DACK7,
-    output          AEN
+    output          AEN,
+    
+    input           write,
+    input           read,
+    input   [31:0]  writedata,
+    output  [31:0] readdata,
+    input   [2:0]   address
     
 );
 
 wire [15:0] data_bus_out;    
 wire [15:0] data_bus_in;
-wire [15:0] address;
+wire [15:0] address_bus;
 
 wire [3:0]  irq;
 wire [3:0]  drq;
@@ -90,16 +96,17 @@ Bus_Interface bus_interface
     .IOR(IOR),
     .data_bus_out(data_bus_out),
     .data_HPS_out(data_HPS_out),
-    .address_bus(address)
+    .address_bus(address_bus)
 );
 
 Register_File register_file
 (
-    .write(),
-    .read(),
-    .writedata(),
-    .readdata(),
-    .address(),
+    .write(write),
+    .read(read),
+    .writedata(writedata),
+    .readdata(readdata),
+    .address(address),
+    .clk(clk_bus),
     .control_reset(),
     .data_out(),
     .address_out(),
@@ -111,7 +118,7 @@ assign D            = data_bus_out;
 
 assign data_bus_in  = D;
 
-assign A            = address;
+assign A            = address_bus;
 
 assign irq[0]       = IRQ2;
 assign irq[1]       = IRQ5;
