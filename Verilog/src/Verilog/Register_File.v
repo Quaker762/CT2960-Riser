@@ -49,7 +49,7 @@ Register #(32) address_reg
     .D(writedata),
     .clk(clk),
     .reset(reset),
-    .load(addr_reg_load),
+    .load(~addr_reg_load),
     
     .Q(address_out_HPS)
 );
@@ -61,8 +61,8 @@ RegisterRW #(32) data_reg
     .D2(data_bus_in),
     .clk(clk),
     .reset(reset),
-    .load(data_reg_load_w),
-    .load2(data_reg_load_r),
+    .load(~data_reg_load_w),
+    .load2(~data_reg_load_r),
     
     .Q(data_out)
 );
@@ -72,9 +72,9 @@ RegisterRW #(32) control_reg
     .D(writedata),
     .D2(control_out),
     .clk(clk),
-    .reset(reset || control_reset),
-    .load(control_reg_load_w),
-    .load2(control_reg_load_r),
+    .reset(reset && control_reset),
+    .load(~control_reg_load_w),
+    .load2(~control_reg_load_r),
     
     .Q(control_out)
 );

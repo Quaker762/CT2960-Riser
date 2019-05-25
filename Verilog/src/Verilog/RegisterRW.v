@@ -22,11 +22,11 @@ begin
     begin
         Q <= 0;
     end
-    else if(load == 1'b1)
+    else if(load == 1'b0)
     begin
         Q <= D;
     end
-     else if(load2 == 1'b1)
+     else if(load2 == 1'b0)
      begin
         Q <= D2;
      end

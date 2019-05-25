@@ -199,7 +199,7 @@ begin
             data_load       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
-            ior             <= 1'b0;
+            ior             <= 1'b1;
             control_reset   <= 1'b1;        
         end
         BUS_READ2:

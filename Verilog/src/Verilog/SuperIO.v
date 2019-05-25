@@ -60,14 +60,14 @@ wire iow;
 
 wire hps_write;
 wire hps_read;
- 
+/*
 Bus_Clock_8MHz bus_clock_pll
 (
     .refclk(clk_50MHz),
     .rst(!global_reset),
     .outclk_0(clk_bus)
 );
-
+*/
 State_Machine state_machine
 (
     .control_in(control),
