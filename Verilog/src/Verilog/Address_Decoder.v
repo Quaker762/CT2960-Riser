@@ -6,32 +6,34 @@
  */
 module Address_Decoder
 (
-    input                   ce,     // Chip enable register
-    input [2:0]         address, // 4-bit Input address
-    output reg [3:0]    out     // Output of the decoder
+    input               ce,     // Chip enable register
+    input      [2:0]    address, // 3-bit Input address
+    output reg [4:0]    out     // Output of the decoder
 );
 
 
-always @(ce)
+always @(ce, address)
 begin
     if(ce == 1'b1) // The chip is enabled
     begin
         case(address)
-        2'b00:
-            out <= 4'h01;   // Control register load enable (from HPS)
-        2'b01:
-            out <= 4'h02;   // Address register load enable (from HPS)
-        2'b10:
-            out <= 4'h04;   // Data register load enable (from HPS)
-        2'b11:
-            out <= 4'h08;   // Data Register load enable (from Card)
+        3'b000:
+            out <= 5'h01;   // Control register load enable (from HPS)
+        3'b001:
+            out <= 5'h02;   // Control register load enable (from Card)     
+        3'b010:
+            out <= 5'h04;   // Address register load enable (from HPS)
+        3'b011:
+            out <= 5'h08;   // Data register load enable (from HPS)
+        3'b100:
+            out <= 5'h10;   // Data Register load enable (from Card)
         default:
-            out <= 4'h00;
+            out <= 5'h00;
         endcase
     end
     else
     begin
-        out <= 4'h00; // Default value, nothing is selected
+        out <= 5'h00; // Default value, nothing is selected
     end
 end
 

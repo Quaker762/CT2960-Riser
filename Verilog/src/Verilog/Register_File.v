@@ -7,58 +7,78 @@ module Register_File
     input   [2:0]   address,
     input           clk,
     
+    input   [15:0]  data_bus_in,
+    
+    input           reset,
     input           control_reset,
     
-    output  [15:0]  data_out,
-    output  [15:0]  address_out,
+    
+    output  [15:0]  data_out_HPS,
+    output  [15:0]  address_out_HPS,
     output  [7:0]   control_out
 );
 
-wire [3:0] decodedAddr;
+wire [4:0] decodedAddr;
 
-wire control_reg_load	= decodedAddr[0];
-wire addr_reg_load 		= decodedAddr[1];
-wire data_reg_load_w	= decodedAddr[2];
-wire data_reg_load_r    = decodedAddr[3];
+wire [31:0] data_out;
+
+wire control_reg_load_w	= decodedAddr[0];
+wire control_reg_load_r	= decodedAddr[1];
+wire addr_reg_load 		= decodedAddr[2];
+wire data_reg_load_w	= decodedAddr[3];
+wire data_reg_load_r    = decodedAddr[4];
 
 Address_Decoder decoder
 (
-	.ce(write),
+	.ce(write || read),
 	.address(address),
 	.out(decodedAddr)
 );
 
+Mux_2_To_1 output_mux
+(
+    .en(read),  
+    .address(address),
+    .reg1Data(control_out),
+    .reg2Data(data_out), 
+    .out(readdata)
+);
+
 Register #(32) address_reg
 (
-    .D(writeData),
+    .D(writedata),
     .clk(clk),
-    .reset(control_reset),
+    .reset(reset),
     .load(addr_reg_load),
     
-    .Q(address_out)
+    .Q(address_out_HPS)
 );
 
 // This needs to be a 2 input Flip flop!
 RegisterRW #(32) data_reg
 (
-    .D(writeData),
-	.D2(readData),
+    .D(writedata),
+    .D2(data_bus_in),
     .clk(clk),
-    .reset(control_reset),
+    .reset(reset),
     .load(data_reg_load_w),
-	.load2(data_reg_load_r),
+    .load2(data_reg_load_r),
     
     .Q(data_out)
 );
 
-Register #(32) control_reg
+RegisterRW #(32) control_reg
 (
-    .D(writeData),
+    .D(writedata),
+    .D2(control_out),
     .clk(clk),
-    .reset(control_reset),
-    .load(control_reg_load),
+    .reset(reset || control_reset),
+    .load(control_reg_load_w),
+    .load2(control_reg_load_r),
     
     .Q(control_out)
 );
+
+assign data_out_HPS = data_out;
 
 endmodule

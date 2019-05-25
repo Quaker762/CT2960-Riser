@@ -29,7 +29,7 @@ Register #(16) address_buffer
     .Q(address_bus)
 );
 
-Register #(16) data_buffer
+Register #(16) data_out_buffer
 (
     .D(data_HPS_in),
     .clk(clk),
@@ -39,10 +39,19 @@ Register #(16) data_buffer
     .Q(data_out)
 );
 
+Register #(16) data_in_buffer
+(
+    .D(data_bus_in),
+    .clk(clk),
+    .reset(reset),
+    .load(data_load),
+    
+    .Q(data_HPS_out)
+);
+
 assign IOW = iow;
 assign IOR = ior;
 
-assign data_HPS_out = (~IOR && ~data_load)  ? data_bus_in    : 16'bzzzzzzzzzzzzzzzz;
-assign data_bus_out = ~IOW                  ? data_out       : 16'bzzzzzzzzzzzzzzzz;
+assign data_bus_out = ~iow                  ? data_out       : 16'bzzzzzzzzzzzzzzzz;
 
 endmodule

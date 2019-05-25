@@ -14,7 +14,7 @@ module SuperIO
     input           DRQ5,
     input           DRQ7,
     
-    input           SW0,
+    input           global_reset,
     output          LED0,
     
     output          RESET,
@@ -29,7 +29,8 @@ module SuperIO
     input           write,
     input           read,
     input   [31:0]  writedata,
-    output  [31:0] readdata,
+    output  [31:0]  readdata,
+    output          clk,
     input   [2:0]   address
     
 );
@@ -49,7 +50,7 @@ wire        clk_bus;
 wire data_load;
 wire address_load;
 wire control_reset;
-
+wire [7:0] control;
 wire [15:0] data_HPS_in;
 wire [15:0] data_HPS_out;
 wire [15:0] address_HPS_in;
@@ -63,15 +64,15 @@ wire hps_read;
 Bus_Clock_8MHz bus_clock_pll
 (
     .refclk(clk_50MHz),
-    .rst(!SW0),
+    .rst(!global_reset),
     .outclk_0(clk_bus)
 );
 
 State_Machine state_machine
 (
-    .control_in(),
+    .control_in(control),
     .clk(clk_bus),
-    .reset(SW0),
+    .reset(global_reset),
     
     .data_load(data_load),
     .address_load(address_load),
@@ -89,7 +90,7 @@ Bus_Interface bus_interface
     .address_load(address_load),
     .iow(iow),
     .ior(ior),
-    .reset(SW0),
+    .reset(global_reset),
     .clk(clk_bus),
 
     .IOW(IOW),
@@ -107,10 +108,12 @@ Register_File register_file
     .readdata(readdata),
     .address(address),
     .clk(clk_bus),
-    .control_reset(),
-    .data_out(),
-    .address_out(),
-    .control_out()
+    .data_bus_in(data_HPS_out),
+    .reset(global_reset),
+    .control_reset(control_reset),
+    .data_out_HPS(data_HPS_in),
+    .address_out_HPS(address_HPS_in),
+    .control_out(control)
     
 );
 
@@ -138,5 +141,7 @@ assign DACK5        = dack[2];
 assign DACK7        = dack[3];
 
 assign AEN          = aen;
+
+assign clk          = clk_bus;
 
 endmodule
