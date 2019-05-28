@@ -97,7 +97,6 @@ set_location_assignment PIN_AG28 -to AEN
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_V11 -to clk_50MHz
-set_location_assignment PIN_AH17 -to SW0
 set_location_assignment PIN_W15 -to LED0
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
@@ -151,7 +150,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRQ10
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RESET
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AEN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk_50MHz
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW0
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED0
 set_global_assignment -name VERILOG_FILE src/Verilog/Bus_Interface.v
 set_global_assignment -name VERILOG_FILE src/Verilog/State_Machine.v
