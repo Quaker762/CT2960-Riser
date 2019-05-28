@@ -79,6 +79,6 @@ RegisterRW #(32) control_reg
     .Q(control_out)
 );
 
-assign data_out_HPS = data_out & 32'h0000FFFF;
+assign data_out_HPS = data_out;
 
 endmodule
