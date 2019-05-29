@@ -1,0 +1,39 @@
+	soc_system u0 (
+		.clk_clk                                  (<connected-to-clk_clk>),                                  //                       clk.clk
+		.reset_reset_n                            (<connected-to-reset_reset_n>),                            //                     reset.reset_n
+		.memory_mem_a                             (<connected-to-memory_mem_a>),                             //                    memory.mem_a
+		.memory_mem_ba                            (<connected-to-memory_mem_ba>),                            //                          .mem_ba
+		.memory_mem_ck                            (<connected-to-memory_mem_ck>),                            //                          .mem_ck
+		.memory_mem_ck_n                          (<connected-to-memory_mem_ck_n>),                          //                          .mem_ck_n
+		.memory_mem_cke                           (<connected-to-memory_mem_cke>),                           //                          .mem_cke
+		.memory_mem_cs_n                          (<connected-to-memory_mem_cs_n>),                          //                          .mem_cs_n
+		.memory_mem_ras_n                         (<connected-to-memory_mem_ras_n>),                         //                          .mem_ras_n
+		.memory_mem_cas_n                         (<connected-to-memory_mem_cas_n>),                         //                          .mem_cas_n
+		.memory_mem_we_n                          (<connected-to-memory_mem_we_n>),                          //                          .mem_we_n
+		.memory_mem_reset_n                       (<connected-to-memory_mem_reset_n>),                       //                          .mem_reset_n
+		.memory_mem_dq                            (<connected-to-memory_mem_dq>),                            //                          .mem_dq
+		.memory_mem_dqs                           (<connected-to-memory_mem_dqs>),                           //                          .mem_dqs
+		.memory_mem_dqs_n                         (<connected-to-memory_mem_dqs_n>),                         //                          .mem_dqs_n
+		.memory_mem_odt                           (<connected-to-memory_mem_odt>),                           //                          .mem_odt
+		.memory_mem_dm                            (<connected-to-memory_mem_dm>),                            //                          .mem_dm
+		.memory_oct_rzqin                         (<connected-to-memory_oct_rzqin>),                         //                          .oct_rzqin
+		.isa_superio_0_conduit_end_export_address (<connected-to-isa_superio_0_conduit_end_export_address>), // isa_superio_0_conduit_end.export_address
+		.isa_superio_0_conduit_end_export_aen     (<connected-to-isa_superio_0_conduit_end_export_aen>),     //                          .export_aen
+		.isa_superio_0_conduit_end_export_data    (<connected-to-isa_superio_0_conduit_end_export_data>),    //                          .export_data
+		.isa_superio_0_conduit_end_export_dack1   (<connected-to-isa_superio_0_conduit_end_export_dack1>),   //                          .export_dack1
+		.isa_superio_0_conduit_end_export_dack3   (<connected-to-isa_superio_0_conduit_end_export_dack3>),   //                          .export_dack3
+		.isa_superio_0_conduit_end_export_dack5   (<connected-to-isa_superio_0_conduit_end_export_dack5>),   //                          .export_dack5
+		.isa_superio_0_conduit_end_export_dack7   (<connected-to-isa_superio_0_conduit_end_export_dack7>),   //                          .export_dack7
+		.isa_superio_0_conduit_end_export_drq1    (<connected-to-isa_superio_0_conduit_end_export_drq1>),    //                          .export_drq1
+		.isa_superio_0_conduit_end_export_drq3    (<connected-to-isa_superio_0_conduit_end_export_drq3>),    //                          .export_drq3
+		.isa_superio_0_conduit_end_export_drq5    (<connected-to-isa_superio_0_conduit_end_export_drq5>),    //                          .export_drq5
+		.isa_superio_0_conduit_end_export_drq7    (<connected-to-isa_superio_0_conduit_end_export_drq7>),    //                          .export_drq7
+		.isa_superio_0_conduit_end_export_ior     (<connected-to-isa_superio_0_conduit_end_export_ior>),     //                          .export_ior
+		.isa_superio_0_conduit_end_export_iow     (<connected-to-isa_superio_0_conduit_end_export_iow>),     //                          .export_iow
+		.isa_superio_0_conduit_end_export_irq2    (<connected-to-isa_superio_0_conduit_end_export_irq2>),    //                          .export_irq2
+		.isa_superio_0_conduit_end_export_irq5    (<connected-to-isa_superio_0_conduit_end_export_irq5>),    //                          .export_irq5
+		.isa_superio_0_conduit_end_export_irq7    (<connected-to-isa_superio_0_conduit_end_export_irq7>),    //                          .export_irq7
+		.isa_superio_0_conduit_end_export_irq10   (<connected-to-isa_superio_0_conduit_end_export_irq10>),   //                          .export_irq10
+		.isa_superio_0_conduit_end_export_reset   (<connected-to-isa_superio_0_conduit_end_export_reset>)    //                          .export_reset
+	);
+

@@ -1,1 +1,0 @@
-Bus_Clock_8MHz_sim/Bus_Clock_8MHz.vo
