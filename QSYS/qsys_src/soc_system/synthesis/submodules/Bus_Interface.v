@@ -4,6 +4,7 @@ module Bus_Interface
     input  [15:0]   data_bus_in,
     input  [15:0]   address_HPS_in,
     input           data_load,
+    input           data_read,
     input           address_load,
     input           iow,
     input           ior,
@@ -44,7 +45,7 @@ Register #(16) data_in_buffer
     .D(data_bus_in),
     .clk(clk),
     .reset(reset),
-    .load(data_load),
+    .load(data_read),
     
     .Q(data_HPS_out)
 );

@@ -18,15 +18,17 @@ module Register_File
     output  [7:0]   control_out
 );
 
-wire [4:0] decodedAddr;
+wire [5:0] decodedAddr;
 
 wire [31:0] data_out;
+wire [31:0] test_out;
 
 wire control_reg_load_w	= decodedAddr[0];
 wire control_reg_load_r	= decodedAddr[1];
 wire addr_reg_load 		= decodedAddr[2];
 wire data_reg_load_w	= decodedAddr[3];
 wire data_reg_load_r    = decodedAddr[4];
+wire test               = decodedAddr[5];
 
 Address_Decoder decoder
 (
@@ -35,12 +37,13 @@ Address_Decoder decoder
 	.out(decodedAddr)
 );
 
-Mux_2_To_1 output_mux
+Mux_3_To_1 output_mux
 (
     .en(read),  
     .address(address),
     .reg1Data(control_out),
     .reg2Data(data_out), 
+    .reg3Data(test_out),
     .out(readdata)
 );
 
@@ -77,6 +80,16 @@ RegisterRW #(32) control_reg
     .load2(~control_reg_load_r),
     
     .Q(control_out)
+);
+
+Register #(32) test_reg
+(
+    .D(32'ha5a5a5a5),
+    .clk(clk),
+    .reset(reset),
+    .load(~test),
+    
+    .Q(test_out)
 );
 
 assign data_out_HPS = data_out;

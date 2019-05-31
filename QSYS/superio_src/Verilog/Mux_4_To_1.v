@@ -4,13 +4,14 @@
  *  Given 2 32-bit inputs, select only a single 32-bit value
  *  to be asserted as output.
  */
-module Mux_2_To_1 #(parameter WIDTH = 32)
+module Mux_3_To_1 #(parameter WIDTH = 32)
 (
     input   [2:0]               address,        // Three-bit register address from QSYS
     
     // Register inputs
     input [WIDTH-1:0]           reg1Data,
     input [WIDTH-1:0]           reg2Data,
+    input [WIDTH-1:0]           reg3Data,
     
     input                           en,         // Enable control signal
     
@@ -26,6 +27,8 @@ begin
             out <= reg1Data;
         3'b100:
             out <= reg2Data;
+        3'b101:
+            out <= reg3Data;
         default:
             out <= 32'hzzzzzzzz;
         endcase

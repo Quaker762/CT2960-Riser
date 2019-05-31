@@ -47,6 +47,7 @@ wire        aen = 1'b0;
 wire        clk_bus;
 
 wire data_load;
+wire data_read;
 wire address_load;
 wire control_reset;
 wire [7:0] control;
@@ -74,6 +75,7 @@ State_Machine state_machine
     .reset(global_reset),
     
     .data_load(data_load),
+    .data_read(data_read),
     .address_load(address_load),
     .iow(iow),
     .ior(ior),
@@ -86,6 +88,7 @@ Bus_Interface bus_interface
     .data_bus_in(data_bus_in),
     .address_HPS_in(address_HPS_in),
     .data_load(data_load),
+    .data_read(data_read),
     .address_load(address_load),
     .iow(iow),
     .ior(ior),

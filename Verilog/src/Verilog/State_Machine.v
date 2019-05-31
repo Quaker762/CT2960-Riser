@@ -5,6 +5,7 @@ module State_Machine
     input             reset,
     
     output reg        data_load,
+    output reg        data_read,
     output reg        address_load,
     output reg        iow,
     output reg        ior,
@@ -134,6 +135,7 @@ begin
         BUS_IDLE:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
@@ -143,6 +145,7 @@ begin
         BUS_ADDRESS_LOAD:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b0;
             iow             <= 1'b1;
             ior             <= 1'b1;
@@ -152,6 +155,7 @@ begin
         BUS_WRITE1:
         begin
             data_load       <= 1'b0;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
@@ -161,6 +165,7 @@ begin
         BUS_WRITE2:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
@@ -170,6 +175,7 @@ begin
         BUS_WRITE3:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
@@ -179,6 +185,7 @@ begin
         BUS_WRITE4:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
@@ -188,6 +195,7 @@ begin
         BUS_WRITE5:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
@@ -197,6 +205,7 @@ begin
         BUS_READ1:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
@@ -205,6 +214,7 @@ begin
         BUS_READ2:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b0;
@@ -214,6 +224,7 @@ begin
         BUS_READ3:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b0;
@@ -223,6 +234,7 @@ begin
         BUS_READ4:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b0;
@@ -231,7 +243,8 @@ begin
         
         BUS_READ5:
         begin
-            data_load       <= 1'b0;
+            data_load       <= 1'b1;
+            data_read       <= 1'b0;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b0;
@@ -241,6 +254,7 @@ begin
         CONTROL_RESET:
         begin
             data_load       <= 1'b1;
+            data_read       <= 1'b1;
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
