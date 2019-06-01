@@ -14,8 +14,6 @@ module State_Machine
     output  [3:0]  state_debug
 );
 
-assign state_debug = current_state;
-
 localparam BUS_IDLE         = 4'b0000;
 localparam BUS_ADDRESS_LOAD = 4'b0001;
 localparam BUS_WRITE1       = 4'b0011;
@@ -267,5 +265,7 @@ begin
         end
     endcase
 end
+
+assign state_debug = current_state;
 
 endmodule
