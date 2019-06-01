@@ -38,6 +38,8 @@ module SUPERIO_QSYS
 	input IRQ10,
 	output RESET,
 	
+	output [3:0] state_out,
+	
 	input sw
 	
 );
@@ -70,6 +72,7 @@ soc_system soc(
 		.isa_superio_0_conduit_end_export_irq7(IRQ7),    //                          .export_irq7
 		.isa_superio_0_conduit_end_export_irq10(IRQ10),   //                          .export_irq10
 		.isa_superio_0_conduit_end_export_reset(RESET),   //                          .export_reset
+		.isa_superio_0_conduit_end_state_out_export(state_out),
 		.memory_mem_a(hps_memory_mem_a),                             //                    memory.mem_a
 		.memory_mem_ba(hps_memory_mem_ba),                            //                          .mem_ba
 		.memory_mem_ck(hps_memory_mem_ck),                            //                          .mem_ck

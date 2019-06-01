@@ -1,0 +1,208 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Labs/Lab4/ModelSim
+vAddress_Decoder
+Z0 !s110 1558794356
+!i10b 1
+!s100 IlEfR<;0bB1QlVoaS7`F@3
+IoVH0e_QAc>d<mjzQl4Fd12
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Modelsim
+Z3 w1558774884
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v
+L0 7
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1558794356.000000
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@address_@decoder
+vBus_Interface
+R0
+!i10b 1
+!s100 Z8ogJ7m4k;RiRz4WS^zND2
+IzfYn;6^?eOo^nP>QEM5n;2
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v|
+!i113 1
+R6
+R7
+n@bus_@interface
+vCounter
+R0
+!i10b 1
+!s100 XAa6:KD9[KC?QWCZnDdgX3
+Ij1>lc1I;iC08fMEZ=Djdi2
+R1
+R2
+w1558615422
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v|
+!i113 1
+R6
+R7
+n@counter
+vMux_2_To_1
+R0
+!i10b 1
+!s100 MQ3flke<H5Hb;0k2MRWbm2
+Ii`C=GCamfYE[Y_X@d[g;V0
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v|
+!i113 1
+R6
+R7
+n@mux_2_@to_1
+vRegister
+R0
+!i10b 1
+!s100 Ge0BTjQ?I=29ShUCA5fRO2
+IT5M:[E0916Oh>=QbmiB4b3
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v|
+!i113 1
+R6
+R7
+n@register
+vRegister_File
+R0
+!i10b 1
+!s100 ]@hTbTSC@`k<<<JO>X`BC3
+IN@3[[@HV_oQbe]5>albFH3
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v|
+!i113 1
+R6
+R7
+n@register_@file
+vRegisterRW
+R0
+!i10b 1
+!s100 D09T7@27K>B?NkTd^c:m83
+InQkJ238<7=oQlz2^6Mc^<2
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v
+L0 6
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v|
+!i113 1
+R6
+R7
+n@register@r@w
+vState_Machine
+R0
+!i10b 1
+!s100 ^af9j]<6AR0C?O=Wdg4_83
+INAa?4ci6mGYl^XMS1U5WF3
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v|
+!i113 1
+R6
+R7
+n@state_@machine
+vSuperIO
+!s110 1558794357
+!i10b 1
+!s100 lK<U[=3Z6GS]A1b@gHkc71
+IVOU^I@ZZ<PmTKfOfP4MFk0
+R1
+R2
+R3
+8E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v
+FE:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v|
+!i113 1
+R6
+R7
+n@super@i@o

@@ -1,23 +1,6 @@
 
 module soc_system (
 	clk_clk,
-	reset_reset_n,
-	memory_mem_a,
-	memory_mem_ba,
-	memory_mem_ck,
-	memory_mem_ck_n,
-	memory_mem_cke,
-	memory_mem_cs_n,
-	memory_mem_ras_n,
-	memory_mem_cas_n,
-	memory_mem_we_n,
-	memory_mem_reset_n,
-	memory_mem_dq,
-	memory_mem_dqs,
-	memory_mem_dqs_n,
-	memory_mem_odt,
-	memory_mem_dm,
-	memory_oct_rzqin,
 	isa_superio_0_conduit_end_export_address,
 	isa_superio_0_conduit_end_export_aen,
 	isa_superio_0_conduit_end_export_data,
@@ -35,26 +18,26 @@ module soc_system (
 	isa_superio_0_conduit_end_export_irq5,
 	isa_superio_0_conduit_end_export_irq7,
 	isa_superio_0_conduit_end_export_irq10,
-	isa_superio_0_conduit_end_export_reset);	
+	isa_superio_0_conduit_end_export_reset,
+	memory_mem_a,
+	memory_mem_ba,
+	memory_mem_ck,
+	memory_mem_ck_n,
+	memory_mem_cke,
+	memory_mem_cs_n,
+	memory_mem_ras_n,
+	memory_mem_cas_n,
+	memory_mem_we_n,
+	memory_mem_reset_n,
+	memory_mem_dq,
+	memory_mem_dqs,
+	memory_mem_dqs_n,
+	memory_mem_odt,
+	memory_mem_dm,
+	memory_oct_rzqin,
+	reset_reset_n);	
 
 	input		clk_clk;
-	input		reset_reset_n;
-	output	[12:0]	memory_mem_a;
-	output	[2:0]	memory_mem_ba;
-	output		memory_mem_ck;
-	output		memory_mem_ck_n;
-	output		memory_mem_cke;
-	output		memory_mem_cs_n;
-	output		memory_mem_ras_n;
-	output		memory_mem_cas_n;
-	output		memory_mem_we_n;
-	output		memory_mem_reset_n;
-	inout	[7:0]	memory_mem_dq;
-	inout		memory_mem_dqs;
-	inout		memory_mem_dqs_n;
-	output		memory_mem_odt;
-	output		memory_mem_dm;
-	input		memory_oct_rzqin;
 	output	[15:0]	isa_superio_0_conduit_end_export_address;
 	output		isa_superio_0_conduit_end_export_aen;
 	inout	[15:0]	isa_superio_0_conduit_end_export_data;
@@ -73,4 +56,21 @@ module soc_system (
 	input		isa_superio_0_conduit_end_export_irq7;
 	input		isa_superio_0_conduit_end_export_irq10;
 	inout		isa_superio_0_conduit_end_export_reset;
+	output	[12:0]	memory_mem_a;
+	output	[2:0]	memory_mem_ba;
+	output		memory_mem_ck;
+	output		memory_mem_ck_n;
+	output		memory_mem_cke;
+	output		memory_mem_cs_n;
+	output		memory_mem_ras_n;
+	output		memory_mem_cas_n;
+	output		memory_mem_we_n;
+	output		memory_mem_reset_n;
+	inout	[7:0]	memory_mem_dq;
+	inout		memory_mem_dqs;
+	inout		memory_mem_dqs_n;
+	output		memory_mem_odt;
+	output		memory_mem_dm;
+	input		memory_oct_rzqin;
+	input		reset_reset_n;
 endmodule

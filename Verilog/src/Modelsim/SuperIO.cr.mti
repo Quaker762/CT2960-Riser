@@ -1,0 +1,64 @@
+E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/State_Machine.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module State_Machine
+
+Top level modules:
+	State_Machine
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/RegisterRW.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RegisterRW
+
+Top level modules:
+	RegisterRW
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Bus_Interface.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Bus_Interface
+
+Top level modules:
+	Bus_Interface
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/SuperIO.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SuperIO
+
+Top level modules:
+	SuperIO
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Mux_4_To_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Mux_2_To_1
+
+Top level modules:
+	Mux_2_To_1
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Address_Decoder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Address_Decoder
+
+Top level modules:
+	Address_Decoder
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Register_File.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}} E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v {1 {vlog -work work -stats=none E:/Users/Jesse/Documents/Uni/Year4/Sem1/EEET2162/Assignment/Verilog/src/Verilog/Counter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Counter
+
+Top level modules:
+	Counter
+
+} {} {}}
