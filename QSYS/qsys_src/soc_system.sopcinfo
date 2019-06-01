@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.06.01.21:43:50 -->
+ <!-- 2019.06.01.22:45:37 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1559389429</value>
+  <value>1559393135</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -98,7 +98,7 @@
  <module
    name="ISA_SUPERIO_0"
    kind="ISA_SUPERIO"
-   version="0.2"
+   version="0.3"
    path="ISA_SUPERIO_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -723,7 +723,13 @@ parameters are a RESULT of the module parameters. -->
     <name>state_out</name>
     <direction>Output</direction>
     <width>4</width>
-    <role>state_out_export</role>
+    <role>export_state_out</role>
+   </port>
+   <port>
+    <name>clk</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>export_clk</role>
    </port>
   </interface>
  </module>
@@ -79472,7 +79478,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>ISA_SUPERIO</displayName>
-  <version>0.2</version>
+  <version>0.3</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>

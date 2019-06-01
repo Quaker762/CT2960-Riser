@@ -23,7 +23,8 @@ module soc_system (
 		input  wire        isa_superio_0_conduit_end_export_irq7,      //                          .export_irq7
 		input  wire        isa_superio_0_conduit_end_export_irq10,     //                          .export_irq10
 		output wire        isa_superio_0_conduit_end_export_reset,     //                          .export_reset
-		output wire [3:0]  isa_superio_0_conduit_end_state_out_export, //                          .state_out_export
+		output wire [3:0]  isa_superio_0_conduit_end_export_state_out, //                          .export_state_out
+		output wire        isa_superio_0_conduit_end_export_clk,       //                          .export_clk
 		output wire [12:0] memory_mem_a,                               //                    memory.mem_a
 		output wire [2:0]  memory_mem_ba,                              //                          .mem_ba
 		output wire        memory_mem_ck,                              //                          .mem_ck
@@ -114,7 +115,8 @@ module soc_system (
 		.IRQ7         (isa_superio_0_conduit_end_export_irq7),                    //               .export_irq7
 		.IRQ10        (isa_superio_0_conduit_end_export_irq10),                   //               .export_irq10
 		.RESET        (isa_superio_0_conduit_end_export_reset),                   //               .export_reset
-		.state_out    (isa_superio_0_conduit_end_state_out_export)                //               .state_out_export
+		.state_out    (isa_superio_0_conduit_end_export_state_out),               //               .export_state_out
+		.clk          (isa_superio_0_conduit_end_export_clk)                      //               .export_clk
 	);
 
 	soc_system_hps_0 #(

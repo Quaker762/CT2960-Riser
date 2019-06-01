@@ -30,8 +30,9 @@ module SuperIO
     input   [31:0]  writedata,
     output  [31:0]  readdata,
     output          clk,
-    input   [2:0]   address
-    
+    input   [2:0]   address,
+   
+    output	[3:0]	  state_out
 );
 
 wire [15:0] data_bus_out;    
@@ -54,6 +55,8 @@ wire [7:0] control;
 wire [15:0] data_HPS_in;
 wire [15:0] data_HPS_out;
 wire [15:0] address_HPS_in;
+
+wire [3:0]	debug_state;
 
 wire ior;
 wire iow;
@@ -79,7 +82,8 @@ State_Machine state_machine
     .address_load(address_load),
     .iow(iow),
     .ior(ior),
-    .control_reset(control_reset)
+    .control_reset(control_reset),
+	 .state_debug(debug_state)
 );
 
 Bus_Interface bus_interface
@@ -147,5 +151,7 @@ assign AEN          = aen;
 assign clk          = clk_bus;
 
 assign clk_bus 	  = clk_50MHz;
+
+assign state_out	  = debug_state;
 
 endmodule
