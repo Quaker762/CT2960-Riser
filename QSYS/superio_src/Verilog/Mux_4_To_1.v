@@ -18,7 +18,7 @@ module Mux_3_To_1 #(parameter WIDTH = 32)
     output reg [WIDTH-1:0]  out             // Output data register (the selected register)
 );
 
-always @(en, address, reg1Data, reg2Data)
+always @(en, address, reg1Data, reg2Data, reg3Data)
 begin
     if(en == 1'b1) // Should we assert the output to the bus?
     begin
