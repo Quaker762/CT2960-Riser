@@ -8,6 +8,7 @@ module Bus_Interface
     input           address_load,
     input           iow,
     input           ior,
+	 input           data_write,
     input           reset,
     input           clk,
 
@@ -53,6 +54,6 @@ Register #(16) data_in_buffer
 assign IOW = iow;
 assign IOR = ior;
 
-assign data_bus_out = ~iow                  ? data_out       : 16'bzzzzzzzzzzzzzzzz;
+assign data_bus_out = ~data_write                 ? data_out       : 16'bzzzzzzzzzzzzzzzz;
 
 endmodule

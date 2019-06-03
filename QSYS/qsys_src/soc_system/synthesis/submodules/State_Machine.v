@@ -10,11 +10,10 @@ module State_Machine
     output reg        iow,
     output reg        ior,
     output reg        control_reset,
+	 output reg 		 data_out,
 
     output  [3:0]  state_debug
 );
-
-assign state_debug = current_state;
 
 localparam BUS_IDLE         = 4'b0000;
 localparam BUS_ADDRESS_LOAD = 4'b0001;
@@ -145,6 +144,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
+				data_out        <= 1'b1;
         end
         
         BUS_ADDRESS_LOAD:
@@ -154,7 +154,8 @@ begin
             address_load    <= 1'b0;
             iow             <= 1'b1;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;    
+            control_reset   <= 1'b1; 
+				data_out        <= 1'b1;			
         end
         
         BUS_WRITE1:
@@ -164,7 +165,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;    
+            control_reset   <= 1'b1;
+				data_out        <= 1'b1;				
         end
         
         BUS_WRITE2:
@@ -172,9 +174,10 @@ begin
             data_load       <= 1'b1;
             data_read       <= 1'b1;
             address_load    <= 1'b1;
-            iow             <= 1'b0;
+            iow             <= 1'b1;
             ior             <= 1'b1;
-            control_reset   <= 1'b1; 		
+            control_reset   <= 1'b1; 
+				data_out        <= 1'b0;
         end
         
         BUS_WRITE3:
@@ -184,7 +187,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;   		
+            control_reset   <= 1'b1;
+			   data_out        <= 1'b0;
         end
         
         BUS_WRITE4:
@@ -194,7 +198,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;  		
+            control_reset   <= 1'b1;
+				data_out        <= 1'b0;
         end
         
         BUS_WRITE5:
@@ -204,7 +209,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b0;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;	
+            control_reset   <= 1'b1;
+				data_out        <= 1'b0;	
         end
         
         BUS_READ1:
@@ -214,7 +220,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b1;
-            control_reset   <= 1'b1;				
+            control_reset   <= 1'b1;
+				data_out        <= 1'b1;				
         end
         BUS_READ2:
         begin
@@ -224,6 +231,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
+				data_out        <= 1'b1;
         end
         
         BUS_READ3:
@@ -234,6 +242,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
+				data_out        <= 1'b1;
         end
         
         BUS_READ4:
@@ -243,7 +252,8 @@ begin
             address_load    <= 1'b1;
             iow             <= 1'b1;
             ior             <= 1'b0;
-            control_reset   <= 1'b1;  				
+            control_reset   <= 1'b1; 
+				data_out        <= 1'b1; 				
         end
         
         BUS_READ5:
@@ -254,6 +264,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
+				data_out        <= 1'b1;
         end
         
         CONTROL_RESET:
@@ -264,8 +275,11 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b0;
+				data_out        <= 1'b1;
         end
     endcase
 end
+
+assign state_debug = current_state;
 
 endmodule

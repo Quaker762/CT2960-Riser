@@ -49,6 +49,7 @@ wire        clk_bus;
 
 wire data_load;
 wire data_read;
+wire data_out;
 wire address_load;
 wire control_reset;
 wire [7:0] control;
@@ -83,7 +84,8 @@ State_Machine state_machine
     .iow(iow),
     .ior(ior),
     .control_reset(control_reset),
-	 .state_debug(debug_state)
+	 .state_debug(debug_state),
+	 .data_out(data_out)
 );
 
 Bus_Interface bus_interface
@@ -96,6 +98,7 @@ Bus_Interface bus_interface
     .address_load(address_load),
     .iow(iow),
     .ior(ior),
+	 .data_write(data_out),
     .reset(global_reset),
     .clk(clk_bus),
 

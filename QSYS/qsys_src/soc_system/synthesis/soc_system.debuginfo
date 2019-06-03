@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2019.06.01.23:10:01 -->
+ <!-- 2019.06.03.17:04:49 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1559394562</value>
+  <value>1559545450</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -150,7 +150,7 @@
  <module
    name="ISA_SUPERIO_0"
    kind="ISA_SUPERIO"
-   version="0.3"
+   version="0.4"
    path="ISA_SUPERIO_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -42303,7 +42303,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>ISA_SUPERIO</displayName>
-  <version>0.3</version>
+  <version>0.4</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -42482,5 +42482,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>902B3411F6660000016B1328CFC4</uniqueIdentifier>
+ <uniqueIdentifier>902B3411F6660000016B1C272C17</uniqueIdentifier>
 </EnsembleReport>
