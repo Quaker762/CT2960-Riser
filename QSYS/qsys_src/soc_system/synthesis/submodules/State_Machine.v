@@ -22,12 +22,13 @@ localparam BUS_WRITE2       = 4'b0100;
 localparam BUS_WRITE3       = 4'b0101;
 localparam BUS_WRITE4       = 4'b0110;
 localparam BUS_WRITE5       = 4'b0111;
-localparam BUS_READ1        = 4'b1000;
-localparam BUS_READ2        = 4'b1001;
-localparam BUS_READ3        = 4'b1010;
-localparam BUS_READ4        = 4'b1011;
-localparam BUS_READ5        = 4'b1100;
-localparam CONTROL_RESET    = 4'b1101;
+localparam BUS_WRITE6		 = 4'b1000;
+localparam BUS_READ1        = 4'b1001;
+localparam BUS_READ2        = 4'b1010;
+localparam BUS_READ3        = 4'b1011;
+localparam BUS_READ4        = 4'b1100;
+localparam BUS_READ5        = 4'b1101;
+localparam CONTROL_RESET    = 4'b1110;
 
 reg [3:0] current_state;
 reg [3:0] next_state;
@@ -71,7 +72,7 @@ begin
             end
             else
             begin
-                next_state <= current_state;
+                next_state <= BUS_IDLE;
             end
         end
         
@@ -97,6 +98,11 @@ begin
         
         BUS_WRITE5:
         begin
+            next_state <= BUS_WRITE6;
+        end
+		  
+		  BUS_WRITE6:
+		  begin
             next_state <= CONTROL_RESET;
         end
         
@@ -144,7 +150,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;
+			data_out        <= 1'b1;
         end
         
         BUS_ADDRESS_LOAD:
@@ -155,7 +161,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1; 
-				data_out        <= 1'b1;			
+			data_out        <= 1'b1;			
         end
         
         BUS_WRITE1:
@@ -166,7 +172,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;				
+			data_out        <= 1'b1;				
         end
         
         BUS_WRITE2:
@@ -177,7 +183,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1; 
-				data_out        <= 1'b0;
+			data_out        <= 1'b0;
         end
         
         BUS_WRITE3:
@@ -188,7 +194,7 @@ begin
             iow             <= 1'b0;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-			   data_out        <= 1'b0;
+			data_out        <= 1'b0;
         end
         
         BUS_WRITE4:
@@ -199,7 +205,7 @@ begin
             iow             <= 1'b0;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-				data_out        <= 1'b0;
+			data_out        <= 1'b0;
         end
         
         BUS_WRITE5:
@@ -210,7 +216,18 @@ begin
             iow             <= 1'b0;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-				data_out        <= 1'b0;	
+			data_out        <= 1'b0;	
+        end
+		  
+		  BUS_WRITE6:
+        begin
+            data_load       <= 1'b1;
+            data_read       <= 1'b1;
+            address_load    <= 1'b1;
+            iow             <= 1'b0;
+            ior             <= 1'b1;
+            control_reset   <= 1'b1;
+			data_out        <= 1'b0;	
         end
         
         BUS_READ1:
@@ -221,7 +238,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;				
+			data_out        <= 1'b1;				
         end
         BUS_READ2:
         begin
@@ -231,7 +248,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;
+			data_out        <= 1'b1;
         end
         
         BUS_READ3:
@@ -242,7 +259,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;
+			data_out        <= 1'b1;
         end
         
         BUS_READ4:
@@ -253,7 +270,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1; 
-				data_out        <= 1'b1; 				
+			data_out        <= 1'b1; 				
         end
         
         BUS_READ5:
@@ -264,7 +281,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b0;
             control_reset   <= 1'b1;
-				data_out        <= 1'b1;
+			data_out        <= 1'b1;
         end
         
         CONTROL_RESET:
@@ -275,7 +292,7 @@ begin
             iow             <= 1'b1;
             ior             <= 1'b1;
             control_reset   <= 1'b0;
-				data_out        <= 1'b1;
+			data_out        <= 1'b1;
         end
     endcase
 end

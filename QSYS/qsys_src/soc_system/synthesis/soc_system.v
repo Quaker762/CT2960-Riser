@@ -4,44 +4,45 @@
 
 `timescale 1 ps / 1 ps
 module soc_system (
-		input  wire        clk_clk,                                    //                       clk.clk
-		output wire [15:0] isa_superio_0_conduit_end_export_address,   // isa_superio_0_conduit_end.export_address
-		output wire        isa_superio_0_conduit_end_export_aen,       //                          .export_aen
-		inout  wire [15:0] isa_superio_0_conduit_end_export_data,      //                          .export_data
-		output wire        isa_superio_0_conduit_end_export_dack1,     //                          .export_dack1
-		output wire        isa_superio_0_conduit_end_export_dack3,     //                          .export_dack3
-		output wire        isa_superio_0_conduit_end_export_dack5,     //                          .export_dack5
-		output wire        isa_superio_0_conduit_end_export_dack7,     //                          .export_dack7
-		input  wire        isa_superio_0_conduit_end_export_drq1,      //                          .export_drq1
-		input  wire        isa_superio_0_conduit_end_export_drq3,      //                          .export_drq3
-		input  wire        isa_superio_0_conduit_end_export_drq5,      //                          .export_drq5
-		input  wire        isa_superio_0_conduit_end_export_drq7,      //                          .export_drq7
-		output wire        isa_superio_0_conduit_end_export_ior,       //                          .export_ior
-		output wire        isa_superio_0_conduit_end_export_iow,       //                          .export_iow
-		input  wire        isa_superio_0_conduit_end_export_irq2,      //                          .export_irq2
-		input  wire        isa_superio_0_conduit_end_export_irq5,      //                          .export_irq5
-		input  wire        isa_superio_0_conduit_end_export_irq7,      //                          .export_irq7
-		input  wire        isa_superio_0_conduit_end_export_irq10,     //                          .export_irq10
-		output wire        isa_superio_0_conduit_end_export_reset,     //                          .export_reset
-		output wire [3:0]  isa_superio_0_conduit_end_export_state_out, //                          .export_state_out
-		output wire        isa_superio_0_conduit_end_export_clk,       //                          .export_clk
-		output wire [12:0] memory_mem_a,                               //                    memory.mem_a
-		output wire [2:0]  memory_mem_ba,                              //                          .mem_ba
-		output wire        memory_mem_ck,                              //                          .mem_ck
-		output wire        memory_mem_ck_n,                            //                          .mem_ck_n
-		output wire        memory_mem_cke,                             //                          .mem_cke
-		output wire        memory_mem_cs_n,                            //                          .mem_cs_n
-		output wire        memory_mem_ras_n,                           //                          .mem_ras_n
-		output wire        memory_mem_cas_n,                           //                          .mem_cas_n
-		output wire        memory_mem_we_n,                            //                          .mem_we_n
-		output wire        memory_mem_reset_n,                         //                          .mem_reset_n
-		inout  wire [7:0]  memory_mem_dq,                              //                          .mem_dq
-		inout  wire        memory_mem_dqs,                             //                          .mem_dqs
-		inout  wire        memory_mem_dqs_n,                           //                          .mem_dqs_n
-		output wire        memory_mem_odt,                             //                          .mem_odt
-		output wire        memory_mem_dm,                              //                          .mem_dm
-		input  wire        memory_oct_rzqin,                           //                          .oct_rzqin
-		input  wire        reset_reset_n                               //                     reset.reset_n
+		input  wire        clk_clk,                                     //                       clk.clk
+		output wire [15:0] isa_superio_0_conduit_end_export_address,    // isa_superio_0_conduit_end.export_address
+		output wire        isa_superio_0_conduit_end_export_aen,        //                          .export_aen
+		inout  wire [15:0] isa_superio_0_conduit_end_export_data,       //                          .export_data
+		output wire        isa_superio_0_conduit_end_export_dack1,      //                          .export_dack1
+		output wire        isa_superio_0_conduit_end_export_dack3,      //                          .export_dack3
+		output wire        isa_superio_0_conduit_end_export_dack5,      //                          .export_dack5
+		output wire        isa_superio_0_conduit_end_export_dack7,      //                          .export_dack7
+		input  wire        isa_superio_0_conduit_end_export_drq1,       //                          .export_drq1
+		input  wire        isa_superio_0_conduit_end_export_drq3,       //                          .export_drq3
+		input  wire        isa_superio_0_conduit_end_export_drq5,       //                          .export_drq5
+		input  wire        isa_superio_0_conduit_end_export_drq7,       //                          .export_drq7
+		output wire        isa_superio_0_conduit_end_export_ior,        //                          .export_ior
+		output wire        isa_superio_0_conduit_end_export_iow,        //                          .export_iow
+		input  wire        isa_superio_0_conduit_end_export_irq2,       //                          .export_irq2
+		input  wire        isa_superio_0_conduit_end_export_irq5,       //                          .export_irq5
+		input  wire        isa_superio_0_conduit_end_export_irq7,       //                          .export_irq7
+		input  wire        isa_superio_0_conduit_end_export_irq10,      //                          .export_irq10
+		output wire        isa_superio_0_conduit_end_export_reset,      //                          .export_reset
+		output wire [3:0]  isa_superio_0_conduit_end_export_state_out,  //                          .export_state_out
+		output wire        isa_superio_0_conduit_end_export_clk,        //                          .export_clk
+		input  wire        isa_superio_0_conduit_end_export_card_reset, //                          .export_card_reset
+		output wire [12:0] memory_mem_a,                                //                    memory.mem_a
+		output wire [2:0]  memory_mem_ba,                               //                          .mem_ba
+		output wire        memory_mem_ck,                               //                          .mem_ck
+		output wire        memory_mem_ck_n,                             //                          .mem_ck_n
+		output wire        memory_mem_cke,                              //                          .mem_cke
+		output wire        memory_mem_cs_n,                             //                          .mem_cs_n
+		output wire        memory_mem_ras_n,                            //                          .mem_ras_n
+		output wire        memory_mem_cas_n,                            //                          .mem_cas_n
+		output wire        memory_mem_we_n,                             //                          .mem_we_n
+		output wire        memory_mem_reset_n,                          //                          .mem_reset_n
+		inout  wire [7:0]  memory_mem_dq,                               //                          .mem_dq
+		inout  wire        memory_mem_dqs,                              //                          .mem_dqs
+		inout  wire        memory_mem_dqs_n,                            //                          .mem_dqs_n
+		output wire        memory_mem_odt,                              //                          .mem_odt
+		output wire        memory_mem_dm,                               //                          .mem_dm
+		input  wire        memory_oct_rzqin,                            //                          .oct_rzqin
+		input  wire        reset_reset_n                                //                     reset.reset_n
 	);
 
 	wire   [1:0] hps_0_h2f_lw_axi_master_awburst;                          // hps_0:h2f_lw_AWBURST -> mm_interconnect_0:hps_0_h2f_lw_axi_master_awburst
@@ -116,7 +117,8 @@ module soc_system (
 		.IRQ10        (isa_superio_0_conduit_end_export_irq10),                   //               .export_irq10
 		.RESET        (isa_superio_0_conduit_end_export_reset),                   //               .export_reset
 		.state_out    (isa_superio_0_conduit_end_export_state_out),               //               .export_state_out
-		.clk          (isa_superio_0_conduit_end_export_clk)                      //               .export_clk
+		.clk          (isa_superio_0_conduit_end_export_clk),                     //               .export_clk
+		.card_reset   (isa_superio_0_conduit_end_export_card_reset)               //               .export_card_reset
 	);
 
 	soc_system_hps_0 #(

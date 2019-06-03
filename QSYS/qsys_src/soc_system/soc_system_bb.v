@@ -1,7 +1,6 @@
 
 module soc_system (
 	clk_clk,
-	reset_reset_n,
 	isa_superio_0_conduit_end_export_address,
 	isa_superio_0_conduit_end_export_aen,
 	isa_superio_0_conduit_end_export_data,
@@ -20,7 +19,7 @@ module soc_system (
 	isa_superio_0_conduit_end_export_irq7,
 	isa_superio_0_conduit_end_export_irq10,
 	isa_superio_0_conduit_end_export_reset,
-	isa_superio_0_conduit_end_state_out_export,
+	isa_superio_0_conduit_end_export_state_out,
 	isa_superio_0_conduit_end_export_clk,
 	memory_mem_a,
 	memory_mem_ba,
@@ -37,10 +36,10 @@ module soc_system (
 	memory_mem_dqs_n,
 	memory_mem_odt,
 	memory_mem_dm,
-	memory_oct_rzqin);	
+	memory_oct_rzqin,
+	reset_reset_n);	
 
 	input		clk_clk;
-	input		reset_reset_n;
 	output	[15:0]	isa_superio_0_conduit_end_export_address;
 	output		isa_superio_0_conduit_end_export_aen;
 	inout	[15:0]	isa_superio_0_conduit_end_export_data;
@@ -59,7 +58,7 @@ module soc_system (
 	input		isa_superio_0_conduit_end_export_irq7;
 	input		isa_superio_0_conduit_end_export_irq10;
 	output		isa_superio_0_conduit_end_export_reset;
-	output	[3:0]	isa_superio_0_conduit_end_state_out_export;
+	output	[3:0]	isa_superio_0_conduit_end_export_state_out;
 	output		isa_superio_0_conduit_end_export_clk;
 	output	[12:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -77,4 +76,5 @@ module soc_system (
 	output		memory_mem_odt;
 	output		memory_mem_dm;
 	input		memory_oct_rzqin;
+	input		reset_reset_n;
 endmodule

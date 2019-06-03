@@ -15,6 +15,7 @@ module SuperIO
     input           DRQ7,
     
     input           global_reset,
+	 input			  card_reset,
     
     output          RESET,
     output          IOW,
@@ -41,7 +42,7 @@ wire [15:0] address_bus;
 
 wire [3:0]  irq;
 wire [3:0]  drq;
-wire        reset;
+wire        reset = card_reset;
 wire [3:0]  dack;
 wire        aen = 1'b0;
 

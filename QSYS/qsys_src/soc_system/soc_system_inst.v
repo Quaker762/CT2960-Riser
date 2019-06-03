@@ -1,6 +1,5 @@
 	soc_system u0 (
 		.clk_clk                                    (<connected-to-clk_clk>),                                    //                       clk.clk
-		.reset_reset_n                              (<connected-to-reset_reset_n>),                              //                     reset.reset_n
 		.isa_superio_0_conduit_end_export_address   (<connected-to-isa_superio_0_conduit_end_export_address>),   // isa_superio_0_conduit_end.export_address
 		.isa_superio_0_conduit_end_export_aen       (<connected-to-isa_superio_0_conduit_end_export_aen>),       //                          .export_aen
 		.isa_superio_0_conduit_end_export_data      (<connected-to-isa_superio_0_conduit_end_export_data>),      //                          .export_data
@@ -19,7 +18,7 @@
 		.isa_superio_0_conduit_end_export_irq7      (<connected-to-isa_superio_0_conduit_end_export_irq7>),      //                          .export_irq7
 		.isa_superio_0_conduit_end_export_irq10     (<connected-to-isa_superio_0_conduit_end_export_irq10>),     //                          .export_irq10
 		.isa_superio_0_conduit_end_export_reset     (<connected-to-isa_superio_0_conduit_end_export_reset>),     //                          .export_reset
-		.isa_superio_0_conduit_end_state_out_export (<connected-to-isa_superio_0_conduit_end_state_out_export>), //                          .state_out_export
+		.isa_superio_0_conduit_end_export_state_out (<connected-to-isa_superio_0_conduit_end_export_state_out>), //                          .export_state_out
 		.isa_superio_0_conduit_end_export_clk       (<connected-to-isa_superio_0_conduit_end_export_clk>),       //                          .export_clk
 		.memory_mem_a                               (<connected-to-memory_mem_a>),                               //                    memory.mem_a
 		.memory_mem_ba                              (<connected-to-memory_mem_ba>),                              //                          .mem_ba
@@ -36,6 +35,7 @@
 		.memory_mem_dqs_n                           (<connected-to-memory_mem_dqs_n>),                           //                          .mem_dqs_n
 		.memory_mem_odt                             (<connected-to-memory_mem_odt>),                             //                          .mem_odt
 		.memory_mem_dm                              (<connected-to-memory_mem_dm>),                              //                          .mem_dm
-		.memory_oct_rzqin                           (<connected-to-memory_oct_rzqin>)                            //                          .oct_rzqin
+		.memory_oct_rzqin                           (<connected-to-memory_oct_rzqin>),                           //                          .oct_rzqin
+		.reset_reset_n                              (<connected-to-reset_reset_n>)                               //                     reset.reset_n
 	);
 

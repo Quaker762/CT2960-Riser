@@ -41,7 +41,8 @@ module SUPERIO_QSYS
 	output [3:0] state_out,
 	output clk,
 	
-	input sw
+	input sw,
+	input card_reset
 	
 );
 
@@ -81,6 +82,7 @@ soc_system soc(
 		.isa_superio_0_conduit_end_export_reset(RESET),   //                          .export_reset
 		.isa_superio_0_conduit_end_export_state_out(state_out),
 		.isa_superio_0_conduit_end_export_clk(clk),       //                          .export_clk
+		.isa_superio_0_conduit_end_export_card_reset(!card_reset), //                          .export_card_reset
 		.memory_mem_a(hps_memory_mem_a),                             //                    memory.mem_a
 		.memory_mem_ba(hps_memory_mem_ba),                            //                          .mem_ba
 		.memory_mem_ck(hps_memory_mem_ck),                            //                          .mem_ck

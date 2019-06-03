@@ -62,7 +62,7 @@
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
- <module name="ISA_SUPERIO_0" kind="ISA_SUPERIO" version="0.3" enabled="1" />
+ <module name="ISA_SUPERIO_0" kind="ISA_SUPERIO" version="0.5" enabled="1" />
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
