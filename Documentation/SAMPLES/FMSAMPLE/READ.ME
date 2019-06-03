@@ -1,0 +1,38 @@
+                                   FMSAMPLE.C
+
+This is a sample program which shows the very basics of controlling the
+FM synthesizer chips on Sound Blaster cards.
+
+The program, written in Borland C, contains conditionals which cause the
+program to be compiled for a Sound Blaster, Sound Blaster Pro version 1
+(CT-1330), or Sound Blaster Pro version 2 (CT-1600) and later cards.
+
+If you have a Sound Blaster Pro, but you don't know whether it's a CT-1330
+or CT-1600, do this at the DOS prompt:
+  debug
+  i 388
+If the value returned is 06, you have a CT-1330.  If the value is 00, you
+have a CT-1600.
+
+The executable included with this was compiled for Sound Blaster Pro 2 and
+Sound Blaster 16 cards (which use the OPL3).
+
+To compile the program for a Sound Blaster Pro version 1 (CT-1330),
+comment out the line:
+  #define OPL3
+
+To compile the program for a plain Sound Blaster (monaural), comment out
+the line:
+  #define STEREO
+
+For documentation on the OPL3 FM synthesizer, request the "OPL3 YMF262 
+Application Manual," catalog number LSI-6MF2622 from Yamaha.  You might 
+also want the YM3812 (OPLII) Application Manual, cat. no. LSI-2438120.
+  
+  Yamaha Systems Technology
+  981 Ridder Park Drive
+  San Jose, CA 95131
+  Tel. (408) 437-3133
+  Fax. (408) 437-8791
+
+

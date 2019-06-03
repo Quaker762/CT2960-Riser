@@ -47,7 +47,13 @@ module SUPERIO_QSYS
 
 wire clock_pll;
 
-PLL pll(
+//PLL pll(
+//		.refclk(CLOCK_50),   //  refclk.clk
+//		.rst(!sw),      //   reset.reset
+//		.outclk_0(clock_pll)  // outclk0.clk
+//);
+
+pll pll(
 		.refclk(CLOCK_50),   //  refclk.clk
 		.rst(!sw),      //   reset.reset
 		.outclk_0(clock_pll)  // outclk0.clk

@@ -1,0 +1,49 @@
+These files are to demonstrate how to record and play simultaneously using
+two Sound Blaster (or later) cards, or one Sound Blaster 16.  The programs
+create a delay by playing back from a file about 1 second after the
+recording of that file started.
+
+This directory contains:
+
+DELAY.C     Delay program for two Sound Blasters.
+DELAY.EXE
+DELAY2.C    Delay program for one Sound Blaster 16.
+DELAY2.EXE
+SBDEFS.H    Header files for compilation.
+MYDEFS.H
+
+DELAY does an 8-bit recording to disk.  Approximately one second after the
+recording was started, the playback starts from the same file.  After you
+run this program, you might want to delete the DELAY.RAW recording file.
+
+DELAY2 does a 16-bit recording to disk.  One second after the recording
+was started, the playback starts.  This program works by using the 8-bit
+and 16-bit sections of the card simultaneously, so the 16-bit data is
+converted to 8-bit data before it's played back.  There is only one sample
+clock, so the recording and playback run at the same sample rate.  You
+might want to delete the DELAY2.RAW recording file afterwards.
+
+Note that this ability to play and record simultaneously using one SB16 is
+not documented, not supported by Creative's drivers, and not guaranteed to
+be available on future cards.
+
+BEFORE RUNNING DELAY.EXE:
+You should already have a BLASTER environment variable for your primary
+card (e.g. BLASTER=A220 I5 D1 T3).  Make a BLASTER2 environment variable
+that specifies the configuration of the second Sound Blaster card (e.g.
+BLASTER2=A240 I7 D3 T3).  The two cards must be configured for different
+I/O port addresses, different IRQ numbers, and different DMA channels.  The
+primary card (BLASTER) does the recording.  The secondary (BLASTER2) does
+the playback.
+
+Make sure the microphone recording level on the primary card is turned up.
+
+BEFORE RUNNING DELAY2.EXE:
+You must have a Sound Blaster 16 and a working 16-bit DMA channel on your
+motherboard.  You should already have a BLASTER environment variable that
+looks something like this:  BLASTER=A220 I5 D1 H5 P330 T6.  The "D" and
+"H" numbers specify the 8-bit and 16-bit DMA channels, and must be
+different for this program to work.
+
+Make sure you turn up the microphone recording level before running
+DELAY2.

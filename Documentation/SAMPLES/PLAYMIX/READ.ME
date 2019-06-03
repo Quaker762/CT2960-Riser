@@ -1,0 +1,32 @@
+                                 PLAYMIX
+
+This program demonstrates two main things:
+  1.  How to mix two voc files in real time and play them.
+  2.  How to control a Sound Blaster using low-level commands.
+This program also shows one method of pitch shifting a sound up in frequency,
+though there is much room for improvement.  (Other methods to try would be
+modifying a Bresenham line drawing algorithm, and possibly additionally
+altering the sample rate.)
+
+The executable included with this was compiled in auto-init mode.  If you
+re-compile this program without the #define AUTOINIT, the sound playback will
+click slightly.  You'll hear a click every time the board finishes playing one
+buffer and switches to the other.  It's caused by the lack of sound output
+during the time that the DMAC and DSP are being re-programmed.   Most existing
+programs do not use auto-init mode.
+
+One thing to keep in mind is that when you combine signals to play them
+simultaneously, you lose sound quality.  The reason is that when two signals
+are added, you have to divide the results by two to prevent the new signal from
+getting too large.  That's the same as cutting the resolution of the original
+signals in half before adding them.  If you use a Sound Blaster 16 (16-bit
+audio) instead of an older 8-bit sound card, the resolution will be high enough
+that it probably won't matter if you do cut the resolution in half.  (But this
+program was written for 8-bit sound.)
+
+This program was compiled with this board configuration hard coded into it:
+   port address:  220H
+   IRQ number:    5
+   DMA channel:   1
+If your board doesn't match this configuration, change the program and
+recompile it.
