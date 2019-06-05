@@ -38,9 +38,10 @@ void sb16_init()
     
     uint16_t ret = 0;    
     
+    // Wait until the DSP data buffer contains data 
     for(int i = 0; i < 200; i++)
     {
-        ret = sb16_read(SB16_DSP_STATUS);
+        ret = sb16_read(SB16_DATA_AVAIL);
         if(ret & 0x80)
             break; 
     }
